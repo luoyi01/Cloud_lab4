@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8090",
+  "duration_s": 40,
+  "workers": 1,
+  "interval_s": 0.2,
+  "requests": 200,
+  "success": 200,
+  "errors": 0,
+  "success_percent": 100.0,
+  "p50_ms": 4.5225,
+  "p95_ms": 6.67,
+  "instances": [
+    "358217a769a0",
+    "5ecbc9a4c2bd",
+    "8d8aa44514f9",
+    "e324f751ecc2"
+  ],
+  "client_retries": 0,
+  "csv": "compose-delete/requests.csv"
+}

@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:8090",
+  "instances": [
+    "358217a769a0",
+    "5ecbc9a4c2bd",
+    "e324f751ecc2"
+  ],
+  "replicas": 3,
+  "shared_message_id": 1,
+  "marker": "复现检查-83f71214",
+  "checks": "passed"
+}

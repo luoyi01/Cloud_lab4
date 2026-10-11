@@ -1,0 +1,240 @@
+{
+  "scope": "Measured on one Windows/WSL2/Docker Desktop host; application container usage excludes platform overhead.",
+  "warm_start": [
+    {
+      "scheme": "compose",
+      "runs": 5,
+      "mean_s": 12.569,
+      "median_s": 12.553,
+      "stdev_s": 0.069,
+      "min_s": 12.492,
+      "max_s": 12.674
+    },
+    {
+      "scheme": "k8s",
+      "runs": 5,
+      "mean_s": 3.462,
+      "median_s": 3.522,
+      "stdev_s": 0.11,
+      "min_s": 3.276,
+      "max_s": 3.535
+    }
+  ],
+  "scale": [
+    {
+      "scheme": "compose",
+      "step": 1,
+      "replicas": 1,
+      "ready_s": 7.734,
+      "observations": 5,
+      "app_cpu_m": 81.9,
+      "api_cpu_m": 64.4,
+      "app_memory_mib": 59.742,
+      "api_memory_mib": 40.56,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 10.6445,
+      "p95_ms": 63.055
+    },
+    {
+      "scheme": "compose",
+      "step": 2,
+      "replicas": 3,
+      "ready_s": 7.282,
+      "observations": 5,
+      "app_cpu_m": 212.1,
+      "api_cpu_m": 194.0,
+      "app_memory_mib": 148.692,
+      "api_memory_mib": 129.05,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 5.422499999999999,
+      "p95_ms": 8.115
+    },
+    {
+      "scheme": "compose",
+      "step": 3,
+      "replicas": 5,
+      "ready_s": 7.404,
+      "observations": 5,
+      "app_cpu_m": 406.6,
+      "api_cpu_m": 388.8,
+      "app_memory_mib": 217.818,
+      "api_memory_mib": 197.49,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 4.8495,
+      "p95_ms": 6.147
+    },
+    {
+      "scheme": "compose",
+      "step": 4,
+      "replicas": 3,
+      "ready_s": 2.474,
+      "observations": 5,
+      "app_cpu_m": 309.7,
+      "api_cpu_m": 261.6,
+      "app_memory_mib": 140.156,
+      "api_memory_mib": 119.19,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 5.239,
+      "p95_ms": 7.22
+    },
+    {
+      "scheme": "k8s",
+      "step": 1,
+      "replicas": 1,
+      "ready_s": 3.316,
+      "observations": 5,
+      "app_cpu_m": 93.762,
+      "api_cpu_m": 63.991,
+      "app_memory_mib": 60.438,
+      "api_memory_mib": 40.613,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 10.602,
+      "p95_ms": 12.652
+    },
+    {
+      "scheme": "k8s",
+      "step": 2,
+      "replicas": 3,
+      "ready_s": 3.072,
+      "observations": 5,
+      "app_cpu_m": 98.923,
+      "api_cpu_m": 66.664,
+      "app_memory_mib": 139.121,
+      "api_memory_mib": 118.355,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 6.266500000000001,
+      "p95_ms": 9.699
+    },
+    {
+      "scheme": "k8s",
+      "step": 3,
+      "replicas": 5,
+      "ready_s": 3.12,
+      "observations": 5,
+      "app_cpu_m": 98.914,
+      "api_cpu_m": 68.175,
+      "app_memory_mib": 216.551,
+      "api_memory_mib": 196.262,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 5.763999999999999,
+      "p95_ms": 8.798
+    },
+    {
+      "scheme": "k8s",
+      "step": 4,
+      "replicas": 3,
+      "ready_s": 0.717,
+      "observations": 5,
+      "app_cpu_m": 91.392,
+      "api_cpu_m": 61.419,
+      "app_memory_mib": 139.516,
+      "api_memory_mib": 119.555,
+      "requests": 1300,
+      "errors": 0,
+      "p50_ms": 6.2725,
+      "p95_ms": 9.762
+    }
+  ],
+  "self-heal": {
+    "fault_utc": "2026-10-11T15:02:55.565019+00:00",
+    "old_name": "api-6df4d78668-c8vvb",
+    "old_uid": "ccc28c4f-a5d6-4610-9d25-19a22f17372e",
+    "method": "kubectl delete pod --wait=false (default graceful deletion)",
+    "new_name": "api-6df4d78668-jbhtr",
+    "new_uid": "7b405bc5-be76-4c58-9989-485b1ba352b2",
+    "new_node": "cloudlab-worker2",
+    "replacement_ready_s": 3.711,
+    "traffic": {
+      "url": "http://127.0.0.1:8080",
+      "duration_s": 45,
+      "workers": 1,
+      "interval_s": 0.2,
+      "requests": 225,
+      "success": 225,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 4.862,
+      "p95_ms": 6.585,
+      "instances": [
+        "api-6df4d78668-c8vvb",
+        "api-6df4d78668-jbhtr",
+        "api-6df4d78668-jmrb5",
+        "api-6df4d78668-xs76c"
+      ],
+      "client_retries": 0,
+      "csv": "self-heal/requests.csv"
+    }
+  },
+  "compose-delete": {
+    "utc": "2026-10-11T15:04:09.261024+00:00",
+    "removed_container": "358217a769a0",
+    "remaining_after_15s": 2,
+    "auto_recreated_after_deletion": false,
+    "traffic": {
+      "url": "http://127.0.0.1:8090",
+      "duration_s": 40,
+      "workers": 1,
+      "interval_s": 0.2,
+      "requests": 200,
+      "success": 200,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 4.5225,
+      "p95_ms": 6.67,
+      "instances": [
+        "358217a769a0",
+        "5ecbc9a4c2bd",
+        "8d8aa44514f9",
+        "e324f751ecc2"
+      ],
+      "client_retries": 0,
+      "csv": "compose-delete/requests.csv"
+    }
+  },
+  "node-failure": {
+    "fault_utc": "2026-10-11T15:09:25.773127+00:00",
+    "worker": "cloudlab-worker2",
+    "affected_api_pods": [
+      "api-6df4d78668-bqqnd",
+      "api-6df4d78668-l4sjq"
+    ],
+    "method": "docker stop Kind worker container",
+    "toleration_seconds": 20,
+    "scope": "one simulated API worker on the same physical host",
+    "node_not_ready_s": 51.556,
+    "all_api_ready_on_survivor_s": 74.303,
+    "surviving_pods": [
+      "api-6df4d78668-5hbsw",
+      "api-6df4d78668-hgx98",
+      "api-6df4d78668-l25j9"
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8080",
+      "duration_s": 150,
+      "workers": 1,
+      "interval_s": 0.2,
+      "requests": 574,
+      "success": 530,
+      "errors": 44,
+      "success_percent": 92.334,
+      "p50_ms": 5.2725,
+      "p95_ms": 6.706,
+      "instances": [
+        "api-6df4d78668-5hbsw",
+        "api-6df4d78668-bqqnd",
+        "api-6df4d78668-hgx98",
+        "api-6df4d78668-l25j9",
+        "api-6df4d78668-l4sjq"
+      ],
+      "client_retries": 0,
+      "csv": "node-failure/requests.csv"
+    }
+  }
+}

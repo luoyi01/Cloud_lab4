@@ -1,0 +1,4 @@
+reportlab==4.4.9
+Pillow==12.3.0
+# Only for rendering / visual QA, not for running the application:
+pypdfium2==5.13.0

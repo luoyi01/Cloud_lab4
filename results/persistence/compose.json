@@ -1,0 +1,13 @@
+{
+  "scheme": "compose",
+  "utc": "2026-10-11T15:03:37.074204+00:00",
+  "message": {
+    "id": 3,
+    "author": "实验验证",
+    "content": "持久化验证-compose-1791731014",
+    "created_at": "2026-10-11T15:03:34.523347+00:00"
+  },
+  "readback": "identical",
+  "restart_to_endpoint_ready_s": 0.547,
+  "scope": "graceful Redis restart; not power loss or storage-node failure"
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "scheme": "compose",
+    "run": 1,
+    "utc": "2026-10-11T15:04:44.080417+00:00",
+    "ready_s": 12.674,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "compose",
+    "run": 2,
+    "utc": "2026-10-11T15:04:57.997844+00:00",
+    "ready_s": 12.553,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "compose",
+    "run": 3,
+    "utc": "2026-10-11T15:05:11.606609+00:00",
+    "ready_s": 12.594,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "compose",
+    "run": 4,
+    "utc": "2026-10-11T15:05:23.596416+00:00",
+    "ready_s": 12.534,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "compose",
+    "run": 5,
+    "utc": "2026-10-11T15:05:37.382673+00:00",
+    "ready_s": 12.492,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "k8s",
+    "run": 1,
+    "utc": "2026-10-11T15:05:48.144185+00:00",
+    "ready_s": 3.276,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "k8s",
+    "run": 2,
+    "utc": "2026-10-11T15:05:58.825384+00:00",
+    "ready_s": 3.535,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "k8s",
+    "run": 3,
+    "utc": "2026-10-11T15:06:10.825454+00:00",
+    "ready_s": 3.531,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "k8s",
+    "run": 4,
+    "utc": "2026-10-11T15:06:22.852010+00:00",
+    "ready_s": 3.522,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  },
+  {
+    "scheme": "k8s",
+    "run": 5,
+    "utc": "2026-10-11T15:06:31.627740+00:00",
+    "ready_s": 3.446,
+    "scope": "warm stateless API(3)+Web(1) restart; Redis and platform stay running"
+  }
+]

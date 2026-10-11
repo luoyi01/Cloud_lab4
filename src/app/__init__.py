@@ -1,0 +1,1 @@
+"""Cloud message board application."""

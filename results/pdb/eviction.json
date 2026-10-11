@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-11T15:03:43.899406+00:00",
+  "replicas": 2,
+  "minAvailable": 2,
+  "status": {
+    "conditions": [
+      {
+        "lastTransitionTime": "2026-10-11T15:03:42Z",
+        "message": "",
+        "observedGeneration": 1,
+        "reason": "InsufficientPods",
+        "status": "False",
+        "type": "DisruptionAllowed"
+      }
+    ],
+    "currentHealthy": 2,
+    "desiredHealthy": 2,
+    "disruptionsAllowed": 0,
+    "expectedPods": 3,
+    "observedGeneration": 1
+  },
+  "pod": "api-6df4d78668-jmrb5",
+  "exit_code": 1,
+  "stderr": "Error from server (TooManyRequests): Cannot evict pod as it would violate the pod's disruption budget.\n",
+  "same_pod_still_ready": true
+}

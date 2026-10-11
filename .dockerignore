@@ -1,0 +1,16 @@
+.git
+.planning
+.local
+.env
+.env.*
+findings.md
+progress.md
+task_plan.md
+实验方案.md
+__pycache__
+.pytest_cache
+results
+screenshots
+rendered
+*.zip
+*.tar

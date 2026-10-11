@@ -1,0 +1,820 @@
+{
+  "scheme": "k8s",
+  "replicas": 5,
+  "step": 3,
+  "scale_ready_s": 3.12,
+  "resource_samples": [
+    {
+      "utc": "2026-10-11T15:45:42.259882+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-ccdkb",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:42Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:21Z",
+            "window": "12.292s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "17550846n",
+                  "memory": "39776Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-pf84l",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:42Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:28Z",
+            "window": "29.595s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "18918601n",
+                  "memory": "40816Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:42Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:19Z",
+            "window": "17.363s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "19275931n",
+                  "memory": "40144Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:42Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:28Z",
+            "window": "19.316s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "18826672n",
+                  "memory": "5200Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:42Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:20Z",
+            "window": "16.369s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "11237338n",
+                  "memory": "13928Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:45:52.252447+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-8j9dr",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:44Z",
+            "window": "14.56s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "15436813n",
+                  "memory": "40316Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-ccdkb",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:34Z",
+            "window": "12.158s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "13950320n",
+                  "memory": "39752Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-pf84l",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:40Z",
+            "window": "11.754s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14384379n",
+                  "memory": "39768Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:34Z",
+            "window": "15.215s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "12387906n",
+                  "memory": "40128Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-z74bm",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:31Z",
+            "window": "11.344935872s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "87224115n",
+                  "memory": "40720Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:28Z",
+            "window": "19.316s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "18826672n",
+                  "memory": "5200Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:45:52Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:43Z",
+            "window": "23.45s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "10686567n",
+                  "memory": "15312Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:46:01.930958+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-8j9dr",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:59Z",
+            "window": "15.075s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14908457n",
+                  "memory": "40052Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-ccdkb",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:52Z",
+            "window": "18.386s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "11731698n",
+                  "memory": "39724Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-pf84l",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:51Z",
+            "window": "11.146s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14106226n",
+                  "memory": "40316Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:56Z",
+            "window": "21.612s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14837636n",
+                  "memory": "40392Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-z74bm",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:47Z",
+            "window": "15.646s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "12591077n",
+                  "memory": "40488Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:45Z",
+            "window": "17.531s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "19213792n",
+                  "memory": "5504Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:01Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:54Z",
+            "window": "10.567s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "11525220n",
+                  "memory": "15272Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:46:10.215149+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-8j9dr",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:59Z",
+            "window": "15.075s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14908457n",
+                  "memory": "40052Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-ccdkb",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:52Z",
+            "window": "18.386s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "11731698n",
+                  "memory": "39724Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-pf84l",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:51Z",
+            "window": "11.146s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14106226n",
+                  "memory": "40316Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:56Z",
+            "window": "21.612s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14837636n",
+                  "memory": "40392Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-z74bm",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:47Z",
+            "window": "15.646s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "12591077n",
+                  "memory": "40488Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:45Z",
+            "window": "17.531s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "19213792n",
+                  "memory": "5504Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:10Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:54Z",
+            "window": "10.567s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "11525220n",
+                  "memory": "15272Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:46:20.226514+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-8j9dr",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:59Z",
+            "window": "15.075s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14908457n",
+                  "memory": "40052Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-ccdkb",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:46:02Z",
+            "window": "10.163s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "11786480n",
+                  "memory": "39748Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-pf84l",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:46:07Z",
+            "window": "16.001s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "12224673n",
+                  "memory": "40012Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:46:06Z",
+            "window": "9.699s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "14294566n",
+                  "memory": "41152Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "api-6df4d78668-z74bm",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:45:59Z",
+            "window": "12.211s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "13516010n",
+                  "memory": "40456Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:46:02Z",
+            "window": "16.431s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "19451037n",
+                  "memory": "5160Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:46:20Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:46:05Z",
+            "window": "11.153s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "11891060n",
+                  "memory": "15276Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "traffic": {
+    "url": "http://127.0.0.1:8080",
+    "duration_s": 65,
+    "workers": 4,
+    "interval_s": 0.2,
+    "requests": 1300,
+    "success": 1300,
+    "errors": 0,
+    "success_percent": 100.0,
+    "p50_ms": 5.763999999999999,
+    "p95_ms": 8.798,
+    "instances": [
+      "api-6df4d78668-8j9dr",
+      "api-6df4d78668-ccdkb",
+      "api-6df4d78668-pf84l",
+      "api-6df4d78668-qp8tk",
+      "api-6df4d78668-z74bm"
+    ],
+    "client_retries": 0,
+    "csv": "scale/k8s-3-5.csv"
+  }
+}

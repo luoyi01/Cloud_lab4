@@ -1,0 +1,251 @@
+.FFFFFFFFFFFFF                                                           [100%]
+=================================== FAILURES ===================================
+_____________________ test_message_roundtrip_and_trimming ______________________
+
+client = <starlette.testclient.TestClient object at 0x7591035d1370>
+
+    def test_message_roundtrip_and_trimming(client):
+        r = client.post("/api/messages", json={"author": "  同学  ", "content": "  第一条留言  "})
+>       assert r.status_code == 201
+E       assert 404 == 201
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_api.py:39: AssertionError
+____________ test_invalid_input_is_rejected_without_writing[data0] _____________
+
+client = <starlette.testclient.TestClient object at 0x7591035d31d0>
+data = {'author': '  ', 'content': 'ok'}
+
+    @pytest.mark.parametrize("data", [
+        {"author": "  ", "content": "ok"}, {"author": "a", "content": "\n"},
+        {"author": "a" * 31, "content": "ok"}, {"author": "a", "content": "x" * 301},
+        {"author": 12, "content": "ok"}, {"author": "a", "content": None},
+    ])
+    def test_invalid_input_is_rejected_without_writing(client, data):
+>       assert client.post("/api/messages", json=data).status_code == 422
+E       AssertionError: assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = post('/api/messages', json={'author': '  ', 'content': 'ok'})
+E        +      where post = <starlette.testclient.TestClient object at 0x7591035d31d0>.post
+
+tests/test_api.py:56: AssertionError
+____________ test_invalid_input_is_rejected_without_writing[data1] _____________
+
+client = <starlette.testclient.TestClient object at 0x7591035d17f0>
+data = {'author': 'a', 'content': '\n'}
+
+    @pytest.mark.parametrize("data", [
+        {"author": "  ", "content": "ok"}, {"author": "a", "content": "\n"},
+        {"author": "a" * 31, "content": "ok"}, {"author": "a", "content": "x" * 301},
+        {"author": 12, "content": "ok"}, {"author": "a", "content": None},
+    ])
+    def test_invalid_input_is_rejected_without_writing(client, data):
+>       assert client.post("/api/messages", json=data).status_code == 422
+E       AssertionError: assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = post('/api/messages', json={'author': 'a', 'content': '\n'})
+E        +      where post = <starlette.testclient.TestClient object at 0x7591035d17f0>.post
+
+tests/test_api.py:56: AssertionError
+____________ test_invalid_input_is_rejected_without_writing[data2] _____________
+
+client = <starlette.testclient.TestClient object at 0x75910361e450>
+data = {'author': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'content': 'ok'}
+
+    @pytest.mark.parametrize("data", [
+        {"author": "  ", "content": "ok"}, {"author": "a", "content": "\n"},
+        {"author": "a" * 31, "content": "ok"}, {"author": "a", "content": "x" * 301},
+        {"author": 12, "content": "ok"}, {"author": "a", "content": None},
+    ])
+    def test_invalid_input_is_rejected_without_writing(client, data):
+>       assert client.post("/api/messages", json=data).status_code == 422
+E       AssertionError: assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = post('/api/messages', json={'author': 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 'content': 'ok'})
+E        +      where post = <starlette.testclient.TestClient object at 0x75910361e450>.post
+
+tests/test_api.py:56: AssertionError
+____________ test_invalid_input_is_rejected_without_writing[data3] _____________
+
+client = <starlette.testclient.TestClient object at 0x75910365eae0>
+data = {'author': 'a', 'content': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'}
+
+    @pytest.mark.parametrize("data", [
+        {"author": "  ", "content": "ok"}, {"author": "a", "content": "\n"},
+        {"author": "a" * 31, "content": "ok"}, {"author": "a", "content": "x" * 301},
+        {"author": 12, "content": "ok"}, {"author": "a", "content": None},
+    ])
+    def test_invalid_input_is_rejected_without_writing(client, data):
+>       assert client.post("/api/messages", json=data).status_code == 422
+E       AssertionError: assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = post('/api/messages', json={'author': 'a', 'content': 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'})
+E        +      where post = <starlette.testclient.TestClient object at 0x75910365eae0>.post
+
+tests/test_api.py:56: AssertionError
+____________ test_invalid_input_is_rejected_without_writing[data4] _____________
+
+client = <starlette.testclient.TestClient object at 0x75910365dc70>
+data = {'author': 12, 'content': 'ok'}
+
+    @pytest.mark.parametrize("data", [
+        {"author": "  ", "content": "ok"}, {"author": "a", "content": "\n"},
+        {"author": "a" * 31, "content": "ok"}, {"author": "a", "content": "x" * 301},
+        {"author": 12, "content": "ok"}, {"author": "a", "content": None},
+    ])
+    def test_invalid_input_is_rejected_without_writing(client, data):
+>       assert client.post("/api/messages", json=data).status_code == 422
+E       AssertionError: assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = post('/api/messages', json={'author': 12, 'content': 'ok'})
+E        +      where post = <starlette.testclient.TestClient object at 0x75910365dc70>.post
+
+tests/test_api.py:56: AssertionError
+____________ test_invalid_input_is_rejected_without_writing[data5] _____________
+
+client = <starlette.testclient.TestClient object at 0x75910365e810>
+data = {'author': 'a', 'content': None}
+
+    @pytest.mark.parametrize("data", [
+        {"author": "  ", "content": "ok"}, {"author": "a", "content": "\n"},
+        {"author": "a" * 31, "content": "ok"}, {"author": "a", "content": "x" * 301},
+        {"author": 12, "content": "ok"}, {"author": "a", "content": None},
+    ])
+    def test_invalid_input_is_rejected_without_writing(client, data):
+>       assert client.post("/api/messages", json=data).status_code == 422
+E       AssertionError: assert 404 == 422
+E        +  where 404 = <Response [404 Not Found]>.status_code
+E        +    where <Response [404 Not Found]> = post('/api/messages', json={'author': 'a', 'content': None})
+E        +      where post = <starlette.testclient.TestClient object at 0x75910365e810>.post
+
+tests/test_api.py:56: AssertionError
+_________________ test_cursor_pagination_survives_new_messages _________________
+
+client = <starlette.testclient.TestClient object at 0x75910365dd30>
+
+    def test_cursor_pagination_survives_new_messages(client):
+        for i in range(5):
+            client.post("/api/messages", json={"author": "a", "content": str(i)})
+        page1 = client.get("/api/messages?limit=2").json()
+>       assert [x["content"] for x in page1["items"]] == ["4", "3"]
+E       KeyError: 'items'
+
+tests/test_api.py:64: KeyError
+______________________ test_concurrent_creates_are_atomic ______________________
+
+client = <starlette.testclient.TestClient object at 0x75910365c9e0>
+
+    def test_concurrent_creates_are_atomic(client):
+        def write(i):
+            response = client.post("/api/messages", json={"author": "parallel", "content": str(i)})
+            assert response.status_code == 201
+            return response.json()["message"]["id"]
+        with ThreadPoolExecutor(max_workers=10) as pool:
+>           ids = list(pool.map(write, range(40)))
+
+tests/test_api.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/concurrent/futures/_base.py:619: in result_iterator
+    yield _result_or_cancel(fs.pop())
+/usr/local/lib/python3.12/concurrent/futures/_base.py:317: in _result_or_cancel
+    return fut.result(timeout)
+/usr/local/lib/python3.12/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+/usr/local/lib/python3.12/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/usr/local/lib/python3.12/concurrent/futures/thread.py:59: in run
+    result = self.fn(*self.args, **self.kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+i = 0
+
+    def write(i):
+        response = client.post("/api/messages", json={"author": "parallel", "content": str(i)})
+>       assert response.status_code == 201
+E       assert 404 == 201
+E        +  where 404 = <Response [404 Not Found]>.status_code
+
+tests/test_api.py:75: AssertionError
+_________________ test_concurrent_counter_keeps_all_increments _________________
+
+client = <starlette.testclient.TestClient object at 0x759102c77e00>
+
+    def test_concurrent_counter_keeps_all_increments(client):
+        with ThreadPoolExecutor(max_workers=10) as pool:
+>           counts = list(pool.map(lambda _: client.post("/api/visits").json()["count"], range(40)))
+
+tests/test_api.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.12/concurrent/futures/_base.py:619: in result_iterator
+    yield _result_or_cancel(fs.pop())
+/usr/local/lib/python3.12/concurrent/futures/_base.py:317: in _result_or_cancel
+    return fut.result(timeout)
+/usr/local/lib/python3.12/concurrent/futures/_base.py:449: in result
+    return self.__get_result()
+/usr/local/lib/python3.12/concurrent/futures/_base.py:401: in __get_result
+    raise self._exception
+/usr/local/lib/python3.12/concurrent/futures/thread.py:59: in run
+    result = self.fn(*self.args, **self.kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+_ = 0
+
+>   counts = list(pool.map(lambda _: client.post("/api/visits").json()["count"], range(40)))
+E   KeyError: 'count'
+
+tests/test_api.py:86: KeyError
+___________________________ test_identity_and_health ___________________________
+
+client = <starlette.testclient.TestClient object at 0x75910365dbe0>
+
+    def test_identity_and_health(client):
+        identity = client.get("/api/whoami").json()
+>       assert identity["instance"] == "test-instance" and identity["node"] == "test-node"
+E       KeyError: 'instance'
+
+tests/test_api.py:92: KeyError
+_________________ test_messages_survive_application_recreation _________________
+
+client = <starlette.testclient.TestClient object at 0x759102c768d0>
+settings = Settings(redis_host='redis', redis_port=6379, redis_password='', redis_db=15, redis_prefix='test:198e9cfc59284d30b2aec9f5e0658318', instance='test-instance', node='test-node', app_title='班级云留言板', app_version='1.0.0')
+
+    def test_messages_survive_application_recreation(client, settings):
+        from app.main import create_app
+>       expected = client.post("/api/messages", json={"author": "a", "content": "persistent"}).json()["message"]
+E       KeyError: 'message'
+
+tests/test_api.py:99: KeyError
+___________ test_storage_failure_affects_readiness_but_not_liveness ____________
+
+    def test_storage_failure_affects_readiness_but_not_liveness():
+        from app.config import Settings
+        from app.main import create_app
+        with TestClient(create_app(Settings(redis_host="127.0.0.1", redis_port=1))) as c:
+>           assert c.get("/health/live").status_code == 200
+E           AssertionError: assert 404 == 200
+E            +  where 404 = <Response [404 Not Found]>.status_code
+E            +    where <Response [404 Not Found]> = get('/health/live')
+E            +      where get = <starlette.testclient.TestClient object at 0x7591035a34a0>.get
+
+tests/test_api.py:108: AssertionError
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/starlette/testclient.py:37
+  /usr/local/lib/python3.12/site-packages/starlette/testclient.py:37: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_api.py::test_message_roundtrip_and_trimming - assert 404 ==...
+FAILED tests/test_api.py::test_invalid_input_is_rejected_without_writing[data0]
+FAILED tests/test_api.py::test_invalid_input_is_rejected_without_writing[data1]
+FAILED tests/test_api.py::test_invalid_input_is_rejected_without_writing[data2]
+FAILED tests/test_api.py::test_invalid_input_is_rejected_without_writing[data3]
+FAILED tests/test_api.py::test_invalid_input_is_rejected_without_writing[data4]
+FAILED tests/test_api.py::test_invalid_input_is_rejected_without_writing[data5]
+FAILED tests/test_api.py::test_cursor_pagination_survives_new_messages - KeyE...
+FAILED tests/test_api.py::test_concurrent_creates_are_atomic - assert 404 == 201
+FAILED tests/test_api.py::test_concurrent_counter_keeps_all_increments - KeyE...
+FAILED tests/test_api.py::test_identity_and_health - KeyError: 'instance'
+FAILED tests/test_api.py::test_messages_survive_application_recreation - KeyE...
+FAILED tests/test_api.py::test_storage_failure_affects_readiness_but_not_liveness
+13 failed, 1 passed, 1 warning in 0.59s

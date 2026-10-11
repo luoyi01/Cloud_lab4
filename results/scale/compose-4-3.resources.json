@@ -1,0 +1,332 @@
+{
+  "scheme": "compose",
+  "replicas": 3,
+  "step": 4,
+  "scale_ready_s": 2.474,
+  "resource_samples": [
+    {
+      "utc": "2026-10-11T15:42:18.068625+00:00",
+      "source": "docker stats --no-stream",
+      "containers": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "2.16%",
+          "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+          "ID": "b01bfeae8f44",
+          "MemPerc": "15.70%",
+          "MemUsage": "40.2MiB / 256MiB",
+          "Name": "cloudlab-api-2",
+          "NetIO": "2.24MB / 2.93MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "25.25%",
+          "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+          "ID": "495eb65aab91",
+          "MemPerc": "15.75%",
+          "MemUsage": "40.33MiB / 256MiB",
+          "Name": "cloudlab-api-3",
+          "NetIO": "868kB / 1.13MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "15.11%",
+          "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+          "ID": "4220968849a7",
+          "MemPerc": "15.50%",
+          "MemUsage": "39.67MiB / 256MiB",
+          "Name": "cloudlab-api-4",
+          "NetIO": "867kB / 1.13MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "12.3kB / 20.5kB",
+          "CPUPerc": "0.74%",
+          "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+          "ID": "5de460d26752",
+          "MemPerc": "0.82%",
+          "MemUsage": "4.223MiB / 512MiB",
+          "Name": "cloudlab-redis-1",
+          "NetIO": "2.7MB / 1.91MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "0.93%",
+          "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+          "ID": "d7cd10b32b3c",
+          "MemPerc": "11.65%",
+          "MemUsage": "14.91MiB / 128MiB",
+          "Name": "cloudlab-web-1",
+          "NetIO": "5.7MB / 6.24MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-11T15:42:28.219015+00:00",
+      "source": "docker stats --no-stream",
+      "containers": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "2.29%",
+          "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+          "ID": "b01bfeae8f44",
+          "MemPerc": "15.32%",
+          "MemUsage": "39.21MiB / 256MiB",
+          "Name": "cloudlab-api-2",
+          "NetIO": "2.31MB / 3.02MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "21.64%",
+          "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+          "ID": "495eb65aab91",
+          "MemPerc": "20.12%",
+          "MemUsage": "51.5MiB / 256MiB",
+          "Name": "cloudlab-api-3",
+          "NetIO": "936kB / 1.22MB",
+          "PIDs": "4"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "2.23%",
+          "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+          "ID": "4220968849a7",
+          "MemPerc": "15.40%",
+          "MemUsage": "39.42MiB / 256MiB",
+          "Name": "cloudlab-api-4",
+          "NetIO": "929kB / 1.21MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "12.3kB / 20.5kB",
+          "CPUPerc": "3.74%",
+          "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+          "ID": "5de460d26752",
+          "MemPerc": "0.90%",
+          "MemUsage": "4.59MiB / 512MiB",
+          "Name": "cloudlab-redis-1",
+          "NetIO": "2.82MB / 2MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "1.07%",
+          "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+          "ID": "d7cd10b32b3c",
+          "MemPerc": "11.46%",
+          "MemUsage": "14.67MiB / 128MiB",
+          "Name": "cloudlab-web-1",
+          "NetIO": "5.97MB / 6.54MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-11T15:42:37.781454+00:00",
+      "source": "docker stats --no-stream",
+      "containers": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "24.97%",
+          "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+          "ID": "b01bfeae8f44",
+          "MemPerc": "15.72%",
+          "MemUsage": "40.25MiB / 256MiB",
+          "Name": "cloudlab-api-2",
+          "NetIO": "2.38MB / 3.11MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "1.97%",
+          "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+          "ID": "495eb65aab91",
+          "MemPerc": "15.53%",
+          "MemUsage": "39.76MiB / 256MiB",
+          "Name": "cloudlab-api-3",
+          "NetIO": "1.01MB / 1.31MB",
+          "PIDs": "4"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "1.67%",
+          "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+          "ID": "4220968849a7",
+          "MemPerc": "15.30%",
+          "MemUsage": "39.18MiB / 256MiB",
+          "Name": "cloudlab-api-4",
+          "NetIO": "996kB / 1.3MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "12.3kB / 20.5kB",
+          "CPUPerc": "3.51%",
+          "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+          "ID": "5de460d26752",
+          "MemPerc": "1.14%",
+          "MemUsage": "5.816MiB / 512MiB",
+          "Name": "cloudlab-redis-1",
+          "NetIO": "2.92MB / 2.08MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "0.93%",
+          "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+          "ID": "d7cd10b32b3c",
+          "MemPerc": "11.84%",
+          "MemUsage": "15.15MiB / 128MiB",
+          "Name": "cloudlab-web-1",
+          "NetIO": "6.23MB / 6.82MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-11T15:42:47.774793+00:00",
+      "source": "docker stats --no-stream",
+      "containers": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "1.77%",
+          "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+          "ID": "b01bfeae8f44",
+          "MemPerc": "15.50%",
+          "MemUsage": "39.69MiB / 256MiB",
+          "Name": "cloudlab-api-2",
+          "NetIO": "2.44MB / 3.18MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "2.30%",
+          "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+          "ID": "495eb65aab91",
+          "MemPerc": "15.53%",
+          "MemUsage": "39.75MiB / 256MiB",
+          "Name": "cloudlab-api-3",
+          "NetIO": "1.07MB / 1.4MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "2.20%",
+          "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+          "ID": "4220968849a7",
+          "MemPerc": "15.31%",
+          "MemUsage": "39.2MiB / 256MiB",
+          "Name": "cloudlab-api-4",
+          "NetIO": "1.07MB / 1.4MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "12.3kB / 20.5kB",
+          "CPUPerc": "3.57%",
+          "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+          "ID": "5de460d26752",
+          "MemPerc": "1.06%",
+          "MemUsage": "5.441MiB / 512MiB",
+          "Name": "cloudlab-redis-1",
+          "NetIO": "3.03MB / 2.16MB",
+          "PIDs": "6"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "1.12%",
+          "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+          "ID": "d7cd10b32b3c",
+          "MemPerc": "11.39%",
+          "MemUsage": "14.58MiB / 128MiB",
+          "Name": "cloudlab-web-1",
+          "NetIO": "6.49MB / 7.11MB",
+          "PIDs": "17"
+        }
+      ]
+    },
+    {
+      "utc": "2026-10-11T15:42:57.768599+00:00",
+      "source": "docker stats --no-stream",
+      "containers": [
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "1.83%",
+          "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+          "ID": "b01bfeae8f44",
+          "MemPerc": "15.31%",
+          "MemUsage": "39.2MiB / 256MiB",
+          "Name": "cloudlab-api-2",
+          "NetIO": "2.51MB / 3.27MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "1.89%",
+          "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+          "ID": "495eb65aab91",
+          "MemPerc": "15.43%",
+          "MemUsage": "39.49MiB / 256MiB",
+          "Name": "cloudlab-api-3",
+          "NetIO": "1.14MB / 1.49MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "0B / 0B",
+          "CPUPerc": "1.89%",
+          "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+          "ID": "4220968849a7",
+          "MemPerc": "15.69%",
+          "MemUsage": "40.17MiB / 256MiB",
+          "Name": "cloudlab-api-4",
+          "NetIO": "1.14MB / 1.49MB",
+          "PIDs": "3"
+        },
+        {
+          "BlockIO": "12.3kB / 20.5kB",
+          "CPUPerc": "1.92%",
+          "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+          "ID": "5de460d26752",
+          "MemPerc": "1.93%",
+          "MemUsage": "9.887MiB / 512MiB",
+          "Name": "cloudlab-redis-1",
+          "NetIO": "3.14MB / 2.24MB",
+          "PIDs": "12"
+        },
+        {
+          "BlockIO": "0B / 4.1kB",
+          "CPUPerc": "0.95%",
+          "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+          "ID": "d7cd10b32b3c",
+          "MemPerc": "11.74%",
+          "MemUsage": "15.03MiB / 128MiB",
+          "Name": "cloudlab-web-1",
+          "NetIO": "6.75MB / 7.39MB",
+          "PIDs": "17"
+        }
+      ]
+    }
+  ],
+  "traffic": {
+    "url": "http://127.0.0.1:8090",
+    "duration_s": 65,
+    "workers": 4,
+    "interval_s": 0.2,
+    "requests": 1300,
+    "success": 1300,
+    "errors": 0,
+    "success_percent": 100.0,
+    "p50_ms": 5.239,
+    "p95_ms": 7.22,
+    "instances": [
+      "4220968849a7",
+      "495eb65aab91",
+      "b01bfeae8f44"
+    ],
+    "client_retries": 0,
+    "csv": "scale/compose-4-3.csv"
+  }
+}

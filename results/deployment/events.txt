@@ -1,0 +1,334 @@
+UTC 2026-10-11T15:52:33.569222+00:00
+$ kubectl --kubeconfig .local/kubeconfig -n cloudlab get events --sort-by=.metadata.creationTimestamp
+LAST SEEN   TYPE      REASON                  OBJECT                               MESSAGE
+51m         Normal    Created                 pod/api-84c66996c-rgk7l              Container created
+52m         Normal    ExternalProvisioning    persistentvolumeclaim/data-redis-0   Waiting for a volume to be created either by the external provisioner 'rancher.io/local-path' or manually by the system administrator. If volume creation is delayed, please verify that the provisioner is running and correctly registered.
+52m         Normal    SuccessfulCreate        replicaset/api-84c66996c             Created pod: api-84c66996c-6npsk
+52m         Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-84c66996c from 0 to 3
+52m         Normal    Scheduled               pod/api-84c66996c-rgk7l              Successfully assigned cloudlab/api-84c66996c-rgk7l to cloudlab-worker2
+52m         Normal    SuccessfulCreate        replicaset/api-84c66996c             Created pod: api-84c66996c-vkm7d
+51m         Normal    Started                 pod/api-84c66996c-6npsk              Container started
+52m         Normal    WaitForFirstConsumer    persistentvolumeclaim/data-redis-0   waiting for first consumer to be created before binding
+52m         Normal    SuccessfulCreate        replicaset/api-84c66996c             Created pod: api-84c66996c-rgk7l
+51m         Normal    Pulled                  pod/api-84c66996c-rgk7l              Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+52m         Normal    Provisioning            persistentvolumeclaim/data-redis-0   External provisioner is provisioning volume for claim "cloudlab/data-redis-0"
+52m         Normal    SuccessfulCreate        statefulset/redis                    Create Claim data-redis-0 Pod redis-0 in StatefulSet redis success
+48m         Normal    SuccessfulCreate        statefulset/redis                    Create Pod redis-0 in StatefulSet redis successful
+51m         Normal    Started                 pod/api-84c66996c-vkm7d              Container started
+51m         Normal    Created                 pod/api-84c66996c-vkm7d              Container created
+51m         Normal    Pulled                  pod/api-84c66996c-vkm7d              Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+52m         Normal    Scheduled               pod/api-84c66996c-vkm7d              Successfully assigned cloudlab/api-84c66996c-vkm7d to cloudlab-worker
+52m         Normal    Scheduled               pod/web-5b9fdb9d8f-fsnlf             Successfully assigned cloudlab/web-5b9fdb9d8f-fsnlf to cloudlab-worker
+51m         Normal    Started                 pod/api-84c66996c-rgk7l              Container started
+52m         Normal    Pulled                  pod/web-5b9fdb9d8f-fsnlf             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+52m         Normal    Scheduled               pod/api-84c66996c-6npsk              Successfully assigned cloudlab/api-84c66996c-6npsk to cloudlab-worker
+51m         Normal    Pulled                  pod/api-84c66996c-6npsk              Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+52m         Normal    Created                 pod/web-5b9fdb9d8f-fsnlf             Container created
+52m         Normal    ScalingReplicaSet       deployment/web                       Scaled up replica set web-5b9fdb9d8f from 0 to 1
+52m         Normal    Started                 pod/web-5b9fdb9d8f-fsnlf             Container started
+52m         Normal    SuccessfulCreate        replicaset/web-5b9fdb9d8f            Created pod: web-5b9fdb9d8f-fsnlf
+51m         Normal    Created                 pod/api-84c66996c-6npsk              Container created
+52m         Warning   Unhealthy               pod/web-5b9fdb9d8f-fsnlf             Readiness probe failed: Get "http://10.244.2.4:80/healthz": dial tcp 10.244.2.4:80: connect: connection refused
+51m         Warning   Unhealthy               pod/api-84c66996c-6npsk              Startup probe failed: Get "http://10.244.2.3:8000/health/live": dial tcp 10.244.2.3:8000: connect: connection refused
+51m         Warning   Unhealthy               pod/api-84c66996c-rgk7l              Startup probe failed: Get "http://10.244.1.3:8000/health/live": dial tcp 10.244.1.3:8000: connect: connection refused
+51m         Warning   Unhealthy               pod/api-84c66996c-vkm7d              Startup probe failed: Get "http://10.244.2.2:8000/health/live": dial tcp 10.244.2.2:8000: connect: connection refused
+52m         Normal    ProvisioningSucceeded   persistentvolumeclaim/data-redis-0   Successfully provisioned volume pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d
+52m         Normal    Started                 pod/redis-0                          Container started
+51m         Warning   BackOff                 pod/api-84c66996c-rgk7l              Back-off restarting failed container api in pod api-84c66996c-rgk7l_cloudlab(e4ceb248-3d67-4f76-8626-9ef14e91d3c7)
+52m         Normal    Scheduled               pod/redis-0                          Successfully assigned cloudlab/redis-0 to cloudlab-worker
+52m         Normal    Pulled                  pod/redis-0                          Container image "redis:7.4.5-alpine@sha256:0302cccee2b2043e61b497c8f4075467c5f7ba27a9f38be7e092634f2734baed" already present on machine and can be accessed by the pod
+51m         Warning   BackOff                 pod/api-84c66996c-6npsk              Back-off restarting failed container api in pod api-84c66996c-6npsk_cloudlab(fb89dc27-c744-41fd-a9c9-d0f8d49adf7d)
+51m         Warning   BackOff                 pod/api-84c66996c-vkm7d              Back-off restarting failed container api in pod api-84c66996c-vkm7d_cloudlab(bc17ea0d-871a-4916-afba-1c461578323d)
+52m         Normal    Created                 pod/redis-0                          Container created
+50m         Normal    Started                 pod/api-559b8ffd95-rrhxl             Container started
+50m         Normal    Pulled                  pod/api-559b8ffd95-rrhxl             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+50m         Normal    Created                 pod/api-559b8ffd95-rrhxl             Container created
+50m         Normal    Scheduled               pod/api-559b8ffd95-rrhxl             Successfully assigned cloudlab/api-559b8ffd95-rrhxl to cloudlab-worker2
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-559b8ffd95 from 0 to 1
+50m         Normal    SuccessfulCreate        replicaset/api-559b8ffd95            Created pod: api-559b8ffd95-rrhxl
+50m         Normal    Scheduled               pod/api-559b8ffd95-r77w5             Successfully assigned cloudlab/api-559b8ffd95-r77w5 to cloudlab-worker
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-84c66996c from 3 to 2
+50m         Normal    SuccessfulDelete        replicaset/api-84c66996c             Deleted pod: api-84c66996c-vkm7d
+50m         Normal    SuccessfulCreate        replicaset/api-559b8ffd95            Created pod: api-559b8ffd95-r77w5
+50m         Normal    Pulled                  pod/api-559b8ffd95-r77w5             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-559b8ffd95 from 1 to 2
+50m         Normal    Started                 pod/api-559b8ffd95-r77w5             Container started
+50m         Normal    Created                 pod/api-559b8ffd95-r77w5             Container created
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-559b8ffd95 from 2 to 3
+50m         Normal    Scheduled               pod/api-559b8ffd95-4mvgm             Successfully assigned cloudlab/api-559b8ffd95-4mvgm to cloudlab-worker
+50m         Normal    Pulled                  pod/api-559b8ffd95-4mvgm             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+50m         Normal    SuccessfulCreate        replicaset/api-559b8ffd95            Created pod: api-559b8ffd95-4mvgm
+50m         Normal    Started                 pod/api-559b8ffd95-4mvgm             Container started
+50m         Normal    Created                 pod/api-559b8ffd95-4mvgm             Container created
+50m         Normal    SuccessfulDelete        replicaset/api-84c66996c             Deleted pod: api-84c66996c-6npsk
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-84c66996c from 2 to 1
+50m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-xs76c
+50m         Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-rrcmd
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-84c66996c from 1 to 0
+50m         Normal    Scheduled               pod/web-567b7594fd-rrcmd             Successfully assigned cloudlab/web-567b7594fd-rrcmd to cloudlab-worker
+50m         Normal    SuccessfulDelete        replicaset/api-84c66996c             Deleted pod: api-84c66996c-rgk7l
+50m         Normal    Scheduled               pod/api-6df4d78668-xs76c             Successfully assigned cloudlab/api-6df4d78668-xs76c to cloudlab-worker2
+9m30s       Normal    ScalingReplicaSet       deployment/web                       Scaled up replica set web-567b7594fd from 0 to 1
+9m29s       Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-6df4d78668 from 0 to 1
+50m         Normal    Pulled                  pod/web-567b7594fd-rrcmd             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+50m         Warning   Unhealthy               pod/web-567b7594fd-rrcmd             Readiness probe failed: Get "http://10.244.2.9:80/healthz": dial tcp 10.244.2.9:80: connect: connection refused
+50m         Normal    Started                 pod/web-567b7594fd-rrcmd             Container started
+50m         Normal    Started                 pod/api-6df4d78668-xs76c             Container started
+50m         Normal    Created                 pod/api-6df4d78668-xs76c             Container created
+50m         Normal    Pulled                  pod/api-6df4d78668-xs76c             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+50m         Normal    Created                 pod/web-567b7594fd-rrcmd             Container created
+50m         Normal    SuccessfulDelete        replicaset/web-5b9fdb9d8f            Deleted pod: web-5b9fdb9d8f-fsnlf
+50m         Normal    Killing                 pod/web-5b9fdb9d8f-fsnlf             Stopping container web
+50m         Normal    ScalingReplicaSet       deployment/web                       Scaled down replica set web-5b9fdb9d8f from 1 to 0
+50m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-jmrb5
+50m         Normal    Pulled                  pod/api-6df4d78668-jmrb5             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+50m         Normal    Created                 pod/api-6df4d78668-jmrb5             Container created
+50m         Normal    Started                 pod/api-6df4d78668-jmrb5             Container started
+50m         Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-559b8ffd95 from 3 to 2
+46m         Normal    ScalingReplicaSet       deployment/api                       (combined from similar events): Scaled up replica set api-6df4d78668 from 0 to 3
+50m         Normal    Killing                 pod/api-559b8ffd95-4mvgm             Stopping container api
+50m         Normal    SuccessfulDelete        replicaset/api-559b8ffd95            Deleted pod: api-559b8ffd95-4mvgm
+50m         Normal    Scheduled               pod/api-6df4d78668-jmrb5             Successfully assigned cloudlab/api-6df4d78668-jmrb5 to cloudlab-worker
+50m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-c8vvb
+50m         Normal    SuccessfulDelete        replicaset/api-559b8ffd95            Deleted pod: api-559b8ffd95-r77w5
+50m         Normal    Killing                 pod/api-559b8ffd95-r77w5             Stopping container api
+50m         Normal    Started                 pod/api-6df4d78668-c8vvb             Container started
+50m         Normal    Created                 pod/api-6df4d78668-c8vvb             Container created
+50m         Normal    Pulled                  pod/api-6df4d78668-c8vvb             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+50m         Normal    Scheduled               pod/api-6df4d78668-c8vvb             Successfully assigned cloudlab/api-6df4d78668-c8vvb to cloudlab-worker
+50m         Normal    SuccessfulDelete        replicaset/api-559b8ffd95            Deleted pod: api-559b8ffd95-rrhxl
+50m         Normal    Killing                 pod/api-559b8ffd95-rrhxl             Stopping container api
+49m         Normal    Killing                 pod/api-6df4d78668-c8vvb             Stopping container api
+49m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-jbhtr
+49m         Normal    Scheduled               pod/api-6df4d78668-jbhtr             Successfully assigned cloudlab/api-6df4d78668-jbhtr to cloudlab-worker2
+49m         Normal    Created                 pod/api-6df4d78668-jbhtr             Container created
+49m         Normal    Started                 pod/api-6df4d78668-jbhtr             Container started
+49m         Normal    Pulled                  pod/api-6df4d78668-jbhtr             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+48m         Normal    Killing                 pod/redis-0                          Stopping container redis
+48m         Warning   Unhealthy               pod/api-6df4d78668-jbhtr             Readiness probe failed: HTTP probe failed with statuscode: 503
+48m         Normal    Scheduled               pod/redis-0                          Successfully assigned cloudlab/redis-0 to cloudlab-worker
+48m         Normal    Pulled                  pod/redis-0                          Container image "redis:7.4.5-alpine@sha256:0302cccee2b2043e61b497c8f4075467c5f7ba27a9f38be7e092634f2734baed" already present on machine and can be accessed by the pod
+48m         Normal    Started                 pod/redis-0                          Container started
+48m         Warning   Unhealthy               pod/api-6df4d78668-jmrb5             Readiness probe failed: HTTP probe failed with statuscode: 503
+48m         Normal    Created                 pod/redis-0                          Container created
+48m         Warning   Unhealthy               pod/api-6df4d78668-xs76c             Readiness probe failed: HTTP probe failed with statuscode: 503
+48m         Normal    Killing                 pod/api-6df4d78668-jbhtr             Stopping container api
+48m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-jbhtr
+48m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-7pdws
+48m         Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-6df4d78668 from 2 to 3
+48m         Normal    Scheduled               pod/api-6df4d78668-7pdws             Successfully assigned cloudlab/api-6df4d78668-7pdws to cloudlab-worker
+48m         Normal    Created                 pod/api-6df4d78668-7pdws             Container created
+48m         Normal    Started                 pod/api-6df4d78668-7pdws             Container started
+48m         Normal    Pulled                  pod/api-6df4d78668-7pdws             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-xs76c
+46m         Normal    Killing                 pod/api-6df4d78668-7pdws             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-jmrb5             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-xs76c             Stopping container api
+14m         Normal    ScalingReplicaSet       deployment/web                       Scaled down replica set web-567b7594fd from 1 to 0
+46m         Normal    SuccessfulDelete        replicaset/web-567b7594fd            Deleted pod: web-567b7594fd-rrcmd
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-jmrb5
+46m         Normal    Killing                 pod/web-567b7594fd-rrcmd             Stopping container web
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-7pdws
+14m         Normal    NoPods                  poddisruptionbudget/api              No matching pods found
+46m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-plccj
+46m         Normal    Pulled                  pod/api-6df4d78668-9c4j9             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Scheduled               pod/api-6df4d78668-z4fg9             Successfully assigned cloudlab/api-6df4d78668-z4fg9 to cloudlab-worker2
+46m         Normal    Started                 pod/api-6df4d78668-9c4j9             Container started
+46m         Normal    Created                 pod/web-567b7594fd-xgqdb             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-z4fg9             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Created                 pod/api-6df4d78668-z4fg9             Container created
+46m         Normal    Started                 pod/api-6df4d78668-z4fg9             Container started
+46m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-9c4j9
+46m         Normal    Scheduled               pod/api-6df4d78668-9c4j9             Successfully assigned cloudlab/api-6df4d78668-9c4j9 to cloudlab-worker2
+46m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-z4fg9
+46m         Normal    Pulled                  pod/web-567b7594fd-xgqdb             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Scheduled               pod/web-567b7594fd-xgqdb             Successfully assigned cloudlab/web-567b7594fd-xgqdb to cloudlab-worker
+46m         Normal    Started                 pod/api-6df4d78668-plccj             Container started
+46m         Normal    Created                 pod/api-6df4d78668-9c4j9             Container created
+46m         Normal    Created                 pod/api-6df4d78668-plccj             Container created
+46m         Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-xgqdb
+46m         Normal    Scheduled               pod/api-6df4d78668-plccj             Successfully assigned cloudlab/api-6df4d78668-plccj to cloudlab-worker
+46m         Normal    Pulled                  pod/api-6df4d78668-plccj             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Warning   Unhealthy               pod/web-567b7594fd-xgqdb             Readiness probe failed: Get "http://10.244.2.15:80/healthz": dial tcp 10.244.2.15:80: connect: connection refused
+46m         Normal    Started                 pod/web-567b7594fd-xgqdb             Container started
+46m         Normal    Killing                 pod/web-567b7594fd-xgqdb             Stopping container web
+14m         Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-6df4d78668 from 3 to 0
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-9c4j9
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-plccj
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-z4fg9
+46m         Normal    SuccessfulDelete        replicaset/web-567b7594fd            Deleted pod: web-567b7594fd-xgqdb
+46m         Normal    Killing                 pod/api-6df4d78668-plccj             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-z4fg9             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-9c4j9             Stopping container api
+46m         Normal    Created                 pod/web-567b7594fd-5jp48             Container created
+46m         Normal    Scheduled               pod/web-567b7594fd-5jp48             Successfully assigned cloudlab/web-567b7594fd-5jp48 to cloudlab-worker
+46m         Normal    Scheduled               pod/api-6df4d78668-jj6nb             Successfully assigned cloudlab/api-6df4d78668-jj6nb to cloudlab-worker2
+46m         Normal    Pulled                  pod/api-6df4d78668-jj6nb             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Created                 pod/api-6df4d78668-jj6nb             Container created
+46m         Normal    Started                 pod/api-6df4d78668-jj6nb             Container started
+46m         Normal    Started                 pod/api-6df4d78668-ssvjj             Container started
+46m         Normal    Created                 pod/api-6df4d78668-ssvjj             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-ssvjj             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Scheduled               pod/api-6df4d78668-ssvjj             Successfully assigned cloudlab/api-6df4d78668-ssvjj to cloudlab-worker
+46m         Normal    Created                 pod/api-6df4d78668-pdmwn             Container created
+46m         Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-6df4d78668 from 0 to 3
+46m         Normal    Started                 pod/api-6df4d78668-pdmwn             Container started
+46m         Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-5jp48
+46m         Normal    Pulled                  pod/web-567b7594fd-5jp48             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Pulled                  pod/api-6df4d78668-pdmwn             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Started                 pod/web-567b7594fd-5jp48             Container started
+46m         Warning   Unhealthy               pod/web-567b7594fd-5jp48             Readiness probe failed: Get "http://10.244.2.17:80/healthz": dial tcp 10.244.2.17:80: connect: connection refused
+46m         Normal    Scheduled               pod/api-6df4d78668-pdmwn             Successfully assigned cloudlab/api-6df4d78668-pdmwn to cloudlab-worker2
+46m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-jj6nb
+41m         Normal    SuccessfulCreate        replicaset/api-6df4d78668            (combined from similar events): Created pod: api-6df4d78668-hgx98
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-jj6nb
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-ssvjj
+46m         Normal    Killing                 pod/web-567b7594fd-5jp48             Stopping container web
+46m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            (combined from similar events): Deleted pod: api-6df4d78668-ksgpm
+46m         Normal    SuccessfulDelete        replicaset/web-567b7594fd            Deleted pod: web-567b7594fd-5jp48
+46m         Normal    Killing                 pod/api-6df4d78668-jj6nb             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-pdmwn             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-ssvjj             Stopping container api
+46m         Normal    Scheduled               pod/api-6df4d78668-dzxxt             Successfully assigned cloudlab/api-6df4d78668-dzxxt to cloudlab-worker2
+46m         Normal    Scheduled               pod/web-567b7594fd-jmlvx             Successfully assigned cloudlab/web-567b7594fd-jmlvx to cloudlab-worker
+46m         Normal    Scheduled               pod/api-6df4d78668-ksgpm             Successfully assigned cloudlab/api-6df4d78668-ksgpm to cloudlab-worker
+46m         Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-jmlvx
+46m         Normal    Scheduled               pod/api-6df4d78668-2zr85             Successfully assigned cloudlab/api-6df4d78668-2zr85 to cloudlab-worker2
+46m         Normal    Started                 pod/api-6df4d78668-dzxxt             Container started
+46m         Normal    Created                 pod/api-6df4d78668-dzxxt             Container created
+46m         Normal    Created                 pod/api-6df4d78668-ksgpm             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-dzxxt             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Warning   Unhealthy               pod/web-567b7594fd-jmlvx             Readiness probe failed: Get "http://10.244.2.19:80/healthz": dial tcp 10.244.2.19:80: connect: connection refused
+46m         Normal    Pulled                  pod/web-567b7594fd-jmlvx             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Created                 pod/web-567b7594fd-jmlvx             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-2zr85             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Started                 pod/web-567b7594fd-jmlvx             Container started
+46m         Normal    Created                 pod/api-6df4d78668-2zr85             Container created
+46m         Normal    Started                 pod/api-6df4d78668-2zr85             Container started
+46m         Normal    Started                 pod/api-6df4d78668-ksgpm             Container started
+46m         Normal    Pulled                  pod/api-6df4d78668-ksgpm             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    SuccessfulDelete        replicaset/web-567b7594fd            Deleted pod: web-567b7594fd-jmlvx
+46m         Normal    Killing                 pod/api-6df4d78668-2zr85             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-dzxxt             Stopping container api
+46m         Normal    Killing                 pod/web-567b7594fd-jmlvx             Stopping container web
+46m         Normal    Killing                 pod/api-6df4d78668-ksgpm             Stopping container api
+46m         Normal    Scheduled               pod/api-6df4d78668-b42dn             Successfully assigned cloudlab/api-6df4d78668-b42dn to cloudlab-worker
+46m         Normal    Scheduled               pod/api-6df4d78668-mvlbx             Successfully assigned cloudlab/api-6df4d78668-mvlbx to cloudlab-worker2
+46m         Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-n2h4c
+46m         Normal    Scheduled               pod/api-6df4d78668-9jjhf             Successfully assigned cloudlab/api-6df4d78668-9jjhf to cloudlab-worker2
+46m         Normal    Scheduled               pod/web-567b7594fd-n2h4c             Successfully assigned cloudlab/web-567b7594fd-n2h4c to cloudlab-worker
+46m         Normal    Created                 pod/api-6df4d78668-mvlbx             Container created
+46m         Normal    Started                 pod/web-567b7594fd-n2h4c             Container started
+46m         Normal    Created                 pod/api-6df4d78668-b42dn             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-b42dn             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Started                 pod/api-6df4d78668-mvlbx             Container started
+46m         Warning   Unhealthy               pod/web-567b7594fd-n2h4c             Readiness probe failed: Get "http://10.244.2.21:80/healthz": dial tcp 10.244.2.21:80: connect: connection refused
+46m         Normal    Started                 pod/api-6df4d78668-9jjhf             Container started
+46m         Normal    Created                 pod/api-6df4d78668-9jjhf             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-9jjhf             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Pulled                  pod/web-567b7594fd-n2h4c             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Created                 pod/web-567b7594fd-n2h4c             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-mvlbx             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Started                 pod/api-6df4d78668-b42dn             Container started
+46m         Normal    SuccessfulDelete        replicaset/web-567b7594fd            Deleted pod: web-567b7594fd-n2h4c
+46m         Normal    Killing                 pod/web-567b7594fd-n2h4c             Stopping container web
+46m         Normal    Killing                 pod/api-6df4d78668-9jjhf             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-b42dn             Stopping container api
+46m         Normal    Killing                 pod/api-6df4d78668-mvlbx             Stopping container api
+46m         Normal    Pulled                  pod/api-6df4d78668-bqqnd             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Created                 pod/api-6df4d78668-5hbsw             Container created
+46m         Normal    Scheduled               pod/web-567b7594fd-d5cvr             Successfully assigned cloudlab/web-567b7594fd-d5cvr to cloudlab-worker
+46m         Normal    Created                 pod/api-6df4d78668-l4sjq             Container created
+46m         Normal    Pulled                  pod/api-6df4d78668-l4sjq             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-d5cvr
+46m         Normal    Scheduled               pod/api-6df4d78668-bqqnd             Successfully assigned cloudlab/api-6df4d78668-bqqnd to cloudlab-worker2
+46m         Normal    Created                 pod/api-6df4d78668-bqqnd             Container created
+46m         Normal    Scheduled               pod/api-6df4d78668-l4sjq             Successfully assigned cloudlab/api-6df4d78668-l4sjq to cloudlab-worker2
+46m         Normal    Scheduled               pod/api-6df4d78668-5hbsw             Successfully assigned cloudlab/api-6df4d78668-5hbsw to cloudlab-worker
+46m         Normal    Pulled                  pod/api-6df4d78668-5hbsw             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Started                 pod/web-567b7594fd-d5cvr             Container started
+46m         Normal    Started                 pod/api-6df4d78668-bqqnd             Container started
+46m         Warning   Unhealthy               pod/web-567b7594fd-d5cvr             Readiness probe failed: Get "http://10.244.2.23:80/healthz": dial tcp 10.244.2.23:80: connect: connection refused
+46m         Normal    Created                 pod/web-567b7594fd-d5cvr             Container created
+46m         Normal    Pulled                  pod/web-567b7594fd-d5cvr             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+46m         Normal    Started                 pod/api-6df4d78668-l4sjq             Container started
+46m         Normal    Started                 pod/api-6df4d78668-5hbsw             Container started
+42m         Warning   NodeNotReady            pod/api-6df4d78668-bqqnd             Node is not ready
+42m         Warning   NodeNotReady            pod/api-6df4d78668-l4sjq             Node is not ready
+41m         Normal    Created                 pod/api-6df4d78668-hgx98             Container created
+41m         Normal    Pulled                  pod/api-6df4d78668-hgx98             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+41m         Normal    Scheduled               pod/api-6df4d78668-hgx98             Successfully assigned cloudlab/api-6df4d78668-hgx98 to cloudlab-worker
+41m         Normal    TaintManagerEviction    pod/api-6df4d78668-l4sjq             Marking for deletion Pod cloudlab/api-6df4d78668-l4sjq
+41m         Normal    Scheduled               pod/api-6df4d78668-l25j9             Successfully assigned cloudlab/api-6df4d78668-l25j9 to cloudlab-worker
+41m         Normal    Pulled                  pod/api-6df4d78668-l25j9             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+41m         Normal    Created                 pod/api-6df4d78668-l25j9             Container created
+41m         Normal    TaintManagerEviction    pod/api-6df4d78668-bqqnd             Marking for deletion Pod cloudlab/api-6df4d78668-bqqnd
+41m         Normal    Started                 pod/api-6df4d78668-l25j9             Container started
+41m         Normal    Started                 pod/api-6df4d78668-hgx98             Container started
+40m         Warning   FailedMount             pod/api-6df4d78668-bqqnd             MountVolume.SetUp failed for volume "kube-api-access-8tbqx" : object "cloudlab"/"kube-root-ca.crt" not registered
+14m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-5hbsw
+14m         Normal    SuccessfulDelete        replicaset/web-567b7594fd            Deleted pod: web-567b7594fd-d5cvr
+14m         Normal    Killing                 pod/api-6df4d78668-5hbsw             Stopping container api
+14m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-hgx98
+14m         Normal    SuccessfulDelete        replicaset/api-6df4d78668            Deleted pod: api-6df4d78668-l25j9
+14m         Normal    Killing                 pod/web-567b7594fd-d5cvr             Stopping container web
+14m         Normal    Killing                 pod/api-6df4d78668-hgx98             Stopping container api
+14m         Normal    Killing                 pod/api-6df4d78668-l25j9             Stopping container api
+9m30s       Normal    Created                 pod/web-567b7594fd-hp2dp             Container created
+9m30s       Normal    Started                 pod/web-567b7594fd-hp2dp             Container started
+9m30s       Warning   Unhealthy               pod/web-567b7594fd-hp2dp             Readiness probe failed: Get "http://10.244.2.26:80/healthz": dial tcp 10.244.2.26:80: connect: connection refused
+9m30s       Normal    SuccessfulCreate        replicaset/web-567b7594fd            Created pod: web-567b7594fd-hp2dp
+9m30s       Normal    Scheduled               pod/web-567b7594fd-hp2dp             Successfully assigned cloudlab/web-567b7594fd-hp2dp to cloudlab-worker
+9m30s       Normal    Pulled                  pod/web-567b7594fd-hp2dp             Container image "cloudlab-web:1.0" already present on machine and can be accessed by the pod
+9m28s       Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-qp8tk
+9m28s       Normal    Started                 pod/api-6df4d78668-qp8tk             Container started
+9m28s       Normal    Scheduled               pod/api-6df4d78668-qp8tk             Successfully assigned cloudlab/api-6df4d78668-qp8tk to cloudlab-worker2
+9m28s       Normal    Pulled                  pod/api-6df4d78668-qp8tk             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+9m28s       Normal    Created                 pod/api-6df4d78668-qp8tk             Container created
+8m21s       Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-ccdkb
+8m21s       Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-pf84l
+8m21s       Normal    Scheduled               pod/api-6df4d78668-ccdkb             Successfully assigned cloudlab/api-6df4d78668-ccdkb to cloudlab-worker
+8m21s       Normal    Scheduled               pod/api-6df4d78668-pf84l             Successfully assigned cloudlab/api-6df4d78668-pf84l to cloudlab-worker2
+8m21s       Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-6df4d78668 from 1 to 3
+8m20s       Normal    Pulled                  pod/api-6df4d78668-ccdkb             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+8m20s       Normal    Created                 pod/api-6df4d78668-ccdkb             Container created
+8m20s       Normal    Started                 pod/api-6df4d78668-ccdkb             Container started
+8m20s       Normal    Started                 pod/api-6df4d78668-pf84l             Container started
+8m20s       Normal    Created                 pod/api-6df4d78668-pf84l             Container created
+8m20s       Normal    Pulled                  pod/api-6df4d78668-pf84l             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+7m14s       Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-6df4d78668 from 3 to 5
+7m14s       Normal    Scheduled               pod/api-6df4d78668-z74bm             Successfully assigned cloudlab/api-6df4d78668-z74bm to cloudlab-worker
+7m14s       Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-8j9dr
+7m14s       Normal    SuccessfulCreate        replicaset/api-6df4d78668            Created pod: api-6df4d78668-z74bm
+7m14s       Normal    Scheduled               pod/api-6df4d78668-8j9dr             Successfully assigned cloudlab/api-6df4d78668-8j9dr to cloudlab-worker2
+7m13s       Normal    Started                 pod/api-6df4d78668-8j9dr             Container started
+7m13s       Normal    Started                 pod/api-6df4d78668-z74bm             Container started
+7m13s       Normal    Created                 pod/api-6df4d78668-z74bm             Container created
+7m13s       Normal    Created                 pod/api-6df4d78668-8j9dr             Container created
+7m13s       Normal    Pulled                  pod/api-6df4d78668-8j9dr             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+7m13s       Normal    Pulled                  pod/api-6df4d78668-z74bm             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+6m7s        Normal    Killing                 pod/api-6df4d78668-8j9dr             Stopping container api
+6m7s        Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-6df4d78668 from 5 to 3
+6m7s        Normal    Killing                 pod/api-6df4d78668-pf84l             Stopping container api
+4m52s       Normal    SuccessfulCreate        replicaset/api-659c7f97c9            Created pod: api-659c7f97c9-n8zwr
+4m52s       Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-659c7f97c9 from 0 to 1
+4m52s       Normal    Scheduled               pod/api-659c7f97c9-n8zwr             Successfully assigned cloudlab/api-659c7f97c9-n8zwr to cloudlab-worker2
+4m51s       Normal    Started                 pod/api-659c7f97c9-n8zwr             Container started
+4m51s       Normal    Pulled                  pod/api-659c7f97c9-n8zwr             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+4m51s       Normal    Created                 pod/api-659c7f97c9-n8zwr             Container created
+4m49s       Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-6df4d78668 from 3 to 2
+4m49s       Normal    ScalingReplicaSet       deployment/api                       Scaled up replica set api-659c7f97c9 from 1 to 2
+4m49s       Normal    Killing                 pod/api-6df4d78668-z74bm             Stopping container api
+4m49s       Normal    SuccessfulCreate        replicaset/api-659c7f97c9            Created pod: api-659c7f97c9-rpwlc
+4m49s       Normal    Scheduled               pod/api-659c7f97c9-rpwlc             Successfully assigned cloudlab/api-659c7f97c9-rpwlc to cloudlab-worker
+4m48s       Normal    Created                 pod/api-659c7f97c9-rpwlc             Container created
+4m48s       Normal    Pulled                  pod/api-659c7f97c9-rpwlc             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+4m48s       Normal    Started                 pod/api-659c7f97c9-rpwlc             Container started
+4m46s       Normal    ScalingReplicaSet       deployment/api                       Scaled down replica set api-6df4d78668 from 2 to 1
+4m46s       Normal    Scheduled               pod/api-659c7f97c9-vpnh2             Successfully assigned cloudlab/api-659c7f97c9-vpnh2 to cloudlab-worker
+4m46s       Normal    Killing                 pod/api-6df4d78668-ccdkb             Stopping container api
+4m46s       Normal    SuccessfulCreate        replicaset/api-659c7f97c9            Created pod: api-659c7f97c9-vpnh2
+4m45s       Normal    Pulled                  pod/api-659c7f97c9-vpnh2             Container image "cloudlab-api:1.0" already present on machine and can be accessed by the pod
+4m45s       Normal    Created                 pod/api-659c7f97c9-vpnh2             Container created
+4m45s       Normal    Started                 pod/api-659c7f97c9-vpnh2             Container started
+4m43s       Normal    Killing                 pod/api-6df4d78668-qp8tk             Stopping container api

@@ -1,0 +1,39 @@
+{
+  "fault_utc": "2026-10-11T15:09:25.773127+00:00",
+  "worker": "cloudlab-worker2",
+  "affected_api_pods": [
+    "api-6df4d78668-bqqnd",
+    "api-6df4d78668-l4sjq"
+  ],
+  "method": "docker stop Kind worker container",
+  "toleration_seconds": 20,
+  "scope": "one simulated API worker on the same physical host",
+  "node_not_ready_s": 51.556,
+  "all_api_ready_on_survivor_s": 74.303,
+  "surviving_pods": [
+    "api-6df4d78668-5hbsw",
+    "api-6df4d78668-hgx98",
+    "api-6df4d78668-l25j9"
+  ],
+  "traffic": {
+    "url": "http://127.0.0.1:8080",
+    "duration_s": 150,
+    "workers": 1,
+    "interval_s": 0.2,
+    "requests": 574,
+    "success": 530,
+    "errors": 44,
+    "success_percent": 92.334,
+    "p50_ms": 5.2725,
+    "p95_ms": 6.706,
+    "instances": [
+      "api-6df4d78668-5hbsw",
+      "api-6df4d78668-bqqnd",
+      "api-6df4d78668-hgx98",
+      "api-6df4d78668-l25j9",
+      "api-6df4d78668-l4sjq"
+    ],
+    "client_retries": 0,
+    "csv": "node-failure/requests.csv"
+  }
+}

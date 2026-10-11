@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:8090",
+  "duration_s": 65,
+  "workers": 4,
+  "interval_s": 0.2,
+  "requests": 1300,
+  "success": 1300,
+  "errors": 0,
+  "success_percent": 100.0,
+  "p50_ms": 4.8495,
+  "p95_ms": 6.147,
+  "instances": [
+    "4220968849a7",
+    "495eb65aab91",
+    "a0b7d94408ce",
+    "b01bfeae8f44",
+    "db3876d85ae4"
+  ],
+  "client_retries": 0,
+  "csv": "scale/compose-3-5.csv"
+}

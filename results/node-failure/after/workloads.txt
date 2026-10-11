@@ -1,0 +1,29 @@
+UTC 2026-10-11T15:11:48.197261+00:00
+$ kubectl --kubeconfig .local/kubeconfig -n cloudlab get deploy,sts,pods,svc,pvc,pdb -o wide
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES             SELECTOR
+deployment.apps/api   3/3     3            3           11m   api          cloudlab-api:1.0   app=api
+deployment.apps/web   1/1     1            1           11m   web          cloudlab-web:1.0   app=web
+
+NAME                     READY   AGE   CONTAINERS   IMAGES
+statefulset.apps/redis   1/1     11m   redis        redis:7.4.5-alpine@sha256:0302cccee2b2043e61b497c8f4075467c5f7ba27a9f38be7e092634f2734baed
+
+NAME                       READY   STATUS        RESTARTS   AGE     IP            NODE               NOMINATED NODE   READINESS GATES
+pod/api-6df4d78668-5hbsw   1/1     Running       0          5m20s   10.244.2.22   cloudlab-worker    <none>           <none>
+pod/api-6df4d78668-bqqnd   1/1     Terminating   0          5m20s   10.244.1.15   cloudlab-worker2   <none>           <none>
+pod/api-6df4d78668-hgx98   1/1     Running       0          74s     10.244.2.24   cloudlab-worker    <none>           <none>
+pod/api-6df4d78668-l25j9   1/1     Running       0          74s     10.244.2.25   cloudlab-worker    <none>           <none>
+pod/api-6df4d78668-l4sjq   1/1     Terminating   0          5m20s   10.244.1.16   cloudlab-worker2   <none>           <none>
+pod/redis-0                1/1     Running       0          8m8s    10.244.2.12   cloudlab-worker    <none>           <none>
+pod/web-567b7594fd-d5cvr   1/1     Running       0          5m20s   10.244.2.23   cloudlab-worker    <none>           <none>
+
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/api              ClusterIP   10.96.83.5     <none>        8000/TCP       11m   app=api
+service/redis            ClusterIP   10.96.222.83   <none>        6379/TCP       11m   app=redis
+service/redis-headless   ClusterIP   None           <none>        6379/TCP       11m   app=redis
+service/web              NodePort    10.96.245.66   <none>        80:30180/TCP   11m   app=web
+
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/data-redis-0   Bound    pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d   1Gi        RWO            standard       <unset>                 11m   Filesystem
+
+NAME                             MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/api   2               N/A               1                     11m

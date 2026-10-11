@@ -1,0 +1,19 @@
+{
+  "url": "http://127.0.0.1:8080",
+  "duration_s": 65,
+  "workers": 4,
+  "interval_s": 0.2,
+  "requests": 1300,
+  "success": 1300,
+  "errors": 0,
+  "success_percent": 100.0,
+  "p50_ms": 6.266500000000001,
+  "p95_ms": 9.699,
+  "instances": [
+    "api-6df4d78668-ccdkb",
+    "api-6df4d78668-pf84l",
+    "api-6df4d78668-qp8tk"
+  ],
+  "client_retries": 0,
+  "csv": "scale/k8s-2-3.csv"
+}

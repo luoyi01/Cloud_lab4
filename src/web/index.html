@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>班级云留言板</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead"><a class="brand" href="/">CLOUD BOARD<span>云计算实验 · 04</span></a><span class="status"><i id="status-dot"></i><span id="status">正在连接</span></span></header>
+    <main>
+      <section class="intro">
+        <div><p class="eyebrow">在云端，留下一句话</p><h1 id="title">班级云留言板</h1><p class="subtitle">分享一个想法，记录一次灵感。<br>每条留言都会留在这里。</p></div>
+        <div class="counter"><strong id="total">—</strong><span>条共同的记忆</span><p>累计访问 <b id="visits">—</b> 次</p></div>
+      </section>
+      <div class="board">
+        <aside>
+          <form id="message-form">
+            <div class="section-label"><span>01</span><h2>写一条留言</h2></div>
+            <label for="author">你的名字</label><input id="author" name="author" maxlength="30" placeholder="怎么称呼你？" required autocomplete="nickname">
+            <label for="content">想说的话</label><textarea id="content" name="content" rows="6" maxlength="300" placeholder="今天有什么值得分享的事……" required></textarea>
+            <div class="form-bottom"><span id="char-count">0 / 300</span><button id="submit" type="submit">发布留言 <span aria-hidden="true">↗</span></button></div>
+            <p id="notice" role="status" aria-live="polite"></p>
+          </form>
+          <div class="instance"><span class="eyebrow">本次请求由谁处理</span><code id="instance">正在读取实例身份</code><small id="node"></small><button id="refresh-instance" type="button">再请求一次 ↻</button></div>
+          <p class="footnote">留言由多个应用实例共享。请勿填写密码、联系方式等敏感信息。</p>
+        </aside>
+        <section class="messages" aria-labelledby="messages-title">
+          <div class="section-label feed-heading"><span>02</span><h2 id="messages-title">大家的留言</h2><button id="refresh" type="button" class="text-button">刷新 ↻</button></div>
+          <div id="message-list" aria-live="polite"><p class="empty">正在载入留言……</p></div>
+          <button id="load-more" type="button" hidden>查看更早的留言 ↓</button>
+        </section>
+      </div>
+    </main>
+    <footer><span>让想法相遇，让记录长存。</span><span>FastAPI / Redis / Nginx</span></footer>
+  </div>
+</body>
+</html>

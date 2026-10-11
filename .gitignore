@@ -1,0 +1,52 @@
+# Local planning notes
+/findings.md
+/progress.md
+/task_plan.md
+/实验方案.md
+/.planning/
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+/.kube/
+/.docker/
+/.aws/
+/.ssh/
+/.codex/
+/kubeconfig*
+/k8s/kubeconfig*
+/k8s/base/secret.yaml
+/k8s/local/
+
+# Runtime data and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+node_modules/
+/data/
+/redis-data/
+/tmp/
+/.local/
+/build/
+/dist/
+/rendered/
+
+# Local exports and editor files
+/*.zip
+/*.tar
+/*.tar.gz
+~$*
+.DS_Store
+Thumbs.db
+/.idea/
+/.vscode/
+
+# Keep experiment screenshots, selected results, source files and reports tracked.

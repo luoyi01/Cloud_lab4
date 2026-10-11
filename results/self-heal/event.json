@@ -1,0 +1,30 @@
+{
+  "fault_utc": "2026-10-11T15:02:55.565019+00:00",
+  "old_name": "api-6df4d78668-c8vvb",
+  "old_uid": "ccc28c4f-a5d6-4610-9d25-19a22f17372e",
+  "method": "kubectl delete pod --wait=false (default graceful deletion)",
+  "new_name": "api-6df4d78668-jbhtr",
+  "new_uid": "7b405bc5-be76-4c58-9989-485b1ba352b2",
+  "new_node": "cloudlab-worker2",
+  "replacement_ready_s": 3.711,
+  "traffic": {
+    "url": "http://127.0.0.1:8080",
+    "duration_s": 45,
+    "workers": 1,
+    "interval_s": 0.2,
+    "requests": 225,
+    "success": 225,
+    "errors": 0,
+    "success_percent": 100.0,
+    "p50_ms": 4.862,
+    "p95_ms": 6.585,
+    "instances": [
+      "api-6df4d78668-c8vvb",
+      "api-6df4d78668-jbhtr",
+      "api-6df4d78668-jmrb5",
+      "api-6df4d78668-xs76c"
+    ],
+    "client_retries": 0,
+    "csv": "self-heal/requests.csv"
+  }
+}

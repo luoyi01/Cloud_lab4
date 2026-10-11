@@ -1,0 +1,420 @@
+{
+  "scheme": "k8s",
+  "replicas": 1,
+  "step": 1,
+  "scale_ready_s": 3.316,
+  "resource_samples": [
+    {
+      "utc": "2026-10-11T15:43:27.994594+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:27Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:16Z",
+            "window": "10.976415616s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "172697724n",
+                  "memory": "41576Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:27Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:16Z",
+            "window": "20.636s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "15834270n",
+                  "memory": "5224Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:27Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:15Z",
+            "window": "11.540359168s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "13375320n",
+                  "memory": "14352Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:43:38.633663+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:38Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:22Z",
+            "window": "5.989s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "65968442n",
+                  "memory": "41836Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:38Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:31Z",
+            "window": "15.279s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "18720662n",
+                  "memory": "4876Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:38Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:26Z",
+            "window": "11.787s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "13216764n",
+                  "memory": "15564Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:43:48.629030+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:48Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:35Z",
+            "window": "12.654s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "61547494n",
+                  "memory": "41588Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:48Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:31Z",
+            "window": "15.279s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "18720662n",
+                  "memory": "4876Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:48Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:46Z",
+            "window": "19.19s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "11690463n",
+                  "memory": "15424Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:43:58.633588+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:58Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:35Z",
+            "window": "12.654s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "61547494n",
+                  "memory": "41588Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:58Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:31Z",
+            "window": "15.279s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "18720662n",
+                  "memory": "4876Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:43:58Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:46Z",
+            "window": "19.19s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "11690463n",
+                  "memory": "15424Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "utc": "2026-10-11T15:44:07.828448+00:00",
+      "source": "metrics.k8s.io/v1beta1",
+      "metrics": {
+        "kind": "PodMetricsList",
+        "apiVersion": "metrics.k8s.io/v1beta1",
+        "metadata": {},
+        "items": [
+          {
+            "metadata": {
+              "name": "api-6df4d78668-qp8tk",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:44:07Z",
+              "labels": {
+                "app": "api",
+                "pod-template-hash": "6df4d78668"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:53Z",
+            "window": "18.198s",
+            "containers": [
+              {
+                "name": "api",
+                "usage": {
+                  "cpu": "63990658n",
+                  "memory": "41244Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "redis-0",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:44:07Z",
+              "labels": {
+                "app": "redis",
+                "apps.kubernetes.io/pod-index": "0",
+                "controller-revision-hash": "redis-7df94f7975",
+                "statefulset.kubernetes.io/pod-name": "redis-0"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:50Z",
+            "window": "19.275s",
+            "containers": [
+              {
+                "name": "redis",
+                "usage": {
+                  "cpu": "17607003n",
+                  "memory": "5320Ki"
+                }
+              }
+            ]
+          },
+          {
+            "metadata": {
+              "name": "web-567b7594fd-hp2dp",
+              "namespace": "cloudlab",
+              "creationTimestamp": "2026-10-11T15:44:07Z",
+              "labels": {
+                "app": "web",
+                "pod-template-hash": "567b7594fd"
+              }
+            },
+            "timestamp": "2026-10-11T15:43:56Z",
+            "window": "10.215s",
+            "containers": [
+              {
+                "name": "web",
+                "usage": {
+                  "cpu": "12164366n",
+                  "memory": "14756Ki"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "traffic": {
+    "url": "http://127.0.0.1:8080",
+    "duration_s": 65,
+    "workers": 4,
+    "interval_s": 0.2,
+    "requests": 1300,
+    "success": 1300,
+    "errors": 0,
+    "success_percent": 100.0,
+    "p50_ms": 10.602,
+    "p95_ms": 12.652,
+    "instances": [
+      "api-6df4d78668-qp8tk"
+    ],
+    "client_retries": 0,
+    "csv": "scale/k8s-1-1.csv"
+  }
+}

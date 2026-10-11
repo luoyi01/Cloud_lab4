@@ -1,0 +1,3854 @@
+[
+  {
+    "scheme": "compose",
+    "replicas": 1,
+    "step": 1,
+    "scale_ready_s": 7.734,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:38:49.575297+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "6.01%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.91%",
+            "MemUsage": "40.73MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "499kB / 653kB",
+            "PIDs": "5"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.76%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.87%",
+            "MemUsage": "4.477MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "588kB / 379kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.10%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "12.29%",
+            "MemUsage": "15.73MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "585kB / 643kB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:38:59.574289+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "28.08%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.84%",
+            "MemUsage": "40.56MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "683kB / 892kB",
+            "PIDs": "5"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.61%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.86%",
+            "MemUsage": "4.418MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "704kB / 465kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.86%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.47%",
+            "MemUsage": "14.68MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "847kB / 931kB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:39:09.199219+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "32.38%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.80%",
+            "MemUsage": "40.45MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "909kB / 1.18MB",
+            "PIDs": "5"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.79%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.91%",
+            "MemUsage": "4.672MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "798kB / 535kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.00%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.43%",
+            "MemUsage": "14.62MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "1.11MB / 1.22MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:39:19.191584+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "6.44%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.72%",
+            "MemUsage": "40.25MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.11MB / 1.45MB",
+            "PIDs": "5"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.75%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.93%",
+            "MemUsage": "4.766MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "906kB / 614kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.00%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.09%",
+            "MemUsage": "14.2MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "1.37MB / 1.5MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:39:29.182083+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "6.14%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.93%",
+            "MemUsage": "40.77MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.32MB / 1.72MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.77%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.96%",
+            "MemUsage": "4.906MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "1.03MB / 700kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.01%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.33%",
+            "MemUsage": "14.5MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "1.6MB / 1.76MB",
+            "PIDs": "17"
+          }
+        ]
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8090",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 10.6445,
+      "p95_ms": 63.055,
+      "instances": [
+        "b01bfeae8f44"
+      ],
+      "client_retries": 0,
+      "csv": "scale/compose-1-1.csv"
+    }
+  },
+  {
+    "scheme": "compose",
+    "replicas": 3,
+    "step": 2,
+    "scale_ready_s": 7.282,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:40:01.259019+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.01%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.71%",
+            "MemUsage": "40.21MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.53MB / 1.99MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.09%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.69%",
+            "MemUsage": "40.17MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "156kB / 202kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.08%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.60%",
+            "MemUsage": "39.93MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "155kB / 201kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "3.56%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "1.04%",
+            "MemUsage": "5.301MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "1.29MB / 892kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "3.81%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.57%",
+            "MemUsage": "14.81MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "2.29MB / 2.52MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:40:10.846234+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.53%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.51%",
+            "MemUsage": "39.7MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.6MB / 2.08MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "23.53%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.35%",
+            "MemUsage": "39.29MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "223kB / 289kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "7.65%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "19.56%",
+            "MemUsage": "50.06MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "216kB / 280kB",
+            "PIDs": "4"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.82%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.97%",
+            "MemUsage": "4.953MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "1.41MB / 976kB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "3.35%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.48%",
+            "MemUsage": "14.69MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "2.55MB / 2.8MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:40:20.870208+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "14.36%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.41%",
+            "MemUsage": "39.44MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.66MB / 2.16MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "7.10%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "19.32%",
+            "MemUsage": "49.46MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "292kB / 379kB",
+            "PIDs": "4"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "21.86%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "20.37%",
+            "MemUsage": "52.14MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "292kB / 379kB",
+            "PIDs": "4"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.90%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.87%",
+            "MemUsage": "4.469MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "1.51MB / 1.05MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "3.57%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.86%",
+            "MemUsage": "15.18MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "2.81MB / 3.09MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:40:30.857370+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "15.61%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "19.92%",
+            "MemUsage": "51MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.73MB / 2.25MB",
+            "PIDs": "4"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.77%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.40%",
+            "MemUsage": "39.43MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "359kB / 468kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.02%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.50%",
+            "MemUsage": "39.67MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "359kB / 468kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.82%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.89%",
+            "MemUsage": "4.562MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "1.62MB / 1.13MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.99%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "10.96%",
+            "MemUsage": "14.03MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "3.07MB / 3.37MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:40:40.560779+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.84%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.51%",
+            "MemUsage": "39.7MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.8MB / 2.34MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.00%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.31%",
+            "MemUsage": "39.18MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "429kB / 559kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.80%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.40%",
+            "MemUsage": "39.42MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "428kB / 557kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.85%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.89%",
+            "MemUsage": "4.555MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "1.73MB / 1.21MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.04%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.89%",
+            "MemUsage": "15.21MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "3.33MB / 3.66MB",
+            "PIDs": "17"
+          }
+        ]
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8090",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 5.422499999999999,
+      "p95_ms": 8.115,
+      "instances": [
+        "4220968849a7",
+        "495eb65aab91",
+        "b01bfeae8f44"
+      ],
+      "client_retries": 0,
+      "csv": "scale/compose-2-3.csv"
+    }
+  },
+  {
+    "scheme": "compose",
+    "replicas": 5,
+    "step": 3,
+    "scale_ready_s": 7.404,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:41:12.755573+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "22.50%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.76%",
+            "MemUsage": "40.36MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.92MB / 2.5MB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.09%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.20%",
+            "MemUsage": "38.91MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "539kB / 703kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.10%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.39%",
+            "MemUsage": "39.41MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "539kB / 703kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "25.31%",
+            "Container": "db3876d85ae4354043f3d1b8b4538ca13f12ce499a8694561b049a35388c45be",
+            "ID": "db3876d85ae4",
+            "MemPerc": "15.46%",
+            "MemUsage": "39.59MiB / 256MiB",
+            "Name": "cloudlab-api-5",
+            "NetIO": "89.2kB / 117kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.08%",
+            "Container": "a0b7d94408cea480122b282ff3c1b5cea49ffaa4d30352f88dbef24380b01a83",
+            "ID": "a0b7d94408ce",
+            "MemPerc": "15.27%",
+            "MemUsage": "39.08MiB / 256MiB",
+            "Name": "cloudlab-api-6",
+            "NetIO": "93.7kB / 122kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.79%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.87%",
+            "MemUsage": "4.461MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.01MB / 1.41MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.88%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "12.20%",
+            "MemUsage": "15.62MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "3.99MB / 4.38MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:41:22.748348+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.17%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.69%",
+            "MemUsage": "40.16MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "1.96MB / 2.55MB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.14%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.29%",
+            "MemUsage": "39.15MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "580kB / 757kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.12%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.29%",
+            "MemUsage": "39.14MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "580kB / 757kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "11.36%",
+            "Container": "db3876d85ae4354043f3d1b8b4538ca13f12ce499a8694561b049a35388c45be",
+            "ID": "db3876d85ae4",
+            "MemPerc": "19.65%",
+            "MemUsage": "50.3MiB / 256MiB",
+            "Name": "cloudlab-api-5",
+            "NetIO": "130kB / 171kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "24.09%",
+            "Container": "a0b7d94408cea480122b282ff3c1b5cea49ffaa4d30352f88dbef24380b01a83",
+            "ID": "a0b7d94408ce",
+            "MemPerc": "15.40%",
+            "MemUsage": "39.42MiB / 256MiB",
+            "Name": "cloudlab-api-6",
+            "NetIO": "135kB / 176kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.80%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.93%",
+            "MemUsage": "4.766MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.11MB / 1.49MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.98%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "12.10%",
+            "MemUsage": "15.49MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "4.26MB / 4.67MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:41:32.277889+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.16%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.49%",
+            "MemUsage": "39.65MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2MB / 2.6MB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.20%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.20%",
+            "MemUsage": "38.91MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "621kB / 811kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.01%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.39%",
+            "MemUsage": "39.39MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "621kB / 811kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "20.81%",
+            "Container": "db3876d85ae4354043f3d1b8b4538ca13f12ce499a8694561b049a35388c45be",
+            "ID": "db3876d85ae4",
+            "MemPerc": "20.51%",
+            "MemUsage": "52.5MiB / 256MiB",
+            "Name": "cloudlab-api-5",
+            "NetIO": "175kB / 231kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "10.95%",
+            "Container": "a0b7d94408cea480122b282ff3c1b5cea49ffaa4d30352f88dbef24380b01a83",
+            "ID": "a0b7d94408ce",
+            "MemPerc": "19.55%",
+            "MemUsage": "50.05MiB / 256MiB",
+            "Name": "cloudlab-api-6",
+            "NetIO": "175kB / 230kB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.75%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.97%",
+            "MemUsage": "4.961MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.21MB / 1.56MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.02%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "12.00%",
+            "MemUsage": "15.36MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "4.52MB / 4.96MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:41:42.258494+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.12%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.49%",
+            "MemUsage": "39.66MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.04MB / 2.66MB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "3.52%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.29%",
+            "MemUsage": "39.15MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "662kB / 865kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.08%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.39%",
+            "MemUsage": "39.39MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "662kB / 865kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.29%",
+            "Container": "db3876d85ae4354043f3d1b8b4538ca13f12ce499a8694561b049a35388c45be",
+            "ID": "db3876d85ae4",
+            "MemPerc": "15.36%",
+            "MemUsage": "39.33MiB / 256MiB",
+            "Name": "cloudlab-api-5",
+            "NetIO": "216kB / 285kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.14%",
+            "Container": "a0b7d94408cea480122b282ff3c1b5cea49ffaa4d30352f88dbef24380b01a83",
+            "ID": "a0b7d94408ce",
+            "MemPerc": "15.27%",
+            "MemUsage": "39.09MiB / 256MiB",
+            "Name": "cloudlab-api-6",
+            "NetIO": "211kB / 278kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.71%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "1.06%",
+            "MemUsage": "5.449MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.33MB / 1.65MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.49%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.52%",
+            "MemUsage": "14.75MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "4.78MB / 5.24MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:41:50.830345+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.36%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.59%",
+            "MemUsage": "39.91MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.08MB / 2.71MB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "23.94%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.27%",
+            "MemUsage": "39.08MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "703kB / 919kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "24.04%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.56%",
+            "MemUsage": "39.83MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "703kB / 919kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.27%",
+            "Container": "db3876d85ae4354043f3d1b8b4538ca13f12ce499a8694561b049a35388c45be",
+            "ID": "db3876d85ae4",
+            "MemPerc": "15.27%",
+            "MemUsage": "39.09MiB / 256MiB",
+            "Name": "cloudlab-api-5",
+            "NetIO": "257kB / 339kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.42%",
+            "Container": "a0b7d94408cea480122b282ff3c1b5cea49ffaa4d30352f88dbef24380b01a83",
+            "ID": "a0b7d94408ce",
+            "MemPerc": "15.46%",
+            "MemUsage": "39.58MiB / 256MiB",
+            "Name": "cloudlab-api-6",
+            "NetIO": "252kB / 334kB",
+            "PIDs": "2"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.86%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.97%",
+            "MemUsage": "4.988MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.44MB / 1.73MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "3.48%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.98%",
+            "MemUsage": "15.34MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "5.05MB / 5.53MB",
+            "PIDs": "17"
+          }
+        ]
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8090",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 4.8495,
+      "p95_ms": 6.147,
+      "instances": [
+        "4220968849a7",
+        "495eb65aab91",
+        "a0b7d94408ce",
+        "b01bfeae8f44",
+        "db3876d85ae4"
+      ],
+      "client_retries": 0,
+      "csv": "scale/compose-3-5.csv"
+    }
+  },
+  {
+    "scheme": "compose",
+    "replicas": 3,
+    "step": 4,
+    "scale_ready_s": 2.474,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:42:18.068625+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.16%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.70%",
+            "MemUsage": "40.2MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.24MB / 2.93MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "25.25%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.75%",
+            "MemUsage": "40.33MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "868kB / 1.13MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "15.11%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.50%",
+            "MemUsage": "39.67MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "867kB / 1.13MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "0.74%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.82%",
+            "MemUsage": "4.223MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.7MB / 1.91MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.93%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.65%",
+            "MemUsage": "14.91MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "5.7MB / 6.24MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:42:28.219015+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.29%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.32%",
+            "MemUsage": "39.21MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.31MB / 3.02MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "21.64%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "20.12%",
+            "MemUsage": "51.5MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "936kB / 1.22MB",
+            "PIDs": "4"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.23%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.40%",
+            "MemUsage": "39.42MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "929kB / 1.21MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "3.74%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "0.90%",
+            "MemUsage": "4.59MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.82MB / 2MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.07%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.46%",
+            "MemUsage": "14.67MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "5.97MB / 6.54MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:42:37.781454+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "24.97%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.72%",
+            "MemUsage": "40.25MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.38MB / 3.11MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.97%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.53%",
+            "MemUsage": "39.76MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "1.01MB / 1.31MB",
+            "PIDs": "4"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.67%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.30%",
+            "MemUsage": "39.18MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "996kB / 1.3MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "3.51%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "1.14%",
+            "MemUsage": "5.816MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "2.92MB / 2.08MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.93%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.84%",
+            "MemUsage": "15.15MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "6.23MB / 6.82MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:42:47.774793+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.77%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.50%",
+            "MemUsage": "39.69MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.44MB / 3.18MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.30%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.53%",
+            "MemUsage": "39.75MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "1.07MB / 1.4MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "2.20%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.31%",
+            "MemUsage": "39.2MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "1.07MB / 1.4MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "3.57%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "1.06%",
+            "MemUsage": "5.441MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "3.03MB / 2.16MB",
+            "PIDs": "6"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "1.12%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.39%",
+            "MemUsage": "14.58MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "6.49MB / 7.11MB",
+            "PIDs": "17"
+          }
+        ]
+      },
+      {
+        "utc": "2026-10-11T15:42:57.768599+00:00",
+        "source": "docker stats --no-stream",
+        "containers": [
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.83%",
+            "Container": "b01bfeae8f44de1a515c93ee12d47a8f725cef6850ac2bf648e3aa1937d93f47",
+            "ID": "b01bfeae8f44",
+            "MemPerc": "15.31%",
+            "MemUsage": "39.2MiB / 256MiB",
+            "Name": "cloudlab-api-2",
+            "NetIO": "2.51MB / 3.27MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.89%",
+            "Container": "495eb65aab91d2db78314a6e5419dac1f7dcd3b9cb20e866e94ddb161449c4ea",
+            "ID": "495eb65aab91",
+            "MemPerc": "15.43%",
+            "MemUsage": "39.49MiB / 256MiB",
+            "Name": "cloudlab-api-3",
+            "NetIO": "1.14MB / 1.49MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "0B / 0B",
+            "CPUPerc": "1.89%",
+            "Container": "4220968849a7db33ef7f2ffa81d996fcb0c8ce16ada6c141690561460ffa49af",
+            "ID": "4220968849a7",
+            "MemPerc": "15.69%",
+            "MemUsage": "40.17MiB / 256MiB",
+            "Name": "cloudlab-api-4",
+            "NetIO": "1.14MB / 1.49MB",
+            "PIDs": "3"
+          },
+          {
+            "BlockIO": "12.3kB / 20.5kB",
+            "CPUPerc": "1.92%",
+            "Container": "5de460d26752eb5be328176c19ef95f822407fa15785188fa5e96fb4d667713b",
+            "ID": "5de460d26752",
+            "MemPerc": "1.93%",
+            "MemUsage": "9.887MiB / 512MiB",
+            "Name": "cloudlab-redis-1",
+            "NetIO": "3.14MB / 2.24MB",
+            "PIDs": "12"
+          },
+          {
+            "BlockIO": "0B / 4.1kB",
+            "CPUPerc": "0.95%",
+            "Container": "d7cd10b32b3c18e071bbd58278f85d30ac282bb4c3ea7931bda335d617b9e831",
+            "ID": "d7cd10b32b3c",
+            "MemPerc": "11.74%",
+            "MemUsage": "15.03MiB / 128MiB",
+            "Name": "cloudlab-web-1",
+            "NetIO": "6.75MB / 7.39MB",
+            "PIDs": "17"
+          }
+        ]
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8090",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 5.239,
+      "p95_ms": 7.22,
+      "instances": [
+        "4220968849a7",
+        "495eb65aab91",
+        "b01bfeae8f44"
+      ],
+      "client_retries": 0,
+      "csv": "scale/compose-4-3.csv"
+    }
+  },
+  {
+    "scheme": "k8s",
+    "replicas": 1,
+    "step": 1,
+    "scale_ready_s": 3.316,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:43:27.994594+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:27Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:16Z",
+              "window": "10.976415616s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "172697724n",
+                    "memory": "41576Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:27Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:16Z",
+              "window": "20.636s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "15834270n",
+                    "memory": "5224Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:27Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:15Z",
+              "window": "11.540359168s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "13375320n",
+                    "memory": "14352Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:43:38.633663+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:38Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:22Z",
+              "window": "5.989s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "65968442n",
+                    "memory": "41836Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:38Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:31Z",
+              "window": "15.279s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18720662n",
+                    "memory": "4876Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:38Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:26Z",
+              "window": "11.787s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "13216764n",
+                    "memory": "15564Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:43:48.629030+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:48Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:35Z",
+              "window": "12.654s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "61547494n",
+                    "memory": "41588Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:48Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:31Z",
+              "window": "15.279s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18720662n",
+                    "memory": "4876Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:48Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:46Z",
+              "window": "19.19s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11690463n",
+                    "memory": "15424Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:43:58.633588+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:58Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:35Z",
+              "window": "12.654s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "61547494n",
+                    "memory": "41588Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:58Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:31Z",
+              "window": "15.279s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18720662n",
+                    "memory": "4876Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:43:58Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:46Z",
+              "window": "19.19s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11690463n",
+                    "memory": "15424Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:44:07.828448+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:07Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:53Z",
+              "window": "18.198s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "63990658n",
+                    "memory": "41244Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:07Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:50Z",
+              "window": "19.275s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "17607003n",
+                    "memory": "5320Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:07Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:43:56Z",
+              "window": "10.215s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "12164366n",
+                    "memory": "14756Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8080",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 10.602,
+      "p95_ms": 12.652,
+      "instances": [
+        "api-6df4d78668-qp8tk"
+      ],
+      "client_retries": 0,
+      "csv": "scale/k8s-1-1.csv"
+    }
+  },
+  {
+    "scheme": "k8s",
+    "replicas": 3,
+    "step": 2,
+    "scale_ready_s": 3.072,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:44:35.608707+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:35Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:26Z",
+              "window": "13.24963232s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "78648144n",
+                    "memory": "40556Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:35Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:30Z",
+              "window": "13.788s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21564693n",
+                    "memory": "40224Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:35Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:25Z",
+              "window": "19.498s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "32314442n",
+                    "memory": "40416Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:35Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:28Z",
+              "window": "13.376s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18370290n",
+                    "memory": "5084Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:35Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:18Z",
+              "window": "12.154s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "8836021n",
+                    "memory": "15220Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:44:44.606392+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:44Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:26Z",
+              "window": "13.24963232s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "78648144n",
+                    "memory": "40556Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:44Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:30Z",
+              "window": "13.788s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21564693n",
+                    "memory": "40224Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:44Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:25Z",
+              "window": "19.498s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "32314442n",
+                    "memory": "40416Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:44Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:28Z",
+              "window": "13.376s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18370290n",
+                    "memory": "5084Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:44Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:18Z",
+              "window": "12.154s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "8836021n",
+                    "memory": "15220Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:44:54.630227+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:54Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:39Z",
+              "window": "12.799s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "22777404n",
+                    "memory": "41008Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:54Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:30Z",
+              "window": "13.788s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21564693n",
+                    "memory": "40224Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:54Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:36Z",
+              "window": "10.316s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "19259015n",
+                    "memory": "40668Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:54Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:42Z",
+              "window": "13.761s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18811714n",
+                    "memory": "5268Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:44:54Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:35Z",
+              "window": "16.64s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11630709n",
+                    "memory": "15292Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:45:04.784595+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:04Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:55Z",
+              "window": "16.316s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "23323302n",
+                    "memory": "40532Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:04Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:59Z",
+              "window": "28.91s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "22268073n",
+                    "memory": "39968Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:04Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:48Z",
+              "window": "12.376s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21072398n",
+                    "memory": "40664Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:04Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:56Z",
+              "window": "13.632s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "19509536n",
+                    "memory": "8952Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:04Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:49Z",
+              "window": "13.985s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "12749731n",
+                    "memory": "14504Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:45:14.730618+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:14Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:55Z",
+              "window": "16.316s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "23323302n",
+                    "memory": "40532Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:14Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:59Z",
+              "window": "28.91s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "22268073n",
+                    "memory": "39968Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:14Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:48Z",
+              "window": "12.376s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21072398n",
+                    "memory": "40664Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:14Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:56Z",
+              "window": "13.632s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "19509536n",
+                    "memory": "8952Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:14Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:44:49Z",
+              "window": "13.985s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "12749731n",
+                    "memory": "14504Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8080",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 6.266500000000001,
+      "p95_ms": 9.699,
+      "instances": [
+        "api-6df4d78668-ccdkb",
+        "api-6df4d78668-pf84l",
+        "api-6df4d78668-qp8tk"
+      ],
+      "client_retries": 0,
+      "csv": "scale/k8s-2-3.csv"
+    }
+  },
+  {
+    "scheme": "k8s",
+    "replicas": 5,
+    "step": 3,
+    "scale_ready_s": 3.12,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:45:42.259882+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:42Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:21Z",
+              "window": "12.292s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "17550846n",
+                    "memory": "39776Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:42Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:28Z",
+              "window": "29.595s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "18918601n",
+                    "memory": "40816Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:42Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:19Z",
+              "window": "17.363s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "19275931n",
+                    "memory": "40144Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:42Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:28Z",
+              "window": "19.316s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18826672n",
+                    "memory": "5200Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:42Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:20Z",
+              "window": "16.369s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11237338n",
+                    "memory": "13928Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:45:52.252447+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-8j9dr",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:44Z",
+              "window": "14.56s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "15436813n",
+                    "memory": "40316Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:34Z",
+              "window": "12.158s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "13950320n",
+                    "memory": "39752Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:40Z",
+              "window": "11.754s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14384379n",
+                    "memory": "39768Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:34Z",
+              "window": "15.215s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "12387906n",
+                    "memory": "40128Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:31Z",
+              "window": "11.344935872s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "87224115n",
+                    "memory": "40720Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:28Z",
+              "window": "19.316s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "18826672n",
+                    "memory": "5200Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:45:52Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:43Z",
+              "window": "23.45s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "10686567n",
+                    "memory": "15312Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:46:01.930958+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-8j9dr",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:59Z",
+              "window": "15.075s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14908457n",
+                    "memory": "40052Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:52Z",
+              "window": "18.386s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "11731698n",
+                    "memory": "39724Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:51Z",
+              "window": "11.146s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14106226n",
+                    "memory": "40316Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:56Z",
+              "window": "21.612s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14837636n",
+                    "memory": "40392Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:47Z",
+              "window": "15.646s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "12591077n",
+                    "memory": "40488Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:45Z",
+              "window": "17.531s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "19213792n",
+                    "memory": "5504Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:01Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:54Z",
+              "window": "10.567s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11525220n",
+                    "memory": "15272Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:46:10.215149+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-8j9dr",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:59Z",
+              "window": "15.075s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14908457n",
+                    "memory": "40052Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:52Z",
+              "window": "18.386s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "11731698n",
+                    "memory": "39724Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:51Z",
+              "window": "11.146s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14106226n",
+                    "memory": "40316Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:56Z",
+              "window": "21.612s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14837636n",
+                    "memory": "40392Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:47Z",
+              "window": "15.646s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "12591077n",
+                    "memory": "40488Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:45Z",
+              "window": "17.531s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "19213792n",
+                    "memory": "5504Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:10Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:54Z",
+              "window": "10.567s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11525220n",
+                    "memory": "15272Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:46:20.226514+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-8j9dr",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:59Z",
+              "window": "15.075s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14908457n",
+                    "memory": "40052Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:02Z",
+              "window": "10.163s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "11786480n",
+                    "memory": "39748Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-pf84l",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:07Z",
+              "window": "16.001s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "12224673n",
+                    "memory": "40012Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:06Z",
+              "window": "9.699s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14294566n",
+                    "memory": "41152Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:45:59Z",
+              "window": "12.211s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "13516010n",
+                    "memory": "40456Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:02Z",
+              "window": "16.431s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "19451037n",
+                    "memory": "5160Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:20Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:05Z",
+              "window": "11.153s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11891060n",
+                    "memory": "15276Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8080",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 5.763999999999999,
+      "p95_ms": 8.798,
+      "instances": [
+        "api-6df4d78668-8j9dr",
+        "api-6df4d78668-ccdkb",
+        "api-6df4d78668-pf84l",
+        "api-6df4d78668-qp8tk",
+        "api-6df4d78668-z74bm"
+      ],
+      "client_retries": 0,
+      "csv": "scale/k8s-3-5.csv"
+    }
+  },
+  {
+    "scheme": "k8s",
+    "replicas": 3,
+    "step": 4,
+    "scale_ready_s": 0.717,
+    "resource_samples": [
+      {
+        "utc": "2026-10-11T15:46:45.370025+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:45Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:28Z",
+              "window": "12.205s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "19422122n",
+                    "memory": "41268Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:45Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:33Z",
+              "window": "14.297s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14987060n",
+                    "memory": "40888Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:45Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:32Z",
+              "window": "17.579s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "18598156n",
+                    "memory": "40268Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:45Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:34Z",
+              "window": "15.535s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "20004956n",
+                    "memory": "5804Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:45Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:32Z",
+              "window": "10.381s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11657258n",
+                    "memory": "15364Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:46:54.540288+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:54Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:28Z",
+              "window": "12.205s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "19422122n",
+                    "memory": "41268Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:54Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:33Z",
+              "window": "14.297s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "14987060n",
+                    "memory": "40888Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:54Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:32Z",
+              "window": "17.579s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "18598156n",
+                    "memory": "40268Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:54Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:34Z",
+              "window": "15.535s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "20004956n",
+                    "memory": "5804Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:46:54Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:32Z",
+              "window": "10.381s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11657258n",
+                    "memory": "15364Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:47:03.762843+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:03Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:46Z",
+              "window": "17.489s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "20114071n",
+                    "memory": "40520Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:03Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:50Z",
+              "window": "16.243s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21290586n",
+                    "memory": "41436Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:03Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:44Z",
+              "window": "11.41s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "20014110n",
+                    "memory": "40280Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:03Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:46Z",
+              "window": "12.538s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "17996889n",
+                    "memory": "5172Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:03Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:45Z",
+              "window": "12.739s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "11975900n",
+                    "memory": "15456Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:47:13.780644+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:13Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:55Z",
+              "window": "9.622s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "22004676n",
+                    "memory": "40540Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:13Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:05Z",
+              "window": "15.24s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21598884n",
+                    "memory": "40884Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:13Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:01Z",
+              "window": "17.417s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "24917551n",
+                    "memory": "41060Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:13Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:03Z",
+              "window": "16.457s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "20837455n",
+                    "memory": "5396Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:13Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:02Z",
+              "window": "17.295s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "12867013n",
+                    "memory": "14984Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "utc": "2026-10-11T15:47:22.461990+00:00",
+        "source": "metrics.k8s.io/v1beta1",
+        "metrics": {
+          "kind": "PodMetricsList",
+          "apiVersion": "metrics.k8s.io/v1beta1",
+          "metadata": {},
+          "items": [
+            {
+              "metadata": {
+                "name": "api-6df4d78668-ccdkb",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:22Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:46:55Z",
+              "window": "9.622s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "22004676n",
+                    "memory": "40540Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-qp8tk",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:22Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:05Z",
+              "window": "15.24s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "21598884n",
+                    "memory": "40884Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "api-6df4d78668-z74bm",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:22Z",
+                "labels": {
+                  "app": "api",
+                  "pod-template-hash": "6df4d78668"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:01Z",
+              "window": "17.417s",
+              "containers": [
+                {
+                  "name": "api",
+                  "usage": {
+                    "cpu": "24917551n",
+                    "memory": "41060Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "redis-0",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:22Z",
+                "labels": {
+                  "app": "redis",
+                  "apps.kubernetes.io/pod-index": "0",
+                  "controller-revision-hash": "redis-7df94f7975",
+                  "statefulset.kubernetes.io/pod-name": "redis-0"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:03Z",
+              "window": "16.457s",
+              "containers": [
+                {
+                  "name": "redis",
+                  "usage": {
+                    "cpu": "20837455n",
+                    "memory": "5396Ki"
+                  }
+                }
+              ]
+            },
+            {
+              "metadata": {
+                "name": "web-567b7594fd-hp2dp",
+                "namespace": "cloudlab",
+                "creationTimestamp": "2026-10-11T15:47:22Z",
+                "labels": {
+                  "app": "web",
+                  "pod-template-hash": "567b7594fd"
+                }
+              },
+              "timestamp": "2026-10-11T15:47:02Z",
+              "window": "17.295s",
+              "containers": [
+                {
+                  "name": "web",
+                  "usage": {
+                    "cpu": "12867013n",
+                    "memory": "14984Ki"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "traffic": {
+      "url": "http://127.0.0.1:8080",
+      "duration_s": 65,
+      "workers": 4,
+      "interval_s": 0.2,
+      "requests": 1300,
+      "success": 1300,
+      "errors": 0,
+      "success_percent": 100.0,
+      "p50_ms": 6.2725,
+      "p95_ms": 9.762,
+      "instances": [
+        "api-6df4d78668-ccdkb",
+        "api-6df4d78668-qp8tk",
+        "api-6df4d78668-z74bm"
+      ],
+      "client_retries": 0,
+      "csv": "scale/k8s-4-3.csv"
+    }
+  }
+]
