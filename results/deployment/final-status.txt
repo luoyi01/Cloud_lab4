@@ -1,0 +1,35 @@
+NAME               IMAGE                                                                                        COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+cloudlab-api-2     sha256:cab8463bf2572b67a6a3f763fa33f5d70f8d4b3d4fcb1b5834fff6444bdc90b4                      "uvicorn app.main:ap…"   api       52 minutes ago   Up 52 minutes (healthy)   8000/tcp
+cloudlab-api-3     sha256:cab8463bf2572b67a6a3f763fa33f5d70f8d4b3d4fcb1b5834fff6444bdc90b4                      "uvicorn app.main:ap…"   api       52 minutes ago   Up 52 minutes (healthy)   8000/tcp
+cloudlab-api-4     sha256:cab8463bf2572b67a6a3f763fa33f5d70f8d4b3d4fcb1b5834fff6444bdc90b4                      "uvicorn app.main:ap…"   api       52 minutes ago   Up 52 minutes (healthy)   8000/tcp
+cloudlab-redis-1   redis:7.4.5-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08   "docker-entrypoint.s…"   redis     2 hours ago      Up 2 hours (healthy)      6379/tcp
+cloudlab-web-1     sha256:53e507f228d6bf9fc4ae49457744da2a535e3c47659c026f6501208898801666                      "/docker-entrypoint.…"   web       2 hours ago      Up 52 minutes (healthy)   127.0.0.1:8090->80/tcp
+NAME                     STATUS   ROLES           AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION                              CONTAINER-RUNTIME
+cloudlab-control-plane   Ready    control-plane   118m   v1.36.4   172.19.0.4    <none>        Debian GNU/Linux 13 (trixie)   6.18.40.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+cloudlab-worker          Ready    <none>          117m   v1.36.4   172.19.0.3    <none>        Debian GNU/Linux 13 (trixie)   6.18.40.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+cloudlab-worker2         Ready    <none>          117m   v1.36.4   172.19.0.2    <none>        Debian GNU/Linux 13 (trixie)   6.18.40.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES             SELECTOR
+deployment.apps/api   3/3     3            3           99m   api          cloudlab-api:1.0   app=api
+deployment.apps/web   1/1     1            1           99m   web          cloudlab-web:1.0   app=web
+
+NAME                     READY   AGE   CONTAINERS   IMAGES
+statefulset.apps/redis   1/1     99m   redis        redis:7.4.5-alpine@sha256:0302cccee2b2043e61b497c8f4075467c5f7ba27a9f38be7e092634f2734baed
+
+NAME                       READY   STATUS    RESTARTS   AGE   IP            NODE               NOMINATED NODE   READINESS GATES
+pod/api-659c7f97c9-n8zwr   1/1     Running   0          52m   10.244.1.8    cloudlab-worker2   <none>           <none>
+pod/api-659c7f97c9-rpwlc   1/1     Running   0          52m   10.244.2.29   cloudlab-worker    <none>           <none>
+pod/api-659c7f97c9-vpnh2   1/1     Running   0          51m   10.244.2.30   cloudlab-worker    <none>           <none>
+pod/redis-0                1/1     Running   0          96m   10.244.2.12   cloudlab-worker    <none>           <none>
+pod/web-567b7594fd-hp2dp   1/1     Running   0          56m   10.244.2.26   cloudlab-worker    <none>           <none>
+
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/api              ClusterIP   10.96.83.5     <none>        8000/TCP       99m   app=api
+service/redis            ClusterIP   10.96.222.83   <none>        6379/TCP       99m   app=redis
+service/redis-headless   ClusterIP   None           <none>        6379/TCP       99m   app=redis
+service/web              NodePort    10.96.245.66   <none>        80:30180/TCP   99m   app=web
+
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/data-redis-0   Bound    pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d   1Gi        RWO            standard       <unset>                 99m   Filesystem
+
+NAME                             MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/api   2               N/A               1                     99m

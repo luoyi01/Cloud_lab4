@@ -1,0 +1,92 @@
+{
+  "utc": "2026-10-11T16:08:48.755971+00:00",
+  "host_scope": "Ubuntu WSL2",
+  "host": {
+    "kernel": "6.18.40.1-microsoft-standard-WSL2",
+    "hostname": "LAPTOP-14SB2BS7",
+    "namespaces": {
+      "pid": "pid:[4026532390]",
+      "mnt": "mnt:[4026532388]",
+      "net": "net:[4026531833]"
+    }
+  },
+  "compose": {
+    "kernel": "6.18.40.1-microsoft-standard-WSL2",
+    "hostname": "1183246a431d",
+    "namespaces": {
+      "pid": "pid:[4026533559]",
+      "mnt": "mnt:[4026533556]",
+      "net": "net:[4026533561]"
+    },
+    "pid1": "uvicorn",
+    "root_entries": [
+      ".dockerenv",
+      "app",
+      "bin",
+      "boot",
+      "dev",
+      "etc",
+      "home",
+      "lib",
+      "lib64",
+      "media",
+      "mnt",
+      "opt",
+      "proc",
+      "root",
+      "run",
+      "sbin",
+      "srv",
+      "sys",
+      "tmp",
+      "usr",
+      "var"
+    ],
+    "network_interfaces": [
+      "lo",
+      "eth0"
+    ]
+  },
+  "k8s": {
+    "kernel": "6.18.40.1-microsoft-standard-WSL2",
+    "hostname": "api-659c7f97c9-n8zwr",
+    "namespaces": {
+      "pid": "pid:[4026533879]",
+      "mnt": "mnt:[4026533878]",
+      "net": "net:[4026533799]"
+    },
+    "pid1": "uvicorn",
+    "root_entries": [
+      "app",
+      "bin",
+      "boot",
+      "dev",
+      "etc",
+      "home",
+      "lib",
+      "lib64",
+      "media",
+      "mnt",
+      "opt",
+      "proc",
+      "product_uuid",
+      "root",
+      "run",
+      "sbin",
+      "srv",
+      "sys",
+      "tmp",
+      "usr",
+      "var"
+    ],
+    "network_interfaces": [
+      "lo",
+      "eth0"
+    ]
+  },
+  "namespace_sources": {
+    "host": "/proc/self/ns (current Ubuntu process)",
+    "containers": "/proc/1/ns"
+  },
+  "interpretation": "Both paths share the observed WSL2 kernel; PID/mount/network namespace IDs differ. This is a mechanism observation, not a security penetration test or a separate guest-kernel VM comparison."
+}

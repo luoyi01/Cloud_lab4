@@ -1,0 +1,113 @@
+UTC 2026-10-11T16:37:36+00:00
+Resume after a transient WSL/DrvFS cwd resolution failure; previous attempt retained.
+/mnt/d/XMU/大四/云计算/Cloud_lab4/.local/repro/source
+5cd20a7aed74395667bb97e525caeb75a62979b4
+Local configuration is ready; credentials are not displayed.
+Creating cluster "cloudlab-repro" ...
+ • Ensuring node image (kindest/node:v1.36.4) 🖼️  ...
+ ✓ Ensuring node image (kindest/node:v1.36.4) 🖼️
+ • Preparing nodes 📦 📦 📦   ...
+ ✓ Preparing nodes 📦 📦 📦
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Joining worker nodes 🚜  ...
+ ✓ Joining worker nodes 🚜
+ • Waiting ≤ 2m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 2m0s for control-plane = Ready ⏳
+ • Ready after 10s 💚
+Set kubectl context to "kind-cloudlab-repro"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-cloudlab-repro --kubeconfig '/mnt/d/XMU/大四/云计算/Cloud_lab4/.local/repro/source/.local/kubeconfig'
+
+Thanks for using kind! 😊
+Image: "cloudlab-api:1.0" with ID "sha256:54f17f756231859d092f8a238f012c073e6f96cf8d1f57495168dcd34f53fa20" not yet present on node "cloudlab-repro-worker", loading...
+Image: "cloudlab-api:1.0" with ID "sha256:54f17f756231859d092f8a238f012c073e6f96cf8d1f57495168dcd34f53fa20" not yet present on node "cloudlab-repro-control-plane", loading...
+Image: "cloudlab-api:1.0" with ID "sha256:54f17f756231859d092f8a238f012c073e6f96cf8d1f57495168dcd34f53fa20" not yet present on node "cloudlab-repro-worker2", loading...
+Image: "cloudlab-web:1.0" with ID "sha256:35d5ce574bc2dc058574780b4f83d297e33a0b85fce5c56de4dc84177af884e6" not yet present on node "cloudlab-repro-worker", loading...
+Image: "cloudlab-web:1.0" with ID "sha256:35d5ce574bc2dc058574780b4f83d297e33a0b85fce5c56de4dc84177af884e6" not yet present on node "cloudlab-repro-control-plane", loading...
+Image: "cloudlab-web:1.0" with ID "sha256:35d5ce574bc2dc058574780b4f83d297e33a0b85fce5c56de4dc84177af884e6" not yet present on node "cloudlab-repro-worker2", loading...
+docker.io/library/redis@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08: Pulling from library/redis
+Digest: sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+Status: Image is up to date for redis@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+docker.io/library/redis:7.4.5-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+namespace/cloudlab created
+secret/cloudlab-secret created
+namespace/cloudlab unchanged
+configmap/cloudlab-config created
+configmap/cloudlab-nginx created
+service/api created
+service/redis created
+service/redis-headless created
+service/web created
+deployment.apps/api created
+deployment.apps/web created
+statefulset.apps/redis created
+poddisruptionbudget.policy/api created
+statefulset.apps/redis restarted
+Waiting for 1 pods to be ready...
+Waiting for partitioned roll out to finish: 0 out of 1 new pods have been updated...
+Waiting for 1 pods to be ready...
+Waiting for 1 pods to be ready...
+Waiting for 1 pods to be ready...
+partitioned roll out complete: 1 new pods have been updated...
+deployment.apps/api restarted
+deployment.apps/web restarted
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "api" rollout to finish: 1 old replicas are pending termination...
+deployment "api" successfully rolled out
+deployment "web" successfully rolled out
+API stable: 3 ready Pods, matching Service endpoints.
+API stable: 3 ready Pods, matching Service endpoints.
+NAME                     IMAGE                                                                                        COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+cloudlab-repro-api-1     cloudlab-api:1.0                                                                             "uvicorn app.main:ap…"   api       11 minutes ago   Up 11 minutes (healthy)   8000/tcp
+cloudlab-repro-api-2     cloudlab-api:1.0                                                                             "uvicorn app.main:ap…"   api       11 minutes ago   Up 11 minutes (healthy)   8000/tcp
+cloudlab-repro-api-3     cloudlab-api:1.0                                                                             "uvicorn app.main:ap…"   api       11 minutes ago   Up 11 minutes (healthy)   8000/tcp
+cloudlab-repro-redis-1   redis:7.4.5-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08   "docker-entrypoint.s…"   redis     11 minutes ago   Up 11 minutes (healthy)   6379/tcp
+cloudlab-repro-web-1     cloudlab-web:1.0                                                                             "/docker-entrypoint.…"   web       11 minutes ago   Up 10 minutes (healthy)   127.0.0.1:8091->80/tcp
+NAME                           STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION                              CONTAINER-RUNTIME
+cloudlab-repro-control-plane   Ready    control-plane   71s   v1.36.4   172.19.0.6    <none>        Debian GNU/Linux 13 (trixie)   6.18.40.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+cloudlab-repro-worker          Ready    <none>          60s   v1.36.4   172.19.0.7    <none>        Debian GNU/Linux 13 (trixie)   6.18.40.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+cloudlab-repro-worker2         Ready    <none>          60s   v1.36.4   172.19.0.5    <none>        Debian GNU/Linux 13 (trixie)   6.18.40.1-microsoft-standard-WSL2 (amd64)   containerd://2.3.4
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES             SELECTOR
+deployment.apps/api   3/3     3            3           29s   api          cloudlab-api:1.0   app=api
+deployment.apps/web   1/1     1            1           29s   web          cloudlab-web:1.0   app=web
+
+NAME                     READY   AGE   CONTAINERS   IMAGES
+statefulset.apps/redis   1/1     29s   redis        redis:7.4.5-alpine@sha256:0302cccee2b2043e61b497c8f4075467c5f7ba27a9f38be7e092634f2734baed
+
+NAME                       READY   STATUS    RESTARTS   AGE   IP           NODE                     NOMINATED NODE   READINESS GATES
+pod/api-5576946fbf-g7dw5   1/1     Running   0          19s   10.244.1.7   cloudlab-repro-worker    <none>           <none>
+pod/api-5576946fbf-m5vbl   1/1     Running   0          10s   10.244.1.9   cloudlab-repro-worker    <none>           <none>
+pod/api-5576946fbf-nbzjb   1/1     Running   0          15s   10.244.2.4   cloudlab-repro-worker2   <none>           <none>
+pod/redis-0                1/1     Running   0          22s   10.244.1.6   cloudlab-repro-worker    <none>           <none>
+pod/web-669d9df44c-5tw75   1/1     Running   0          19s   10.244.1.8   cloudlab-repro-worker    <none>           <none>
+
+NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE   SELECTOR
+service/api              ClusterIP   10.96.33.82     <none>        8000/TCP       29s   app=api
+service/redis            ClusterIP   10.96.188.115   <none>        6379/TCP       29s   app=redis
+service/redis-headless   ClusterIP   None            <none>        6379/TCP       29s   app=redis
+service/web              NodePort    10.96.146.12    <none>        80:30180/TCP   29s   app=web
+
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/data-redis-0   Bound    pvc-3a75d05b-c992-4cdc-826b-a24cea8003ba   1Gi        RWO            standard       <unset>                 29s   Filesystem
+
+NAME                             MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/api   2               N/A               1                     29s
+Fresh clone application deployment: PASSED

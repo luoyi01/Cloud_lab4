@@ -1,0 +1,12 @@
+{
+  "url": "http://127.0.0.1:8080",
+  "instances": [
+    "api-659c7f97c9-n8zwr",
+    "api-659c7f97c9-rpwlc",
+    "api-659c7f97c9-vpnh2"
+  ],
+  "replicas": 3,
+  "shared_message_id": 5,
+  "marker": "复现检查-8f59148c",
+  "checks": "passed"
+}

@@ -1,0 +1,29 @@
+UTC 2026-10-11T16:39:36+00:00
+Remove only reproduction project cloudlab-repro and its disposable synthetic volume.
+ Container cloudlab-repro-web-1 Stopping
+ Container cloudlab-repro-web-1 Stopped
+ Container cloudlab-repro-web-1 Removing
+ Container cloudlab-repro-web-1 Removed
+ Container cloudlab-repro-api-3 Stopping
+ Container cloudlab-repro-api-1 Stopping
+ Container cloudlab-repro-api-2 Stopping
+ Container cloudlab-repro-api-3 Stopped
+ Container cloudlab-repro-api-3 Removing
+ Container cloudlab-repro-api-3 Removed
+ Container cloudlab-repro-api-2 Stopped
+ Container cloudlab-repro-api-2 Removing
+ Container cloudlab-repro-api-2 Removed
+ Container cloudlab-repro-api-1 Stopped
+ Container cloudlab-repro-api-1 Removing
+ Container cloudlab-repro-api-1 Removed
+ Container cloudlab-repro-redis-1 Stopping
+ Container cloudlab-repro-redis-1 Stopped
+ Container cloudlab-repro-redis-1 Removing
+ Container cloudlab-repro-redis-1 Removed
+ Network cloudlab-repro_default Removing
+ Volume cloudlab-repro_redis-data Removing
+ Volume cloudlab-repro_redis-data Removed
+ Network cloudlab-repro_default Removed
+Deleting cluster "cloudlab-repro" ...
+Deleted nodes: ["cloudlab-repro-worker" "cloudlab-repro-control-plane" "cloudlab-repro-worker2"]
+Reproduction cleanup: PASSED; primary cloudlab retained.

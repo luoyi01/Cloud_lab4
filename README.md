@@ -114,6 +114,7 @@ python3 scripts/experiments.py compose-delete
 python3 scripts/experiments.py warm-start
 python3 scripts/experiments.py node-failure
 python3 scripts/experiments.py scale
+python3 scripts/isolation.py
 python3 scripts/summary.py
 ```
 
@@ -164,6 +165,16 @@ kubectl --kubeconfig .local/kubeconfig -n cloudlab scale deployment/api deployme
 学号、姓名留空。课程 ZIP 使用 `学号_姓名_云原生实验.zip` 命名，填写身份信息后可执行 `python3 scripts/package.py --student-id 学号 --name 姓名`。打包按 Git 跟踪文件白名单，排除 `.git`、`.env`、kubeconfig、缓存、镜像归档、本地工作记录等。不要直接压缩整个工作目录。截止时间以课程群通知为准。
 
 全新克隆的独立 Compose/Kind 复现记录在 `results/reproduction/`；使用新项目/集群与 8091/8081 端口。主线用默认 `cloudlab` 名称与 8090/8080。额外实例可设置 `LAB_PROJECT`、`LAB_CLUSTER`、`LAB_COMPOSE_PORT`、`LAB_KIND_PORT`；故障实验驱动固定针对主线，额外实例仅供部署验证。
+
+报告已经包含在提交材料中。需要根据重新测量的数据再生成时，在 Git 工作目录中使用独立 Python 环境：
+
+```bash
+python3 -m venv .local/report-venv
+.local/report-venv/bin/pip install -r docs/requirements.txt
+.local/report-venv/bin/python scripts/build_report.py --font /mnt/c/Windows/Fonts/msyh.ttc
+```
+
+Ubuntu 若没有 `venv` 模块，先通过系统包安装 `python3-venv`；其他 Linux 主机使用本机合法安装、支持中文的 TTF/TTC 字体路径。生成器核验完整伸缩、持久化、PDB 和测试证据，从本轮 JSON 更新表格及结论。`docs/report.md` 可单独编辑，重新运行生成器会覆盖它。提交前检查 PDF，提交修改后再运行打包脚本，使 ZIP 记录的提交与内容一致。
 
 ## 参考资料
 

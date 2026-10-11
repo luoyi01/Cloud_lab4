@@ -1,6 +1,6 @@
-NAME                   CPU(cores)   MEMORY(bytes)   
-api-6df4d78668-5hbsw   4m           38Mi            
-api-6df4d78668-hgx98   4m           38Mi            
-api-6df4d78668-l25j9   4m           38Mi            
-redis-0                14m          4Mi             
-web-567b7594fd-d5cvr   1m           12Mi            
+NAME                   CPU(cores)   MEMORY(bytes)
+api-6df4d78668-5hbsw   4m           38Mi
+api-6df4d78668-hgx98   4m           38Mi
+api-6df4d78668-l25j9   4m           38Mi
+redis-0                14m          4Mi
+web-567b7594fd-d5cvr   1m           12Mi

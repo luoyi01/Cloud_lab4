@@ -14,7 +14,7 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak, KeepTogether
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, Image, PageBreak, KeepTogether, Preformatted
 from reportlab.graphics.shapes import Drawing, Rect, String, Line, Polygon
 from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics import renderPDF
@@ -133,11 +133,11 @@ def main():
     render_figure(architecture(), "architecture")
     render_figure(resource_chart(summary), "api-memory")
 
-    body = ParagraphStyle("Body", fontName="Chinese", fontSize=10.5, leading=18, spaceAfter=9, wordWrap="CJK")
+    body = ParagraphStyle("Body", fontName="Chinese", fontSize=10.5, leading=18, spaceAfter=9, wordWrap="CJK", allowWidows=0, allowOrphans=0)
     title = ParagraphStyle("Title", parent=body, fontSize=25, leading=34, spaceAfter=18)
     h1 = ParagraphStyle("H1", parent=body, fontSize=16, leading=24, spaceBefore=17, spaceAfter=11, keepWithNext=True)
     h2 = ParagraphStyle("H2", parent=body, fontSize=12, leading=19, spaceBefore=10, spaceAfter=8, keepWithNext=True)
-    caption = ParagraphStyle("Caption", parent=body, fontSize=9, leading=14, textColor=colors.HexColor("#536055"), alignment=TA_CENTER)
+    caption = ParagraphStyle("Caption", parent=body, fontSize=9, leading=14, textColor=colors.HexColor("#536055"), alignment=TA_CENTER, keepWithNext=True)
     cell = ParagraphStyle("Cell", parent=body, fontSize=9, leading=14, spaceAfter=0)
     header = ParagraphStyle("Header", parent=cell, textColor=colors.white)
     story, md = [], []
@@ -147,6 +147,12 @@ def main():
 
     def heading(text, level=1):
         story.append(Paragraph(escape(text), h1 if level == 1 else h2)); md.extend([("## " if level == 1 else "### ") + text, ""])
+
+    def code(text):
+        style = ParagraphStyle("Code", fontName="Courier", fontSize=8, leading=13, spaceAfter=12,
+                               backColor=colors.HexColor("#f2f5f0"), borderPadding=8)
+        story.extend([Preformatted(text,style),Spacer(1,8)])
+        md.extend(["```bash",text,"```",""])
 
     def table(headers, rows, widths=None, label=None):
         if label:
@@ -170,9 +176,9 @@ def main():
     md.extend(["# 班级云留言板：云计算实验 4", ""])
     p("学号：________________    姓名：________________")
     p("实验平台：Windows 11 / Docker Desktop / WSL2 Ubuntu 24.04")
-    p("交付版本：v1.0.0；代码及配置基线：" + revision[:12] + "。最终源码与报告以 Git 仓库的发布版本及压缩包 SUBMISSION.txt 为准。")
+    p("交付版本：v1.0.0；业务部署基线：" + revision[:12] + "。最终源码与报告以 Git 仓库的发布版本及压缩包 SUBMISSION.txt 为准。")
     p("仓库：https://github.com/luoyi01/Cloud_lab4")
-    p("本报告依据实际运行数据编写。A 为 Docker Compose，B 为三节点 Kind；完整虚拟机仅列为可选方案，没有把本机未安装的 VMware 写成已实施环境。")
+    p("本报告依据实际运行数据编写。A 为 Docker Compose，B 为三节点 Kind；完整虚拟机属于尚未实施的可选扩展。")
     image("docs/figures/architecture.png", "图 1  两条部署路径、共享存储与故障边界", max_height=285)
     story.append(PageBreak())
 
@@ -196,14 +202,19 @@ def main():
 
     heading("四、部署过程记录")
     heading("4.1 Compose 容器化", 2)
+    code('bash scripts/lab.sh bootstrap\nexport PATH="$PWD/.local/bin:$PATH"\nbash scripts/lab.sh build\nbash scripts/lab.sh test\nbash scripts/lab.sh compose-up\npython3 scripts/check.py --url http://127.0.0.1:8090')
     p("API 与 Web 分别有 Dockerfile。Python 运行依赖连同传递依赖精确固定；Python、Nginx、Redis 基镜像固定摘要。API 使用非 root 用户及只读根文件系统。Compose 创建内部网络，以 redis/API 服务名发现组件，只将 Web 的 80 端口映射到 127.0.0.1:8090；API 与 Redis 没有宿主机端口。Redis 用随机密码、命名卷和 AOF everysec。")
     p("执行 bootstrap、build、test、compose-up 后，真实入口验证脚本连续采样身份，确认三个实例均可读到同一条新留言；再验证访问计数递增。restart: unless-stopped 可以作用于容器进程退出，但不会把已删除容器重新创建。该差异在第五节的删除对照中实际验证。")
     heading("4.2 Kind 编排与配置", 2)
+    code('bash scripts/lab.sh k8s-up\nbash scripts/lab.sh metrics\nkubectl --kubeconfig .local/kubeconfig -n cloudlab get pods -o wide')
     p("Kind 配置一控制节点与两个 worker。控制节点 30180 的 NodePort 映射到宿主机 127.0.0.1:8080，提供稳定外部入口。API Deployment 默认三个副本，Service 维持固定名字和地址；ConfigMap 配置标题、版本、Redis 主机与数据前缀；Secret 通过本地 env-file 生成密码。Pod 名及 Node 名由 Downward API 注入。")
     p("API 使用 startup、readiness、liveness 探针；readiness 依赖 Redis，liveness 只判断进程。终止前延迟五秒并预留 30 秒宽限，让 EndpointSlice 移除和服务端终止有缓冲。副本用拓扑分散约束部署到两个 worker，ScheduleAnyway 允许单 worker 故障后继续调度。未用 port-forward 做可用性证明，因为它绑定具体 Pod，会受 Pod 删除影响。")
     p("Redis 使用 StatefulSet，固定 redis-0 身份，headless Service 加客户端 Service，以及 1Gi PVC。Web 与 Redis 放在 stable worker，另一个 worker 只承载本轮故障测试的 API。local-path PV 与该 worker 关联，所以该设计只能观察 API 节点故障，不能证明 Redis 自动故障转移。")
     image("screenshots/02-k8s/message-board.png", "图 3  Kind 固定入口发布留言后的实际页面", max_height=330)
-    heading("4.3 加分项完成状态", 2)
+    heading("4.3 弹性伸缩与自愈操作", 2)
+    code('python3 scripts/experiments.py self-heal\npython3 scripts/experiments.py scale\npython3 scripts/summary.py')
+    p(f"API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后采样。每一步的 Pod 指标、实例列表和五次资源观测保存在 results/scale/。自愈操作在持续业务请求期间删除一个 Pod，以新 UID 确认重建；本轮替代 Pod {heal['replacement_ready_s']} 秒就绪，{heal['traffic']['requests']} 次请求中 {heal['traffic']['errors']} 次错误。具体数据与解释见第五节。")
+    heading("4.4 加分项完成状态", 2)
     table(["文档加分项","本次状态与边界"], [["StatefulSet / PDB / Ingress 等","已做 StatefulSet/PVC 和 PDB eviction；未做 Ingress"],["多节点节点级高可用验证",f"已停止一个 API worker，记录重新调度与 {node_errors} 次失败；单主机、单控制面不保证平台 HA"],["可复现 Git / README","仓库固定版本、自动生成配置、独立 clone 部署验证、打包脚本"],["架构图与深入问题分析","图 1 及第六、七节，结合失败日志和实测数据"],["Redis Sentinel / MySQL 故障转移","未实现；单实例持久化不等于该项"],["完整 CI/CD 自动部署","未实现；没有用单独测试脚本冒充完整流水线"]], [190,293], "表 4  加分项映射（累计最多 10 分，未自拟单项分值）")
 
     heading("五、消融对比实验")
@@ -212,22 +223,29 @@ def main():
     p("在 20、30、40、50、60 秒采集五次用量，汇总中位数。Docker 用 docker stats，K8s 用 metrics.k8s.io/v1beta1；CPU 换算为 m，内存换算为 MiB。统计 API 合计与 API/Web/Redis 应用合计，不含平台及其他数据存储的开销。不同指标系统的 CPU 时间窗口和内存缓存口径并非完全相同，数值用于近似描述，不能严格证明某平台更省资源。五次采样是同一轮中的观测，不是五轮独立重复。")
     heading("5.2 五次热启动", 2)
     p("保留 Redis、镜像和平台，只重新启动三个 API 与一个 Web。计时从启动命令开始到全部期望服务就绪及公开业务端点返回 200。排除下载、构建、Docker Desktop/WSL2 启动及 Kind 建群；每条路径独立重复五次。这是在既定健康检查配置下的热启动对照。")
-    table(["路径","次数","均值 / s","标准差 / s","最小 / s","最大 / s"], [[r["scheme"],r["runs"],r["mean_s"],r["stdev_s"],r["min_s"],r["max_s"] for r in summary["warm_start"]], [75,42,90,96,90,90], "表 5  无状态服务热启动")
+    table(["路径","次数","均值 / s","标准差 / s","最小 / s","最大 / s"], [[r["scheme"],r["runs"],r["mean_s"],r["stdev_s"],r["min_s"],r["max_s"]] for r in summary["warm_start"]], [75,42,90,96,90,90], "表 5  无状态服务热启动")
     p(f"本轮热启动均值为 Compose {starts['compose']} 秒、Kind {starts['k8s']} 秒。差异可能受 readiness 的两秒周期、Compose 五秒健康检查及现有调度状态影响。该结果不能推导为普遍的启动性能排序，也不能当成完整虚拟机与 WSL2 启动成本的测量。")
     heading("5.3 1→3→5→3 扩缩容及资源", 2)
-    table(["路径 / 步骤","副本","Ready / s","API CPU / m","API 内存 / MiB","P95 / ms"], [[f"{r['scheme']} / {r['step']}",r["replicas"],r["ready_s"],r["api_cpu_m"],r["api_memory_mib"],r["p95_ms"] for r in summary["scale"]], [100,40,74,92,100,77], "表 6  伸缩就绪时间与 API 用量（资源为五次观测中位数）")
+    table(["路径 / 步骤","副本","Ready / s","API CPU / m","API 内存 / MiB","P95 / ms"], [[f"{r['scheme']} / {r['step']}",r["replicas"],r["ready_s"],r["api_cpu_m"],r["api_memory_mib"],r["p95_ms"]] for r in summary["scale"]], [100,40,74,92,100,77], "表 6  伸缩就绪时间与 API 用量（资源为五次观测中位数）")
     table(["路径 / 步骤","全应用 CPU / m","全应用内存 / MiB","请求数","错误数"], [[f"{r['scheme']} / {r['step']}",r["app_cpu_m"],r["app_memory_mib"],r["requests"],r["errors"]] for r in summary["scale"]], [105,115,130,68,65], "表 7  全应用资源与固定负载请求结果")
     image("docs/figures/api-memory.png", "图 4  固定负载下，API 副本数量与合计内存的关系", max_height=250)
     p("副本增加会重复 Python 进程和连接池的基础内存；在固定总请求量下，增加副本不会使总业务量同步增加。因此低负载时副本主要提高容错余量，不必然降低延迟或 CPU 合计。本实验没有施加饱和压力，也没有测吞吐上限，不能据此声称五副本带来线性性能提升。")
     heading("5.4 自愈、容器删除和持久化", 2)
     p(f"三副本中默认优雅删除一个 API Pod，旧 UID {heal['old_uid']}，替代 UID {heal['new_uid']}。新 Pod 在 {heal['replacement_ready_s']} 秒后 Ready。45 秒内共 {heal['traffic']['requests']} 次连续业务请求，错误 {heal['traffic']['errors']} 次；这只能证明本次采样窗口内成功，并不是所有故障情形下零中断的保证。")
     p("Compose 删除一个 API 容器后，15 秒后仍有两副本。Compose 没有常驻期望状态控制器，需要再次执行 compose up 才补回。Docker restart policy 与 Kubernetes Deployment 的重建职责不同：前者针对现存容器，后者不断维持期望的 Pod 副本数。")
+    image("screenshots/03-self-heal/evidence.png", "图 5  真实自愈记录核对视图：旧新 UID、Ready 耗时与连续请求", max_height=290)
     p("两条路径分别写入持久化标记，等待 AOF everysec，优雅重启 Redis / 重建 redis-0 后读取结果完全一致。StatefulSet 维持身份和 PVC 绑定，数据卷提供存储。这个测试不包含断电、PV 节点故障或 Redis 主从故障转移。")
     heading("5.5 PDB 与 API worker 故障", 2)
     p("API 降为两副本，PDB minAvailable=2 的 disruptionsAllowed 变为零。Eviction API 返回 TooManyRequests/429，原 Pod UID 与 Ready 状态保持不变，随后恢复三副本。这验证自愿驱逐预算；直接 delete pod、Deployment 缩容、节点突然失联并不由 PDB 阻止。")
     p(f"停止 cloudlab-worker2 前有 {len(node['affected_api_pods'])} 个 API 位于该节点，Web 与 Redis 在存活 stable worker。{node['node_not_ready_s']} 秒检测到 Node 非 Ready，{node['all_api_ready_on_survivor_s']} 秒后全部 API 在存活 worker 就绪。150 秒采样共 {node['traffic']['requests']} 请求、{node['traffic']['errors']} 错误，成功率 {node['traffic']['success_percent']}%。故障节点在 finally 中恢复，所有节点重新 Ready。")
     p("失败出现在失联检测、EndpointSlice 更新及重新调度窗口。Nginx 对符合条件的请求最多尝试三次上游，但在死节点后端仍存在时仍可能失败。API 的 20 秒 toleration 只缩短失联确认后的驱逐等待，不消除节点检测延迟。结果展示了恢复能力，也展示了本地 HA 的局限。")
+    image("screenshots/07-bonus/node-failure.png", "图 6  API worker 故障原始记录核对视图：恢复及失败同时保留", max_height=290)
     table(["比较维度","Compose","Kind / Kubernetes"], [["副本管理","up --scale，一次性执行","Deployment 持续维持期望副本"],["删除后恢复","被删除容器不会自动创建","新 UID Pod 自动调度与 Ready"],["配置","环境变量、挂载文件","ConfigMap/Secret，变更后 rollout"],["服务发现","Docker DNS + Nginx 动态 resolve","Service/EndpointSlice，固定入口"],["持久化","Redis 命名卷","StatefulSet + PVC，仍为 local-path"],["复杂度与隔离","配置较少，便于本地多单元启动","控制面、调度、探针、拓扑、预算；同主机节点仍共享物理故障域"]], [90,190,203], "表 8  同应用的编排机制对比")
+
+    heading("5.6 内核与命名空间隔离观察", 2)
+    isolation = read("comparison/isolation.json")
+    table(["观察项","WSL Ubuntu","Compose API","Kind API"], [[name,*[isolation[s]["namespaces"][name] for s in ("host","compose","k8s")]] for name in ("pid","mnt","net")], [55,143,143,142], "表 9  实际命名空间标识（python3 scripts/isolation.py）")
+    p(f"三处观测到相同内核 {isolation['host']['kernel']}，而 PID、mount、network namespace 标识不同。Ubuntu 读取当前进程 /proc/self/ns，容器读取 /proc/1/ns；容器内 PID 1 的 comm 为 {isolation['compose']['pid1']}，根目录包含镜像中的 app 文件夹，网络接口为各自的 lo/eth0。原始目录及接口列表在 results/comparison/isolation.json。两种路径在共享内核上提供容器视图；增加 Kind 引入了编排和节点容器，没有创建独立 guest 内核。该观察不代表安全攻防测试。完整虚拟机的独立内核、冷启动与资源开销仍需另行实测。")
 
     heading("六、问题与分析")
     heading("6.1 多架构镜像导入缺层", 2)
@@ -246,6 +264,7 @@ def main():
     p(f"节点故障时的 {node_errors} 次失败让我意识到，恢复耗时和用户可用性要分别衡量。保留失败数据比只展示恢复后的 Ready 更有价值。资源测量同样需要谨慎：固定总负载下，更多副本会增加基础内存，却不能凭低负载延迟推断性能上限；Docker 和 K8s 的指标窗口也有差异。之后我希望在跨物理主机环境中加入冗余入口和 Redis Sentinel，再用明确的业务成功判据测量不同故障的恢复时间。")
     p("最后，可复现性本身是实验的一部分。依赖固定、镜像摘要、独立 kubeconfig、随机凭证生成、原始 CSV 和全新 clone 验证，可以让其他人核对过程。仓库应只包含源代码与必要证据，把密码、缓存和本地工作记录排除，避免材料杂乱或暴露不应提交的信息。")
 
+    story.append(PageBreak())
     heading("八、参考文献与资料")
     references = [("课程文档","作业4（改）.docx：技术要求、六提交要求、七评分标准及加分项"),
                   ("Docker WSL 2 backend","https://docs.docker.com/desktop/features/wsl/"),

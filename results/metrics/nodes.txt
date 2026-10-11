@@ -1,4 +1,4 @@
-NAME                     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)   
-cloudlab-control-plane   177m         1%       713Mi           5%          
-cloudlab-worker          97m          0%       412Mi           2%          
-cloudlab-worker2         34m          0%       198Mi           1%          
+NAME                     CPU(cores)   CPU(%)   MEMORY(bytes)   MEMORY(%)
+cloudlab-control-plane   177m         1%       713Mi           5%
+cloudlab-worker          97m          0%       412Mi           2%
+cloudlab-worker2         34m          0%       198Mi           1%

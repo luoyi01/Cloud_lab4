@@ -1,0 +1,18 @@
+{
+  "application_baseline": "5cd20a7aed74395667bb97e525caeb75a62979b4",
+  "regression_tests": 20,
+  "fresh_clone_deployment": "passed",
+  "pdf_pages": 14,
+  "pdf_chinese_text_and_eight_sections": "passed",
+  "pdf_author": "",
+  "identity": "left blank as requested",
+  "rendered_visual_review": "all pages inspected",
+  "valid_png_count": 14,
+  "scale_groups": 8,
+  "scale_business_requests": 10400,
+  "scale_business_errors": 0,
+  "self_heal_requests": 225,
+  "self_heal_errors": 0,
+  "node_failure_errors": 44,
+  "report_sha256": "7a621c480c07a13168b6f6dc25f8f1acfca2232ec778bbdb3ac65c60e4e94aa0"
+}

@@ -143,8 +143,8 @@ client = <starlette.testclient.TestClient object at 0x75910365c9e0>
         with ThreadPoolExecutor(max_workers=10) as pool:
 >           ids = list(pool.map(write, range(40)))
 
-tests/test_api.py:78: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_api.py:78:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 /usr/local/lib/python3.12/concurrent/futures/_base.py:619: in result_iterator
     yield _result_or_cancel(fs.pop())
 /usr/local/lib/python3.12/concurrent/futures/_base.py:317: in _result_or_cancel
@@ -155,7 +155,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     raise self._exception
 /usr/local/lib/python3.12/concurrent/futures/thread.py:59: in run
     result = self.fn(*self.args, **self.kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 i = 0
 
@@ -174,8 +174,8 @@ client = <starlette.testclient.TestClient object at 0x759102c77e00>
         with ThreadPoolExecutor(max_workers=10) as pool:
 >           counts = list(pool.map(lambda _: client.post("/api/visits").json()["count"], range(40)))
 
-tests/test_api.py:86: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_api.py:86:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 /usr/local/lib/python3.12/concurrent/futures/_base.py:619: in result_iterator
     yield _result_or_cancel(fs.pop())
 /usr/local/lib/python3.12/concurrent/futures/_base.py:317: in _result_or_cancel
@@ -186,7 +186,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     raise self._exception
 /usr/local/lib/python3.12/concurrent/futures/thread.py:59: in run
     result = self.fn(*self.args, **self.kwargs)
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
 
 _ = 0
 

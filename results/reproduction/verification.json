@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-11T16:39:00.740564+00:00",
+  "source_commit": "5cd20a7aed74395667bb97e525caeb75a62979b4",
+  "clone": "local git clone --no-hardlinks of committed baseline",
+  "fresh_local_config": true,
+  "independent_credentials": true,
+  "isolated_compose_project": "cloudlab-repro",
+  "isolated_kind_cluster": "cloudlab-repro",
+  "ports": [
+    8091,
+    8081
+  ],
+  "application_deployment": "passed",
+  "tests": "20 passed",
+  "first_install_local_kubectl": "passed",
+  "scope": "Same host, warm Docker image/build cache; no hidden .env, kubeconfig, tool binaries or local data copied. Metrics/fault experiments are verified on the primary cluster, not rerun here."
+}
