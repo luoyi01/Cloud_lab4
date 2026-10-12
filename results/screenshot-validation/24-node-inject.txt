@@ -1,0 +1,18 @@
+UTC 2026-10-12T15:25:10.208777+00:00
+B02 API worker 故障 节点停止与 NotReady
+$ docker stop cloudlab-worker2
+cloudlab-worker2
+$ wait until cloudlab-worker2 becomes NotReady (poll kubectl get node)
+$ kubectl get nodes
+NAME                     STATUS     ROLES           AGE   VERSION
+cloudlab-control-plane   Ready      control-plane   24h   v1.36.4
+cloudlab-worker          Ready      <none>          24h   v1.36.4
+cloudlab-worker2         NotReady   <none>          24h   v1.36.4
+$ kubectl -n cloudlab get pods -l app=api -o wide
+NAME                   READY   STATUS    RESTARTS   AGE     IP            NODE               NOMINATED NODE   READINESS GATES
+api-596f494cd9-2fvrp   1/1     Running   0          3m25s   10.244.2.10   cloudlab-worker    <none>           <none>
+api-596f494cd9-2pk2l   1/1     Running   0          62s     10.244.2.13   cloudlab-worker    <none>           <none>
+api-596f494cd9-ffms4   1/1     Running   0          5m51s   10.244.1.5    cloudlab-worker2   <none>           <none>
+Worker container is stopped; this is an API worker fault, not host or Redis failover.
+
+执行完成；输出来自本轮真实命令。

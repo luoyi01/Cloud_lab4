@@ -1,0 +1,18 @@
+UTC 2026-10-12T15:46:32.145654+00:00
+V03 Compose 端口 环境变量 卷与内部 DNS
+$ docker inspect cloudlab-api-5 --format 'image={{.Config.Image}} cpu={{.HostConfig.NanoCpus}} memory={{.HostConfig.Memory}} readonly={{.HostConfig.ReadonlyRootfs}}'
+image=cloudlab-api:1.0 cpu=500000000 memory=268435456 readonly=true
+$ docker exec cloudlab-api-5 sh -c 'printenv APP_TITLE APP_VERSION REDIS_HOST'
+班级云留言板
+1.0.0
+redis
+$ docker port cloudlab-web-1
+80/tcp -> 127.0.0.1:8090
+$ docker inspect cloudlab-redis-1 --format '{{range .Mounts}}{{.Type}} {{.Name}} -> {{.Destination}}{{end}}'
+volume cloudlab_redis-data -> /data
+$ docker exec cloudlab-api-5 python -c 'import socket; print('"'"'redis DNS='"'"',socket.gethostbyname('"'"'redis'"'"'))'
+redis DNS= 172.20.0.5
+$ curl --fail -sS 'http://127.0.0.1:8090/api/messages?limit=1'
+{"items":[{"id":10,"author":"实验验证","content":"复现检查-b545acb3","created_at":"2026-10-12T15:33:29.439343+00:00"}],"total":10,"next_cursor":10,"instance":"bcc739dfad8f","node":"docker-host","version":"1.0.0"}
+
+执行完成；输出来自本轮真实命令。

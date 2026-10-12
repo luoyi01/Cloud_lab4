@@ -1,0 +1,8 @@
+{
+  "stage": "22-comparison",
+  "title": "V09 B02 原始热启动与节点故障数据复核",
+  "output": "Original measurement review, not new startup timing.\n$ python3 -c 'import json; d=json.load(open('\"'\"'results/comparison/warm-start.json'\"'\"')); print('\"'\"'scheme run ready_s original_UTC'\"'\"'); [print(r['\"'\"'scheme'\"'\"'],r['\"'\"'run'\"'\"'],r['\"'\"'ready_s'\"'\"'],r['\"'\"'utc'\"'\"']) for r in d]'\nscheme run ready_s original_UTC\ncompose 1 12.674 2026-10-11T15:04:44.080417+00:00\ncompose 2 12.553 2026-10-11T15:04:57.997844+00:00\ncompose 3 12.594 2026-10-11T15:05:11.606609+00:00\ncompose 4 12.534 2026-10-11T15:05:23.596416+00:00\ncompose 5 12.492 2026-10-11T15:05:37.382673+00:00\nk8s 1 3.276 2026-10-11T15:05:48.144185+00:00\nk8s 2 3.535 2026-10-11T15:05:58.825384+00:00\nk8s 3 3.531 2026-10-11T15:06:10.825454+00:00\nk8s 4 3.522 2026-10-11T15:06:22.852010+00:00\nk8s 5 3.446 2026-10-11T15:06:31.627740+00:00\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:32:57.528450+00:00"
+}

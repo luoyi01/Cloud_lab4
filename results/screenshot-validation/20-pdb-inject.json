@@ -1,0 +1,8 @@
+{
+  "stage": "20-pdb-inject",
+  "title": "B01 PDB 2 副本时拒绝自愿驱逐",
+  "output": "$ kubectl -n cloudlab scale deployment/api --replicas=2\ndeployment.apps/api scaled\n$ python3 scripts/wait_api.py --replicas 2\nAPI stable: 2 ready Pods, matching Service endpoints.\n$ kubectl -n cloudlab get pdb\nNAME   MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE\napi    2               N/A               0                     24h\n$ kubectl -n cloudlab create --raw /api/v1/namespaces/cloudlab/pods/api-596f494cd9-5jj8d/eviction -f results/screenshot-validation/eviction.json\nError from server (TooManyRequests): Cannot evict pod as it would violate the pod's disruption budget.\n$ kubectl -n cloudlab get pods -l app=api\nNAME                   READY   STATUS    RESTARTS   AGE\napi-596f494cd9-5jj8d   1/1     Running   0          2m22s\napi-596f494cd9-c9tbw   1/1     Running   0          3m46s\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:32:38.518257+00:00"
+}

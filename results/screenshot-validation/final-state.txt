@@ -1,0 +1,41 @@
+$ set -e; cd "/mnt/d/XMU/大四/云计算/Cloud_lab4"; export PATH="$PWD/.local/bin:$PATH"; python3 scripts/check.py --url http://127.0.0.1:8090 --replicas 3; python3 scripts/check.py --url http://127.0.0.1:8080 --replicas 3; kubectl --kubeconfig .local/kubeconfig get nodes; kubectl --kubeconfig .local/kubeconfig -n cloudlab get deploy,statefulset,pvc,pdb
+{
+  "url": "http://127.0.0.1:8090",
+  "instances": [
+    "cdc645871832",
+    "cf9c619b1d34",
+    "e22a7a7adcc5"
+  ],
+  "replicas": 3,
+  "shared_message_id": 13,
+  "marker": "复现检查-dccd3a9d",
+  "checks": "passed"
+}
+{
+  "url": "http://127.0.0.1:8080",
+  "instances": [
+    "api-596f494cd9-52dwm",
+    "api-596f494cd9-6jgww",
+    "api-596f494cd9-c9tbw"
+  ],
+  "replicas": 3,
+  "shared_message_id": 10,
+  "marker": "复现检查-e6f591b0",
+  "checks": "passed"
+}
+NAME                     STATUS   ROLES           AGE   VERSION
+cloudlab-control-plane   Ready    control-plane   25h   v1.36.4
+cloudlab-worker          Ready    <none>          25h   v1.36.4
+cloudlab-worker2         Ready    <none>          25h   v1.36.4
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/api   3/3     3            3           25h
+deployment.apps/web   1/1     1            1           25h
+
+NAME                     READY   AGE
+statefulset.apps/redis   1/1     25h
+
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/data-redis-0   Bound    pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d   1Gi        RWO            standard       <unset>                 25h
+
+NAME                             MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/api   2               N/A               1                     25h

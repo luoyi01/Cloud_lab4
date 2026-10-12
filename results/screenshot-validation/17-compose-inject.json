@@ -1,0 +1,8 @@
+{
+  "stage": "17-compose-inject",
+  "title": "V09 Compose 删除容器 15 秒后仍为 2 副本",
+  "output": "$ docker rm -f 0fdd3fde4a95a97df51534d39049e847dc0481e2286d39aaefdc60a574438698\n0fdd3fde4a95a97df51534d39049e847dc0481e2286d39aaefdc60a574438698\nWait 15 s to observe whether a deleted container is recreated.\n$ docker ps --filter label=com.docker.compose.project=cloudlab --filter label=com.docker.compose.service=api --format 'table {{.Names}}\t{{.Status}}'\nNAMES            STATUS\ncloudlab-api-6   Up About a minute (healthy)\ncloudlab-api-5   Up 3 minutes (healthy)\n$ curl --fail -sS http://127.0.0.1:8090/api/whoami\n{\"instance\":\"fde6170270c1\",\"node\":\"docker-host\",\"version\":\"1.0.0\",\"title\":\"班级云留言板\",\"time\":\"2026-10-12T15:33:46.044162+00:00\"}\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:33:30.547801+00:00"
+}

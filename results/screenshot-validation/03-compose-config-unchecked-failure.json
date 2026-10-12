@@ -1,0 +1,8 @@
+{
+  "stage": "03-compose-config",
+  "title": "V03 Compose 端口 环境变量 卷与内部 DNS",
+  "output": "$ docker inspect cloudlab-api-2 --format 'image={{.Config.Image}} cpu={{.HostConfig.NanoCpus}} memory={{.HostConfig.Memory}} readonly={{.HostConfig.ReadonlyRootfs}}'; docker exec cloudlab-api-2 sh -c 'printenv APP_TITLE APP_VERSION REDIS_HOST'; docker port cloudlab-web-1; docker inspect cloudlab-redis-1 --format '{{range .Mounts}}{{.Type}} {{.Name}} -> {{.Destination}}{{end}}'; docker exec cloudlab-api-2 python -c \"import socket;print('redis DNS=', socket.gethostbyname('redis'))\"; curl --fail -sS http://127.0.0.1:8090/api/messages?limit=1\n\n80/tcp -> 127.0.0.1:8090\nvolume cloudlab_redis-data -> /data\n{\"items\":[{\"id\":7,\"author\":\"截图验证\",\"content\":\"持久化补拍 2026-10-12T15:24:06.838433+00:00\",\"created_at\":\"2026-10-12T15:24:06.841103+00:00\"}],\"total\":7,\"next_cursor\":7,\"instance\":\"5168f3ca9b7d\",\"node\":\"docker-host\",\"version\":\"1.0.0\"}error: no such object: cloudlab-api-2\nError response from daemon: No such container: cloudlab-api-2\nError response from daemon: No such container: cloudlab-api-2\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:28:56.870507+00:00"
+}

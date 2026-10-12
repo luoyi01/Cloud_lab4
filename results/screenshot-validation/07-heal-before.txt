@@ -1,0 +1,14 @@
+UTC 2026-10-12T15:29:00.713884+00:00
+V07 Pod 自愈 原始部署与连续请求
+$ python3 scripts/wait_api.py --replicas 3
+API stable: 3 ready Pods, matching Service endpoints.
+$ kubectl -n cloudlab get pods -l app=api
+NAME                   READY   STATUS    RESTARTS   AGE
+api-596f494cd9-2fvrp   1/1     Running   0          6m24s
+api-596f494cd9-2pk2l   1/1     Running   0          4m1s
+api-596f494cd9-8np75   1/1     Running   0          2m39s
+$ curl --fail -sS http://127.0.0.1:8080/api/whoami
+{"instance":"api-596f494cd9-2pk2l","node":"cloudlab-worker","version":"1.0.0","title":"班级云留言板","time":"2026-10-12T15:29:01.554790+00:00"}
+Continuous business GET: 45 s, interval 0.2 s, retries 0; results/screenshot-validation/self-heal/requests.csv
+
+执行完成；输出来自本轮真实命令。

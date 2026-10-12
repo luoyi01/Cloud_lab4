@@ -1,0 +1,28 @@
+UTC 2026-10-12T15:28:59.020634+00:00
+V05 Kind 集群及 Deployment Service PVC
+$ kubectl get nodes
+NAME                     STATUS   ROLES           AGE   VERSION
+cloudlab-control-plane   Ready    control-plane   24h   v1.36.4
+cloudlab-worker          Ready    <none>          24h   v1.36.4
+cloudlab-worker2         Ready    <none>          24h   v1.36.4
+$ kubectl -n cloudlab get deploy,sts,svc,pvc,pdb
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/api   3/3     3            3           24h
+deployment.apps/web   1/1     1            1           24h
+
+NAME                     READY   AGE
+statefulset.apps/redis   1/1     24h
+
+NAME                     TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+service/api              ClusterIP   10.96.83.5     <none>        8000/TCP       24h
+service/redis            ClusterIP   10.96.222.83   <none>        6379/TCP       24h
+service/redis-headless   ClusterIP   None           <none>        6379/TCP       24h
+service/web              NodePort    10.96.245.66   <none>        80:30180/TCP   24h
+
+NAME                                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+persistentvolumeclaim/data-redis-0   Bound    pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d   1Gi        RWO            standard       <unset>                 24h
+
+NAME                             MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+poddisruptionbudget.policy/api   2               N/A               1                     24h
+
+执行完成；输出来自本轮真实命令。

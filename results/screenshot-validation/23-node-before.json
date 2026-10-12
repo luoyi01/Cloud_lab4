@@ -1,0 +1,8 @@
+{
+  "stage": "23-node-before",
+  "title": "B02 API worker 故障 原始节点与 Pod 分布",
+  "output": "$ kubectl get nodes\nNAME                     STATUS   ROLES           AGE   VERSION\ncloudlab-control-plane   Ready    control-plane   24h   v1.36.4\ncloudlab-worker          Ready    <none>          24h   v1.36.4\ncloudlab-worker2         Ready    <none>          24h   v1.36.4\n$ kubectl -n cloudlab get pods -l app=api -o wide\nNAME                   READY   STATUS    RESTARTS   AGE     IP            NODE               NOMINATED NODE   READINESS GATES\napi-596f494cd9-2fvrp   1/1     Running   0          2m32s   10.244.2.10   cloudlab-worker    <none>           <none>\napi-596f494cd9-2pk2l   1/1     Running   0          9s      10.244.2.13   cloudlab-worker    <none>           <none>\napi-596f494cd9-ffms4   1/1     Running   0          4m58s   10.244.1.5    cloudlab-worker2   <none>           <none>\nAffected Pod UIDs: 6d98ed14-82d0-40d0-b419-0cf2cee710f7\nContinuous business GET: 140 s, interval 0.2 s, retries 0.\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:25:09.124914+00:00"
+}

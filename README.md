@@ -2,7 +2,7 @@
 
 同一套 **Nginx + FastAPI + Redis** 应用，在现有 Windows / Docker Desktop / WSL2 Ubuntu 24.04 上分别运行 Docker Compose 与三节点 Kind。支持发布留言、游标分页、访问计数、输入校验和实例身份展示。留言及计数由 Redis 共享，API 可以独立扩缩容。
 
-实测数据由脚本生成，见 [结果摘要](results/summary.md)、[提交与评分清单](docs/submission-checklist.md)。课程报告为根目录 [Word 版](report.docx)和 [PDF 版](report.pdf)，可编辑正文在 `docs/report.md`。Word 的可编辑文字统一宋体，表格保持可编辑；姓名、学号按要求留空。
+实测数据由脚本生成，见 [结果摘要](results/summary.md)、[提交与评分清单](docs/submission-checklist.md)。课程报告为根目录 [Word 版](report.docx)和 [PDF 版](report.pdf)，正文同步在 `docs/report.md`。最终 Word/PDF 共 41 页、31 幅图和 10 张可编辑表格，Word 的可编辑文字统一宋体。第 4.5 节逐项呈现操作截图和前、中、后组图，见 [截图索引](screenshots/README.md)。公开仓库报告保留姓名、学号占位；本地填写的身份和手动修改保留在本地报告中。
 
 ## 环境与实验范围
 
@@ -162,20 +162,35 @@ kubectl --kubeconfig .local/kubeconfig -n cloudlab scale deployment/api deployme
 
 已选择可复现 Git/README、Redis StatefulSet/PVC、PDB eviction、三节点中的 API worker 故障验证，以及架构图与真实问题分析。未实现 Redis Sentinel/MySQL 自动故障转移、Ingress 或完整 CI/CD，不将其作为成果。
 
-学号、姓名留空。课程 ZIP 使用 `学号_姓名_云原生实验.zip` 命名，填写身份信息后可执行 `python3 scripts/package.py --student-id 学号 --name 姓名`。打包按 Git 跟踪文件白名单，排除 `.git`、`.env`、kubeconfig、缓存、镜像归档、本地工作记录等。不要直接压缩整个工作目录。截止时间以课程群通知为准。
+课程 ZIP 使用 `学号_姓名_云原生实验.zip` 命名，可执行 `python3 scripts/package.py --student-id 学号 --name 姓名`。脚本按白名单导出 **已提交 HEAD**，`SUBMISSION.txt` 记录 SHA；参数只修改文件名和提交说明，不会填写 Word。未提交的本地报告修改不会进入 ZIP。公开交付包中的报告保持身份占位；个人提交时另行放入填写后的本地报告并核对。打包排除 `.git`、`.env`、kubeconfig、缓存、镜像归档及工作记录，不直接压缩整个目录。截止时间以课程群通知为准。
 
 全新克隆的独立 Compose/Kind 复现记录在 `results/reproduction/`；使用新项目/集群与 8091/8081 端口。主线用默认 `cloudlab` 名称与 8090/8080。额外实例可设置 `LAB_PROJECT`、`LAB_CLUSTER`、`LAB_COMPOSE_PORT`、`LAB_KIND_PORT`；故障实验驱动固定针对主线，额外实例仅供部署验证。
 
-报告已经包含在提交材料中。需要根据重新测量的数据再生成时，在 Git 工作目录中使用独立 Python 环境：
+### 操作截图复现与报告维护
+
+两条默认主线部署就绪且 metrics 有数据后，在 WSL Bash 启动现场命令界面：
+
+```bash
+export PATH="$PWD/.local/bin:$PATH"
+python3 scripts/live_validation.py
+```
+
+浏览器打开 `http://127.0.0.1:8077`，按 01–25 顺序选择验证并执行，等待“执行完成”后用浏览器截取包含命令和输出的页面。不能并行运行其他实验；服务持有同一实验锁。各阶段有依赖：自愈、持久化、Compose 删除、PDB 和节点故障须按前、中、后顺序执行，节点故障前会检查 worker2 实际承载 Ready API。原统计数据由比较步骤读取，新操作记录写入 `results/screenshot-validation/`；重复日志历史保留在被忽略的 `history/`。Ctrl+C 会恢复实验节点与两条路径的三副本。
+
+最终 Word 是当前报告的编辑基准，手动修改可直接在 Word 进行，PDF 应由修改后的同一 Word 导出。`scripts/build_report.py` 和 `scripts/build_word_report.py` 是原基线生成器，会重写正文或重建图表，不能直接用于保留当前手工修改的报告。
+
+补图脚本 `scripts/supplement_report.py` 接收尚未含 4.5 节的 Word，保留原段落、表格和用户修改，插入 25 张映射截图并统一宋体；已补图的报告会拒绝再次插入。依赖为 `docs/requirements.txt`。例如以 Git 中的补图前公开基线重建：
 
 ```bash
 python3 -m venv .local/report-venv
 .local/report-venv/bin/pip install -r docs/requirements.txt
-.local/report-venv/bin/python scripts/build_report.py --font /mnt/c/Windows/Fonts/msyh.ttc
-.local/report-venv/bin/python scripts/build_word_report.py --font /mnt/c/Windows/Fonts/simsun.ttc
+git show ee9d3eb:report.docx > .local/pre-supplement.docx
+.local/report-venv/bin/python scripts/supplement_report.py \
+  --source .local/pre-supplement.docx --output .local/rebuilt-report.docx \
+  --anonymous --markdown .local/rebuilt-report.md
 ```
 
-Ubuntu 若没有 `venv` 模块，先通过系统包安装 `python3-venv`；其他 Linux 主机使用本机支持中文的 TTF/TTC 字体路径，Word 图表需提供宋体字体文件。PDF 生成器核验完整伸缩、持久化、PDB 和测试证据，从本轮 JSON 更新表格及结论。`docs/report.md` 可单独编辑，重新运行 PDF 生成器会覆盖它；Word 生成器读取该正文并生成统一宋体的 DOCX，另生成宋体架构图和资源图。提交前检查报告，提交修改后再运行打包脚本，使 ZIP 记录的提交与内容一致。Word 版已经通过本机 Word 排版和全部 15 页预览检查，记录在 `results/word-report-verification.json`。
+上述基线重建不包含后来直接在 Word 所做的个人修改；需要保留修改时，先备份自己的补图前 Word 并作为 `--source`。当前交付 Word/PDF 已完成本机 Word 更新目录、导出 PDF 和全部 41 页视觉检查，核验记录在 `results/screenshot-validation/verification.json`。原 15 页 Word 的检查记录仅代表补图前版本。
 
 ## 参考资料
 

@@ -1,0 +1,8 @@
+{
+  "stage": "07-heal-before",
+  "title": "V07 Pod 自愈 原始部署与连续请求",
+  "output": "$ python3 scripts/wait_api.py --replicas 3\nAPI stable: 3 ready Pods, matching Service endpoints.\n$ kubectl -n cloudlab get pods -l app=api\nNAME                   READY   STATUS    RESTARTS   AGE\napi-596f494cd9-2fvrp   1/1     Running   0          6m24s\napi-596f494cd9-2pk2l   1/1     Running   0          4m1s\napi-596f494cd9-8np75   1/1     Running   0          2m39s\n$ curl --fail -sS http://127.0.0.1:8080/api/whoami\n{\"instance\":\"api-596f494cd9-2pk2l\",\"node\":\"cloudlab-worker\",\"version\":\"1.0.0\",\"title\":\"班级云留言板\",\"time\":\"2026-10-12T15:29:01.554790+00:00\"}\nContinuous business GET: 45 s, interval 0.2 s, retries 0; results/screenshot-validation/self-heal/requests.csv\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:29:00.713884+00:00"
+}

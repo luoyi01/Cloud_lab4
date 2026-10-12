@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8080",
+  "duration_s": 140,
+  "workers": 1,
+  "interval_s": 0.2,
+  "requests": 549,
+  "success": 509,
+  "errors": 40,
+  "success_percent": 92.714,
+  "p50_ms": 4.316,
+  "p95_ms": 5.875,
+  "instances": [
+    "api-596f494cd9-2fvrp",
+    "api-596f494cd9-2pk2l",
+    "api-596f494cd9-8np75",
+    "api-596f494cd9-ffms4"
+  ],
+  "client_retries": 0,
+  "csv": "node-failure/requests.csv"
+}

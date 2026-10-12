@@ -1,0 +1,8 @@
+{
+  "stage": "16-persist-after",
+  "title": "V10 持久化 恢复后相同记录读回",
+  "output": "$ wait for redis-0 with a different UID, no deletionTimestamp, and Ready=True\n$ kubectl -n cloudlab wait --for=condition=Ready pod/redis-0 --timeout=120s\npod/redis-0 condition met\nOld Redis UID: 377704ad-80e2-40a8-ab15-2dd8103a96f7\nNew Redis UID: 8305e1bd-a7c5-4412-9dc0-ffcfdbdc6a27\n$ kubectl -n cloudlab get pods -l app=redis\nNAME      READY   STATUS    RESTARTS   AGE\nredis-0   1/1     Running   0          2s\n$ GET http://127.0.0.1:8090/api/messages?limit=50\ncompose identical_readback=True {\"id\": 11, \"author\": \"截图验证\", \"content\": \"持久化补拍 2026-10-12T15:53:00.646055+00:00\", \"created_at\": \"2026-10-12T15:53:00.661573+00:00\"}\n$ GET http://127.0.0.1:8080/api/messages?limit=50\nk8s identical_readback=True {\"id\": 8, \"author\": \"截图验证\", \"content\": \"持久化补拍 2026-10-12T15:53:00.664574+00:00\", \"created_at\": \"2026-10-12T15:53:00.669516+00:00\"}\n$ kubectl -n cloudlab get pvc\nNAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE\ndata-redis-0   Bound    pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d   1Gi        RWO            standard       <unset>                 24h\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:53:02.715052+00:00"
+}

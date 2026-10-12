@@ -1,0 +1,8 @@
+{
+  "stage": "09-heal-after",
+  "title": "V07 Pod 自愈 恢复与连续请求统计",
+  "output": "$ python3 scripts/wait_api.py --replicas 3\nAPI stable: 3 ready Pods, matching Service endpoints.\n$ kubectl -n cloudlab get pods -l app=api\nNAME                   READY   STATUS    RESTARTS   AGE\napi-596f494cd9-2pk2l   1/1     Running   0          4m9s\napi-596f494cd9-8np75   1/1     Running   0          2m47s\napi-596f494cd9-c9tbw   1/1     Running   0          7s\nOld UID: a1a6180f-74f1-4a73-bd33-8e7121393cb2\nNew UID: 8dfb53ea-c280-416c-8e49-8a3314f594ae\nNew Pod: api-596f494cd9-c9tbw\n{\"url\": \"http://127.0.0.1:8080\", \"duration_s\": 45, \"workers\": 1, \"interval_s\": 0.2, \"requests\": 225, \"success\": 225, \"errors\": 0, \"success_percent\": 100.0, \"p50_ms\": 4.45, \"p95_ms\": 6.176, \"instances\": [\"api-596f494cd9-2fvrp\", \"api-596f494cd9-2pk2l\", \"api-596f494cd9-8np75\", \"api-596f494cd9-c9tbw\"], \"client_retries\": 0, \"csv\": \"self-heal/requests.csv\"}\n$ curl --fail -sS http://127.0.0.1:8080/api/whoami\n{\"instance\":\"api-596f494cd9-2pk2l\",\"node\":\"cloudlab-worker\",\"version\":\"1.0.0\",\"title\":\"班级云留言板\",\"time\":\"2026-10-12T15:29:48.891319+00:00\"}\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:29:02.380618+00:00"
+}

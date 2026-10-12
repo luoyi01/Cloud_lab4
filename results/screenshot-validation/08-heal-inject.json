@@ -1,0 +1,8 @@
+{
+  "stage": "08-heal-inject",
+  "title": "V07 Pod 自愈 手动删除与重建过程",
+  "output": "Old UID: a1a6180f-74f1-4a73-bd33-8e7121393cb2\n$ kubectl -n cloudlab delete pod api-596f494cd9-2fvrp --wait=false\npod \"api-596f494cd9-2fvrp\" deleted from cloudlab namespace\n$ kubectl -n cloudlab get pods -l app=api\nNAME                   READY   STATUS              RESTARTS   AGE\napi-596f494cd9-2fvrp   1/1     Terminating         0          6m25s\napi-596f494cd9-2pk2l   1/1     Running             0          4m2s\napi-596f494cd9-8np75   1/1     Running             0          2m40s\napi-596f494cd9-c9tbw   0/1     ContainerCreating   0          0s\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:29:01.793348+00:00"
+}

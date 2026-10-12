@@ -1,0 +1,1 @@
+{"apiVersion": "policy/v1", "kind": "Eviction", "metadata": {"name": "api-596f494cd9-5jj8d", "namespace": "cloudlab"}}

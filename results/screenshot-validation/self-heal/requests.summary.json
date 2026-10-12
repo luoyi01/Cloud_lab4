@@ -1,0 +1,20 @@
+{
+  "url": "http://127.0.0.1:8080",
+  "duration_s": 45,
+  "workers": 1,
+  "interval_s": 0.2,
+  "requests": 225,
+  "success": 225,
+  "errors": 0,
+  "success_percent": 100.0,
+  "p50_ms": 4.45,
+  "p95_ms": 6.176,
+  "instances": [
+    "api-596f494cd9-2fvrp",
+    "api-596f494cd9-2pk2l",
+    "api-596f494cd9-8np75",
+    "api-596f494cd9-c9tbw"
+  ],
+  "client_retries": 0,
+  "csv": "self-heal/requests.csv"
+}

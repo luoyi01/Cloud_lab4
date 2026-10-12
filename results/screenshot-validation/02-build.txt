@@ -1,0 +1,22 @@
+UTC 2026-10-12T15:28:48.346330+00:00
+V02 Dockerfile 独立构建 API 与 Web 镜像
+$ docker build -q -f docker/api.Dockerfile -t cloudlab-api:screenshot .
+sha256:a7406405991ad58400db82ba3139350154e2bdc3785d8342e95da13c4a2f7bc1
+$ docker build -q -f docker/web.Dockerfile -t cloudlab-web:screenshot .
+sha256:fecafa46137a6af8fb84c95b5f2574dbb5bafa1dc367e022212de0f9fbc109f6
+$ docker image ls --filter reference='cloudlab-*:screenshot' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
+cloudlab-api:screenshot a7406405991a
+cloudlab-web:screenshot fecafa46137a
+$ docker run -d --name cloudlab-screenshot-api --network cloudlab_default --env-file .env -e REDIS_HOST=redis cloudlab-api:screenshot
+14376805573b6d17c61d98ade07b10bd114764749eded61039cd0bf6e0a616ea
+$ docker run -d --name cloudlab-screenshot-web --network cloudlab_default cloudlab-web:screenshot
+61a57d665978e13f7173c08d156438f526023b99ceec6fabdf9174606dd22ffd
+$ docker exec cloudlab-screenshot-api python -c 'import urllib.request; print(urllib.request.urlopen('"'"'http://127.0.0.1:8000/health/ready'"'"').read().decode())'
+{"status":"ready","instance":"14376805573b","node":"docker-host","version":"1.0.0"}
+$ docker exec cloudlab-screenshot-web wget -qO- http://127.0.0.1/api/whoami
+{"instance":"e7aa6b60cdde","node":"docker-host","version":"1.0.0","title":"班级云留言板","time":"2026-10-12T15:28:56.030258+00:00"}
+$ docker rm -f cloudlab-screenshot-api cloudlab-screenshot-web
+cloudlab-screenshot-api
+cloudlab-screenshot-web
+
+执行完成；输出来自本轮真实命令。

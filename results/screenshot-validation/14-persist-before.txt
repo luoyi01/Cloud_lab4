@@ -1,0 +1,13 @@
+UTC 2026-10-12T15:53:00.464255+00:00
+V10 持久化 重启前写入与卷
+Before Redis Pod UID: 377704ad-80e2-40a8-ab15-2dd8103a96f7
+$ POST http://127.0.0.1:8090/api/messages
+compose status=201 {"message": {"id": 11, "author": "截图验证", "content": "持久化补拍 2026-10-12T15:53:00.646055+00:00", "created_at": "2026-10-12T15:53:00.661573+00:00"}, "instance": "cdc645871832", "node": "docker-host", "version": "1.0.0"}
+$ POST http://127.0.0.1:8080/api/messages
+k8s status=201 {"message": {"id": 8, "author": "截图验证", "content": "持久化补拍 2026-10-12T15:53:00.664574+00:00", "created_at": "2026-10-12T15:53:00.669516+00:00"}, "instance": "api-596f494cd9-c9tbw", "node": "cloudlab-worker2", "version": "1.0.0"}
+$ set -e -o pipefail; docker inspect cloudlab-redis-1 --format '{{range .Mounts}}{{.Type}} {{.Name}} -> {{.Destination}}{{end}}'; kubectl -n cloudlab get pvc
+volume cloudlab_redis-data -> /data
+NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE
+data-redis-0   Bound    pvc-3cea1498-cbda-410a-866f-5ea0d2b4ff9d   1Gi        RWO            standard       <unset>                 24h
+
+执行完成；输出来自本轮真实命令。

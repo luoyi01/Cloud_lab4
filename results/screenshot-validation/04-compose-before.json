@@ -1,0 +1,8 @@
+{
+  "stage": "04-compose-before",
+  "title": "V04 V09 Compose 原始部署与业务共享",
+  "output": "$ docker ps --filter label=com.docker.compose.project=cloudlab --format 'table {{.Names}}\t{{.Status}}\t{{.Ports}}'\nNAMES              STATUS                        PORTS\ncloudlab-api-6     Up About a minute (healthy)   8000/tcp\ncloudlab-api-4     Up 3 minutes (healthy)        8000/tcp\ncloudlab-api-5     Up 3 minutes (healthy)        8000/tcp\ncloudlab-web-1     Up 17 minutes (healthy)       127.0.0.1:8090->80/tcp\ncloudlab-redis-1   Up About a minute (healthy)   6379/tcp\n$ python3 scripts/check.py --url http://127.0.0.1:8090\n{\n  \"url\": \"http://127.0.0.1:8090\",\n  \"instances\": [\n    \"0fdd3fde4a95\",\n    \"cdc645871832\",\n    \"fde6170270c1\"\n  ],\n  \"replicas\": 3,\n  \"shared_message_id\": 10,\n  \"marker\": \"复现检查-b545acb3\",\n  \"checks\": \"passed\"\n}\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:33:28.861391+00:00"
+}

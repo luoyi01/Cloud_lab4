@@ -1,16 +1,12 @@
-# 班级云留言板：云计算实验 4
+# 班级云留言板云计算实验报告
 
 学号：________________    姓名：________________
 
-实验平台：Windows 11 / Docker Desktop / WSL2 Ubuntu 24.04
-
-交付版本：v1.0.0；业务部署基线：5cd20a7aed74。最终源码与报告以 Git 仓库的发布版本及压缩包 SUBMISSION.txt 为准。
-
 仓库：https://github.com/luoyi01/Cloud_lab4
 
-本报告依据实际运行数据编写。A 为 Docker Compose，B 为三节点 Kind；完整虚拟机属于尚未实施的可选扩展。
+![操作截图或分析图](figures/word-architecture.png)
 
-![图 1  两条部署路径、共享存储与故障边界](figures/architecture.png)
+图 1  整体架构图：两条部署路径、共享存储与故障边界
 
 ## 一、实验概述
 
@@ -30,7 +26,7 @@
 | 报告结构与规范 | 10 | 八部分正文、图表、分类截图、参考资料 |
 | 心得与技能收获 | 15 | 第七节结合真实问题和边界分析 |
 
-提交包含 src/、docker/、k8s/、分类 screenshots/、本报告与 README；scripts/、tests/、results/、docs/提供复现和核验。压缩包使用学号_姓名_云原生实验.zip；本次按要求先留空身份信息，需提交时补充或重命名。截止时间以课程群通知为准。
+提交包含 src/、docker/、k8s/、分类 screenshots/、本报告与 README；scripts/、tests/、results/、docs/提供复现和核验。
 
 ## 二、环境与工具
 
@@ -68,20 +64,20 @@ API 上限固定为 500m CPU / 256Mi，Web 为 200m / 128Mi，Redis 为 500m / 5
 
 测试使用真实 Redis，而不是伪造存储：校验正常留言、错误输入、游标在插入后不重复、40 次并发创建 ID、40 次并发计数、进程重建后数据、健康探针以及存储失败时不泄漏内部信息。另以本地 HTTP 服务验证 503 逐条记入采样结果且没有隐藏重试，并测试 CPU/内存单位换算。另验证实验中断后的服务恢复。全套 20 项通过，证据见 results/tests/green.log；初始失败记录见 red.log。
 
-![图 2  Compose 实际发布留言后的页面](../screenshots/01-compose/message-board.png)
+![操作截图或分析图](../screenshots/01-compose/message-board.png)
+
+图 2  Compose 实际发布留言后的页面（V04）
 
 ## 四、部署过程记录
 
 ### 4.1 Compose 容器化
 
-```bash
 bash scripts/lab.sh bootstrap
 export PATH="$PWD/.local/bin:$PATH"
 bash scripts/lab.sh build
 bash scripts/lab.sh test
 bash scripts/lab.sh compose-up
 python3 scripts/check.py --url http://127.0.0.1:8090
-```
 
 API 与 Web 分别有 Dockerfile。Python 运行依赖连同传递依赖精确固定；Python、Nginx、Redis 基镜像固定摘要。API 使用非 root 用户及只读根文件系统。Compose 创建内部网络，以 redis/API 服务名发现组件，只将 Web 的 80 端口映射到 127.0.0.1:8090；API 与 Redis 没有宿主机端口。Redis 用随机密码、命名卷和 AOF everysec。
 
@@ -89,11 +85,9 @@ API 与 Web 分别有 Dockerfile。Python 运行依赖连同传递依赖精确�
 
 ### 4.2 Kind 编排与配置
 
-```bash
 bash scripts/lab.sh k8s-up
 bash scripts/lab.sh metrics
 kubectl --kubeconfig .local/kubeconfig -n cloudlab get pods -o wide
-```
 
 Kind 配置一控制节点与两个 worker。控制节点 30180 的 NodePort 映射到宿主机 127.0.0.1:8080，提供稳定外部入口。API Deployment 默认三个副本，Service 维持固定名字和地址；ConfigMap 配置标题、版本、Redis 主机与数据前缀；Secret 通过本地 env-file 生成密码。Pod 名及 Node 名由 Downward API 注入。
 
@@ -101,21 +95,21 @@ API 使用 startup、readiness、liveness 探针；readiness 依赖 Redis，live
 
 Redis 使用 StatefulSet，固定 redis-0 身份，headless Service 加客户端 Service，以及 1Gi PVC。Web 与 Redis 放在 stable worker，另一个 worker 只承载本轮故障测试的 API。local-path PV 与该 worker 关联，所以该设计只能观察 API 节点故障，不能证明 Redis 自动故障转移。
 
-![图 3  Kind 固定入口发布留言后的实际页面](../screenshots/02-k8s/message-board.png)
+![操作截图或分析图](../screenshots/02-k8s/message-board.png)
+
+图 3  Kind 固定入口发布留言后的实际页面（V05）
 
 ### 4.3 弹性伸缩与自愈操作
 
-```bash
 python3 scripts/experiments.py self-heal
 python3 scripts/experiments.py scale
 python3 scripts/summary.py
-```
 
 API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后采样。每一步的 Pod 指标、实例列表和五次资源观测保存在 results/scale/。自愈操作在持续业务请求期间删除一个 Pod，以新 UID 确认重建；本轮替代 Pod 3.711 秒就绪，225 次请求中 0 次错误。具体数据与解释见第五节。
 
 ### 4.4 加分项完成状态
 
-表 4  加分项映射（累计最多 10 分，未自拟单项分值）
+表 4  加分项映射
 
 | 文档加分项 | 本次状态与边界 |
 | --- | --- |
@@ -123,8 +117,199 @@ API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后
 | 多节点节点级高可用验证 | 已停止一个 API worker，记录重新调度与 44 次失败；单主机、单控制面不保证平台 HA |
 | 可复现 Git / README | 仓库固定版本、自动生成配置、独立 clone 部署验证、打包脚本 |
 | 架构图与深入问题分析 | 图 1 及第六、七节，结合失败日志和实测数据 |
-| Redis Sentinel / MySQL 故障转移 | 未实现；单实例持久化不等于该项 |
-| 完整 CI/CD 自动部署 | 未实现；没有用单独测试脚本冒充完整流水线 |
+| Redis Sentinel / MySQL 故障转移 | 暂未实现；单实例持久化不等于该项 |
+| 完整 CI/CD 自动部署 | 暂未实现；没有用单独测试脚本冒充完整流水线 |
+
+### 4.5 操作截图与验证项映射
+
+图 4–28 为补充操作截图，直接捕获本机实时命令执行界面。固定命令在 WSL2 中现场执行，页面显示命令、stdout/stderr 和 UTC 时间；界面由 scripts/live_validation.py 提供。各组按验证项组织，操作时间分别标注，不作为一次连续实验。补拍记录单独保存至 results/screenshot-validation/，原测量数据保留不变。
+
+截图按验证项编号；Pod 自愈、持久化、Compose 删除、PDB 和节点故障均给出操作前、注入过程、恢复后的对照。扩缩容按 1→3→5→3 展示。图 25 等需要读取原统计材料的步骤在图注中明确为结果复核；图 29–31 为原统计图与记录核对视图。
+
+表 5  操作截图覆盖索引
+
+| 验证项 | 文档要求与验证内容 | 报告图号 |
+| --- | --- | --- |
+| V01 | 环境和工具实际版本 | 图 4 |
+| V02 | Dockerfile 独立构建并正常运行 | 图 5 |
+| V03 | 端口 环境变量 卷与通信生效 | 图 6、17–19 |
+| V04 | Compose 多组件业务与共享数据 | 图 2、7 |
+| V05 | Kind 集群 Deployment 和 Service | 图 3、8 |
+| V06 | ConfigMap 和 Secret 配置注入 | 图 9 |
+| V07 | 手动删除 Pod 自动重建 连续请求 | 图 10–12；原结果图 30 |
+| V08 | 伸缩前后数量与 CPU 内存用量 | 图 13–16；原统计图 29 |
+| V09 | 同应用部署 副本 恢复 配置 发现 伸缩对比 | 图 6–16、20–21、25；表 9 |
+| V10 | 正常重启后数据持久化 | 图 17–19 |
+| B01 | 加分 StatefulSet PVC 和 PDB | 图 8、17–19、22–24 |
+| B02 | 加分 多节点 API worker 故障 | 图 26–28；原结果图 31 |
+
+### 4.5.1 环境与容器化
+
+![操作截图或分析图](../screenshots/08-live-validation/01-env.png)
+
+图 4  V01  环境和工具实际版本
+
+核对 Ubuntu、内核、Docker 客户端与服务端、Compose、Kind 和 kubectl 的版本。本机使用现有 WSL2 与 Docker Desktop。 操作时间：2026-10-12 23:28:47（北京时间）；命令和完整输出：results/screenshot-validation/01-env.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/02-build.png)
+
+图 5  V02  独立构建并运行 Dockerfile 镜像
+
+API 和 Web 分别由 Dockerfile 构建，输出真实镜像 ID；独立验证容器读取 Redis 并提供 HTTP 服务后清理。补拍标签 screenshot 与主部署标签 1.0 分开使用。 操作时间：2026-10-12 23:28:48（北京时间）；命令和完整输出：results/screenshot-validation/02-build.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/03-compose-config.png)
+
+图 6  V03  端口 环境变量 命名卷和内部发现
+
+8090 映射到 Web 的 80 端口；容器读到标题、版本和 Redis 主机配置。Redis 的 /data 使用命名卷，内部 DNS 能解析 redis，业务 GET 能读取共享存储。 操作时间：2026-10-12 23:46:32（北京时间）；命令和完整输出：results/screenshot-validation/03-compose-config.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/04-compose-before.png)
+
+图 7  V04 V09  Compose 原始部署与共享业务验证
+
+原始部署包含 3 个 API、Web 和 Redis。业务检查通过固定入口识别 3 个不同实例，写入标记并由各实例读回同一记录，访问计数递增。该图也是 Compose 删除对照的部署前状态。 操作时间：2026-10-12 23:33:28（北京时间）；命令和完整输出：results/screenshot-validation/04-compose-before.txt。
+
+### 4.5.2 Kubernetes 基础资源与配置
+
+![操作截图或分析图](../screenshots/08-live-validation/05-k8s-resources.png)
+
+图 8  V05  三节点集群和应用资源就绪
+
+3 个节点 Ready；API Deployment 为 3/3，Web 和 Redis 就绪。API/Web 的 Service 与 NodePort 提供服务发现和入口，Redis 的 StatefulSet 与 PVC 显示存储身份和 Bound 状态。 操作时间：2026-10-12 23:28:59（北京时间）；命令和完整输出：results/screenshot-validation/05-k8s-resources.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/06-k8s-config.png)
+
+图 9  V06  ConfigMap 和 Secret 引用及运行时注入
+
+ConfigMap 中的标题、版本和 Redis 主机与容器 printenv 一致。Deployment 引用 cloudlab-secret/REDIS_PASSWORD；Secret 仅显示字段名和字节数。业务读回成功同时验证实际 Redis 认证可用。 操作时间：2026-10-12 23:28:59（北京时间）；命令和完整输出：results/screenshot-validation/06-k8s-config.txt。
+
+### 4.5.3 Pod 自愈前中后组图
+
+![操作截图或分析图](../screenshots/08-live-validation/07-heal-before.png)
+
+图 10  V07  原始 3 副本和连续业务请求
+
+删除前确认 3 个 Ready Pod 与 Service 就绪端点一致。启动 45 秒连续业务 GET，每 0.2 秒请求一次，不做客户端重试；请求 CSV 单独保存。 操作时间：2026-10-12 23:29:00（北京时间）；命令和完整输出：results/screenshot-validation/07-heal-before.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/08-heal-inject.png)
+
+图 11  V07  手动删除和替代 Pod 创建过程
+
+命令手动删除目标 Pod。输出同时包含旧 Pod 的 Terminating 状态和新 Pod 的创建状态，说明 Deployment 根据期望副本数触发替换。旧 UID 保留用于后续对照。 操作时间：2026-10-12 23:29:01（北京时间）；命令和完整输出：results/screenshot-validation/08-heal-inject.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/09-heal-after.png)
+
+图 12  V07  恢复到 3 副本和请求连续性
+
+恢复后 3 个 Ready Pod 与 Service 端点匹配，新 UID 与被删除 UID 不同。图中请求统计覆盖部署、删除和恢复全过程；错误数按实际 CSV 计算。原实验 3.711 秒的计时结论仍依据第五节原始记录。 操作时间：2026-10-12 23:29:02（北京时间）；命令和完整输出：results/screenshot-validation/09-heal-after.txt。
+
+### 4.5.4 两条路径扩缩容与资源组图
+
+![操作截图或分析图](../screenshots/08-live-validation/10-scale-one.png)
+
+图 13  V08  伸缩起点 1 副本与资源用量
+
+Compose 与 Kubernetes 都调整到 1 个 API 副本，等待就绪后展示容器资源、Pod 数量和 Pod CPU/内存。 操作时间：2026-10-12 23:51:25（北京时间）；命令和完整输出：results/screenshot-validation/10-scale-one.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/11-scale-three.png)
+
+图 14  V08  扩容到 3 副本与资源用量
+
+同一应用在两条路径中扩到 3 个 API 副本。docker stats 与 kubectl top 对照副本数量和实际用量；limit 为容量上限，不等于实际占用。 操作时间：2026-10-12 23:51:37（北京时间）；命令和完整输出：results/screenshot-validation/11-scale-three.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/12-scale-five.png)
+
+图 15  V08  扩容到 5 副本与资源用量
+
+两条路径继续扩到 5 个 API，截图显示全部实例和指标。API 无本地业务状态，共享 Redis 保持数据一致。 操作时间：2026-10-12 23:52:15（北京时间）；命令和完整输出：results/screenshot-validation/12-scale-five.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/13-scale-back.png)
+
+图 16  V08  缩回 3 副本与资源用量
+
+通过显式伸缩命令缩回 3 个 API，确认额外实例退出。组图展示 1→3→5→3 的实际操作；这里是补拍时的瞬时指标，第五节表格仍使用原固定负载下的五次观测中位数。 操作时间：2026-10-12 23:52:48（北京时间）；命令和完整输出：results/screenshot-validation/13-scale-back.txt。
+
+### 4.5.5 数据持久化前中后组图
+
+![操作截图或分析图](../screenshots/08-live-validation/14-persist-before.png)
+
+图 17  V03 V10 B01  重启前写入标记和确认存储
+
+分别向 Compose 与 Kubernetes 写入各自的新标记，保留记录 ID、内容和创建时间。命名卷与 PVC 是本组重启后读回的存储基础。 操作时间：2026-10-12 23:53:00（北京时间）；命令和完整输出：results/screenshot-validation/14-persist-before.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/15-persist-inject.png)
+
+图 18  V10 B01  Redis 容器重启与 StatefulSet Pod 重建
+
+Compose 重启 Redis 容器，Kubernetes 删除 redis-0，输出记录删除命令和即时 Pod 状态；同名替代 Pod 就绪见恢复图。操作采用正常终止，不是突然断电测试。 操作时间：2026-10-12 23:53:01（北京时间）；命令和完整输出：results/screenshot-validation/15-persist-inject.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/16-persist-after.png)
+
+图 19  V03 V10 B01  恢复后读回原记录并确认 PVC
+
+先确认 redis-0 的 UID 已改变、新 Pod Ready 且未处于删除状态，再从两个公开业务入口读回原标记，记录完整相等，输出 identical_readback=True。PVC 保持 Bound，证明正常重启后的持久化；单实例 Redis 仍不具备主从故障转移。 操作时间：2026-10-12 23:53:02（北京时间）；命令和完整输出：results/screenshot-validation/16-persist-after.txt。
+
+### 4.5.6 Compose 删除对照与恢复
+
+![操作截图或分析图](../screenshots/08-live-validation/17-compose-inject.png)
+
+图 20  V09  删除容器后 15 秒仍为 2 副本
+
+部署前状态见 Compose 原始部署图。删除一个 API 容器，15 秒后仍只有 2 个，入口继续返回业务响应。restart 策略不会重建已删除容器，与 Pod 自愈组形成实际对照。 操作时间：2026-10-12 23:33:30（北京时间）；命令和完整输出：results/screenshot-validation/17-compose-inject.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/18-compose-after.png)
+
+图 21  V09  显式执行 Compose 恢复 3 副本
+
+执行 compose up --scale api=3 后恢复期望数量，展示最终 3 个 API 和覆盖删除、恢复阶段的连续请求统计。服务发现由 Compose 内部 DNS 和 Nginx 代理完成。 操作时间：2026-10-12 23:33:46（北京时间）；命令和完整输出：results/screenshot-validation/18-compose-after.txt。
+
+### 4.5.7 PDB 自愿驱逐前中后组图
+
+![操作截图或分析图](../screenshots/08-live-validation/19-pdb-before.png)
+
+图 22  B01  3 副本时的可驱逐预算
+
+API 3 个副本健康，PDB minAvailable=2 允许预算为 1。该约束保护自愿驱逐路径。 操作时间：2026-10-12 23:32:37（北京时间）；命令和完整输出：results/screenshot-validation/19-pdb-before.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/20-pdb-inject.png)
+
+图 23  B01  2 副本时拒绝 Eviction
+
+将副本数改为 2，预算变为 0，再通过 policy/v1 Eviction 请求驱逐。API Server 拒绝请求，已有 Pod 仍存在；直接 delete 不受 PDB 阻止。 操作时间：2026-10-12 23:32:38（北京时间）；命令和完整输出：results/screenshot-validation/20-pdb-inject.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/21-pdb-after.png)
+
+图 24  B01  恢复 3 副本和预算
+
+将副本恢复为 3，等待全部就绪，预算恢复为 1。完整组图同时体现配置、约束触发和最终恢复。 操作时间：2026-10-12 23:32:49（北京时间）；命令和完整输出：results/screenshot-validation/21-pdb-after.txt。
+
+### 4.5.8 原始对比数据复核
+
+![操作截图或分析图](../screenshots/08-live-validation/22-comparison.png)
+
+图 25  V09  两条路径各五次热启动原始记录
+
+现场执行读取原始 JSON 的命令，显示每轮路径、轮次、耗时和原始 UTC 时间。这是数据复核截图，热启动测量发生在图中标明的原始日期；不把补拍时间当作测量时间。副本、恢复、配置和发现的机制比较见表 9。 操作时间：2026-10-12 23:32:57（北京时间）；命令和完整输出：results/screenshot-validation/22-comparison.txt。
+
+### 4.5.9 API worker 故障前中后组图
+
+![操作截图或分析图](../screenshots/08-live-validation/23-node-before.png)
+
+图 26  B02  故障前节点与 Pod 分布
+
+先确认被停 worker 确实承载 Ready API，记录受影响 UID，启动 140 秒连续业务请求。Web、Redis 与本地 PV 留在存活 worker，本组仅验证 API 节点故障。 操作时间：2026-10-12 23:25:09（北京时间）；命令和完整输出：results/screenshot-validation/23-node-before.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/24-node-inject.png)
+
+图 27  B02  停止 worker 并观察 NotReady
+
+停止 cloudlab-worker2 节点容器，等待 Kubernetes 检测后显示 NotReady 与 Pod 状态。控制器发现失联需要时间，不能将这一窗口写成服务完全不中断。 操作时间：2026-10-12 23:25:10（北京时间）；命令和完整输出：results/screenshot-validation/24-node-inject.txt。
+
+![操作截图或分析图](../screenshots/08-live-validation/25-node-after.png)
+
+图 28  B02  存活节点重新调度和故障节点恢复
+
+等待 3 个 Ready API 全部调度到存活 worker 后，重新启动故障 worker，确认三个节点 Ready。图中保留本轮请求成功和错误数；第五节原节点实验的 44 次错误仍保留。单机 Kind 不证明宿主机或 Redis 高可用。 操作时间：2026-10-12 23:26:03（北京时间）；命令和完整输出：results/screenshot-validation/25-node-after.txt。
 
 ## 五、消融对比实验
 
@@ -138,7 +323,7 @@ API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后
 
 保留 Redis、镜像和平台，只重新启动三个 API 与一个 Web。计时从启动命令开始到全部期望服务就绪及公开业务端点返回 200。排除下载、构建、Docker Desktop/WSL2 启动及 Kind 建群；每条路径独立重复五次。这是在既定健康检查配置下的热启动对照。
 
-表 5  无状态服务热启动
+表 6  无状态服务热启动
 
 | 路径 | 次数 | 均值 / s | 标准差 / s | 最小 / s | 最大 / s |
 | --- | --- | --- | --- | --- | --- |
@@ -149,7 +334,7 @@ API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后
 
 ### 5.3 1→3→5→3 扩缩容及资源
 
-表 6  伸缩就绪时间与 API 用量（资源为五次观测中位数）
+表 7  伸缩就绪时间与 API 用量（资源为五次观测中位数）
 
 | 路径 / 步骤 | 副本 | Ready / s | API CPU / m | API 内存 / MiB | P95 / ms |
 | --- | --- | --- | --- | --- | --- |
@@ -162,7 +347,7 @@ API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后
 | k8s / 3 | 5 | 3.12 | 68.175 | 196.262 | 8.798 |
 | k8s / 4 | 3 | 0.717 | 61.419 | 119.555 | 9.762 |
 
-表 7  全应用资源与固定负载请求结果
+表 8  全应用资源与固定负载请求结果
 
 | 路径 / 步骤 | 全应用 CPU / m | 全应用内存 / MiB | 请求数 | 错误数 |
 | --- | --- | --- | --- | --- |
@@ -175,7 +360,9 @@ API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后
 | k8s / 3 | 98.914 | 216.551 | 1300 | 0 |
 | k8s / 4 | 91.392 | 139.516 | 1300 | 0 |
 
-![图 4  固定负载下，API 副本数量与合计内存的关系](figures/api-memory.png)
+![操作截图或分析图](figures/word-api-memory.png)
+
+图 29  固定负载下，API 副本数量与合计内存的关系
 
 副本增加会重复 Python 进程和连接池的基础内存；在固定总请求量下，增加副本不会使总业务量同步增加。因此低负载时副本主要提高容错余量，不必然降低延迟或 CPU 合计。本实验没有施加饱和压力，也没有测吞吐上限，不能据此声称五副本带来线性性能提升。
 
@@ -185,7 +372,9 @@ API 按 1→3→5→3 调整，等待目标 Ready 数量及业务入口可达后
 
 Compose 删除一个 API 容器后，15 秒后仍有两副本。Compose 没有常驻期望状态控制器，需要再次执行 compose up 才补回。Docker restart policy 与 Kubernetes Deployment 的重建职责不同：前者针对现存容器，后者不断维持期望的 Pod 副本数。
 
-![图 5  真实自愈记录核对视图：旧新 UID、Ready 耗时与连续请求](../screenshots/03-self-heal/evidence.png)
+![操作截图或分析图](../screenshots/03-self-heal/evidence.png)
+
+图 30  真实自愈记录核对视图：旧新 UID、Ready 耗时与连续请求（V07 原始结果复核）
 
 两条路径分别写入持久化标记，等待 AOF everysec，优雅重启 Redis / 重建 redis-0 后读取结果完全一致。StatefulSet 维持身份和 PVC 绑定，数据卷提供存储。这个测试不包含断电、PV 节点故障或 Redis 主从故障转移。
 
@@ -197,9 +386,11 @@ API 降为两副本，PDB minAvailable=2 的 disruptionsAllowed 变为零。Evic
 
 失败出现在失联检测、EndpointSlice 更新及重新调度窗口。Nginx 对符合条件的请求最多尝试三次上游，但在死节点后端仍存在时仍可能失败。API 的 20 秒 toleration 只缩短失联确认后的驱逐等待，不消除节点检测延迟。结果展示了恢复能力，也展示了本地 HA 的局限。
 
-![图 6  API worker 故障原始记录核对视图：恢复及失败同时保留](../screenshots/07-bonus/node-failure.png)
+![操作截图或分析图](../screenshots/07-bonus/node-failure.png)
 
-表 8  同应用的编排机制对比
+图 31  API worker 故障原始记录核对视图：恢复及失败同时保留（B02 原始结果复核）
+
+表 9  同应用的编排机制对比
 
 | 比较维度 | Compose | Kind / Kubernetes |
 | --- | --- | --- |
@@ -212,7 +403,7 @@ API 降为两副本，PDB minAvailable=2 的 disruptionsAllowed 变为零。Evic
 
 ### 5.6 内核与命名空间隔离观察
 
-表 9  实际命名空间标识（python3 scripts/isolation.py）
+表 10  实际命名空间标识（python3 scripts/isolation.py）
 
 | 观察项 | WSL Ubuntu | Compose API | Kind API |
 | --- | --- | --- | --- |

@@ -1,0 +1,8 @@
+{
+  "stage": "01-env",
+  "title": "V01 环境与工具 实际版本",
+  "output": "$ cat /etc/os-release | head -n 4; uname -r; docker version --format 'Client {{.Client.Version}} / Server {{.Server.Version}}'; docker compose version; .local/bin/kind version; kubectl version --client\nPRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\n6.18.40.1-microsoft-standard-WSL2\nClient 29.8.2 / Server 29.8.2\nDocker Compose version v5.5.1\nkind v0.33.0 go1.26.7 linux/amd64\nClient Version: v1.36.1\nKustomize Version: v5.8.1\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:28:47.703623+00:00"
+}

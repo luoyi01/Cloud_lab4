@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-12T16:40:41.973858+00:00",
+  "report_pages": 41,
+  "figures": 31,
+  "editable_tables": 10,
+  "supplemental_operation_screenshots": 25,
+  "validation_coverage": [
+    "B01",
+    "B02",
+    "V01",
+    "V02",
+    "V03",
+    "V04",
+    "V05",
+    "V06",
+    "V07",
+    "V08",
+    "V09",
+    "V10"
+  ],
+  "all_editable_fonts": "宋体",
+  "captions_and_embedded_png_sha256": "passed",
+  "all_41_personal_pages_visual_review": "passed",
+  "public_cover_visual_review": "passed",
+  "public_pages_2_to_41_match_personal_text": "passed",
+  "user_original_noncaption_paragraphs_tables_identity": "preserved",
+  "public_identity_and_credentials": "absent",
+  "original_experiment_results": "unchanged",
+  "new_request_csv_crosschecks": {
+    "self-heal": {
+      "requests": 225,
+      "errors": 0
+    },
+    "compose-delete": {
+      "requests": 175,
+      "errors": 0
+    },
+    "node-failure": {
+      "requests": 549,
+      "errors": 40
+    }
+  },
+  "scale_all_api_metrics": "passed",
+  "redis_new_uid_ready_identical_readback": "passed",
+  "final_two_path_business_and_cluster_resources": "passed",
+  "python_ast": "passed",
+  "personal_docx_sha256": "4e00cce10d77fc33c90f7315f0d2a8bdf148c577d482cba3cd844776173b4100",
+  "public_docx_sha256": "527c82e543089510a88825b078b28487a8848c87df527f3ece14e7f800a37ad9"
+}

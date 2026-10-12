@@ -1,0 +1,12 @@
+UTC 2026-10-12T15:33:46.591411+00:00
+V09 Compose 显式恢复至 3 副本
+$ docker compose --env-file .env -f docker/compose.yaml --progress quiet up -d --no-build --scale api=3 --wait
+
+$ docker ps --filter label=com.docker.compose.project=cloudlab --filter label=com.docker.compose.service=api --format 'table {{.Names}}	{{.Status}}'
+NAMES            STATUS
+cloudlab-api-7   Up 6 seconds (healthy)
+cloudlab-api-6   Up About a minute (healthy)
+cloudlab-api-5   Up 3 minutes (healthy)
+{"url": "http://127.0.0.1:8090", "duration_s": 35, "workers": 1, "interval_s": 0.2, "requests": 175, "success": 175, "errors": 0, "success_percent": 100.0, "p50_ms": 4.526, "p95_ms": 26.624, "instances": ["bcc739dfad8f", "cdc645871832", "fde6170270c1"], "client_retries": 0, "csv": "compose-delete/requests.csv"}
+
+执行完成；输出来自本轮真实命令。

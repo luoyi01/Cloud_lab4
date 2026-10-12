@@ -1,0 +1,25 @@
+UTC 2026-10-12T15:26:03.305331+00:00
+B02 API worker 故障 重新调度与节点恢复
+$ wait for 3 Ready API Pods on the surviving worker
+$ kubectl -n cloudlab get pods -l app=api -o wide
+NAME                   READY   STATUS        RESTARTS   AGE     IP            NODE               NOMINATED NODE   READINESS GATES
+api-596f494cd9-2fvrp   1/1     Running       0          3m49s   10.244.2.10   cloudlab-worker    <none>           <none>
+api-596f494cd9-2pk2l   1/1     Running       0          86s     10.244.2.13   cloudlab-worker    <none>           <none>
+api-596f494cd9-8np75   1/1     Running       0          4s      10.244.2.14   cloudlab-worker    <none>           <none>
+api-596f494cd9-ffms4   1/1     Terminating   0          6m15s   10.244.1.5    cloudlab-worker2   <none>           <none>
+Replaced affected UIDs: 6d98ed14-82d0-40d0-b419-0cf2cee710f7
+All 3 ready replicas are on the surviving worker.
+$ docker start cloudlab-worker2
+cloudlab-worker2
+$ kubectl wait --for=condition=Ready node/cloudlab-worker2 --timeout=120s
+node/cloudlab-worker2 condition met
+$ kubectl get nodes
+NAME                     STATUS   ROLES           AGE   VERSION
+cloudlab-control-plane   Ready    control-plane   24h   v1.36.4
+cloudlab-worker          Ready    <none>          24h   v1.36.4
+cloudlab-worker2         Ready    <none>          24h   v1.36.4
+{"url": "http://127.0.0.1:8080", "duration_s": 140, "workers": 1, "interval_s": 0.2, "requests": 549, "success": 509, "errors": 40, "success_percent": 92.714, "p50_ms": 4.316, "p95_ms": 5.875, "instances": ["api-596f494cd9-2fvrp", "api-596f494cd9-2pk2l", "api-596f494cd9-8np75", "api-596f494cd9-ffms4"], "client_retries": 0, "csv": "node-failure/requests.csv"}
+$ curl --fail -sS http://127.0.0.1:8080/api/whoami
+{"instance":"api-596f494cd9-8np75","node":"cloudlab-worker","version":"1.0.0","title":"班级云留言板","time":"2026-10-12T15:27:33.836481+00:00"}
+
+执行完成；输出来自本轮真实命令。

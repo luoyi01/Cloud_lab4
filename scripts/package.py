@@ -17,25 +17,23 @@ def main():
     for value in (args.student_id, args.name):
         if not value or any(c in value for c in '/\\:*?"<>|\r\n') or value in (".", ".."):
             parser.error("学号和姓名不能包含路径或文件名保留字符。")
-    raw = subprocess.check_output(["git", "ls-files", "-z"], cwd=ROOT).decode("utf-8")
+    # Export one committed snapshot; private local report edits stay local.
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+    raw = subprocess.check_output(["git", "ls-tree", "-r", "--name-only", "-z", commit], cwd=ROOT).decode("utf-8")
     tracked = [Path(name) for name in raw.split("\0") if name]
     selected = [p for p in tracked if p.parts[0] in DIRECTORIES or str(p) in FILES]
-    required = ["README.md", "report.pdf", "src/app/main.py", "docker/compose.yaml", "k8s/base/api.yaml"]
+    required = ["README.md", "report.pdf", "report.docx", "src/app/main.py", "docker/compose.yaml", "k8s/base/api.yaml"]
     if any(Path(name) not in selected for name in required):
         raise SystemExit("课程材料尚未全部被 Git 跟踪，请先核验并提交。")
-    changed = subprocess.check_output(["git", "status", "--porcelain", "--", *[p.as_posix() for p in selected]],
-                                      cwd=ROOT, text=True)
-    if changed:
-        raise SystemExit("提交材料含未提交修改；请先提交，以保证 ZIP 与记录的 HEAD 一致。")
     for relative in selected:
         source = ROOT / relative
         if not source.resolve().is_relative_to(ROOT) or relative.name in ("secret.yaml", "kubeconfig", ".env"):
             raise SystemExit(f"Refuse unexpected source: {relative}")
-    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     target = ROOT / f"{args.student_id}_{args.name}_云原生实验.zip"
     with zipfile.ZipFile(target, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for relative in selected:
-            archive.write(ROOT / relative, arcname=relative.as_posix())
+            content = subprocess.check_output(["git", "show", f"{commit}:{relative.as_posix()}"], cwd=ROOT)
+            archive.writestr(relative.as_posix(), content)
         archive.writestr("SUBMISSION.txt", f"Repository: https://github.com/luoyi01/Cloud_lab4\nCommit: {commit}\nStudent ID: {args.student_id}\nName: {args.name}\n")
     with zipfile.ZipFile(target) as archive:
         assert archive.testzip() is None

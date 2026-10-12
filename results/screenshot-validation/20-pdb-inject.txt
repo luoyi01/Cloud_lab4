@@ -1,0 +1,17 @@
+UTC 2026-10-12T15:32:38.518257+00:00
+B01 PDB 2 副本时拒绝自愿驱逐
+$ kubectl -n cloudlab scale deployment/api --replicas=2
+deployment.apps/api scaled
+$ python3 scripts/wait_api.py --replicas 2
+API stable: 2 ready Pods, matching Service endpoints.
+$ kubectl -n cloudlab get pdb
+NAME   MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+api    2               N/A               0                     24h
+$ kubectl -n cloudlab create --raw /api/v1/namespaces/cloudlab/pods/api-596f494cd9-5jj8d/eviction -f results/screenshot-validation/eviction.json
+Error from server (TooManyRequests): Cannot evict pod as it would violate the pod's disruption budget.
+$ kubectl -n cloudlab get pods -l app=api
+NAME                   READY   STATUS    RESTARTS   AGE
+api-596f494cd9-5jj8d   1/1     Running   0          2m22s
+api-596f494cd9-c9tbw   1/1     Running   0          3m46s
+
+执行完成；输出来自本轮真实命令。

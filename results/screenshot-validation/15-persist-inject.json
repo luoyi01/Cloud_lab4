@@ -1,0 +1,8 @@
+{
+  "stage": "15-persist-inject",
+  "title": "V10 持久化 Redis 重启与 Pod 重建",
+  "output": "$ docker compose --env-file .env -f docker/compose.yaml --progress quiet restart redis\n\n$ kubectl -n cloudlab delete pod redis-0 --wait=false\npod \"redis-0\" deleted from cloudlab namespace\n$ kubectl -n cloudlab get pods -l app=redis\nNAME      READY   STATUS      RESTARTS   AGE\nredis-0   0/1     Completed   0          21m\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:53:01.241752+00:00"
+}

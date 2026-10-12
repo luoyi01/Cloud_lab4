@@ -1,0 +1,8 @@
+{
+  "stage": "03-compose-config",
+  "title": "V03 Compose 端口 环境变量 卷与内部 DNS",
+  "output": "$ docker inspect cloudlab-api-2 --format 'image={{.Config.Image}} cpu={{.HostConfig.NanoCpus}} memory={{.HostConfig.Memory}} readonly={{.HostConfig.ReadonlyRootfs}}'; docker exec cloudlab-api-2 sh -c 'printenv APP_TITLE APP_VERSION REDIS_HOST'; docker port cloudlab-web-1; docker inspect cloudlab-redis-1 --format '{{range .Mounts}}{{.Type}} {{.Name}} -> {{.Destination}}{{end}}'; docker exec cloudlab-api-2 python -c \"import socket;print('redis DNS=', socket.gethostbyname('redis'))\"; curl --fail -sS http://127.0.0.1:8090/health/ready\nimage=cloudlab-api:1.0 cpu=500000000 memory=268435456 readonly=true\n班级云留言板\n1.0.0\nredis\n80/tcp -> 127.0.0.1:8090\nvolume cloudlab_redis-data -> /data\nredis DNS= 172.20.0.5\ncurl: (22) The requested URL returned error: 404\nERROR: RuntimeError: command exit 22\n",
+  "running": false,
+  "status": "执行失败，请检查原始输出。",
+  "utc": "2026-10-12T15:18:12.087500+00:00"
+}

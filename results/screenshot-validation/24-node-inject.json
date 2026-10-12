@@ -1,0 +1,8 @@
+{
+  "stage": "24-node-inject",
+  "title": "B02 API worker 故障 节点停止与 NotReady",
+  "output": "$ docker stop cloudlab-worker2\ncloudlab-worker2\n$ wait until cloudlab-worker2 becomes NotReady (poll kubectl get node)\n$ kubectl get nodes\nNAME                     STATUS     ROLES           AGE   VERSION\ncloudlab-control-plane   Ready      control-plane   24h   v1.36.4\ncloudlab-worker          Ready      <none>          24h   v1.36.4\ncloudlab-worker2         NotReady   <none>          24h   v1.36.4\n$ kubectl -n cloudlab get pods -l app=api -o wide\nNAME                   READY   STATUS    RESTARTS   AGE     IP            NODE               NOMINATED NODE   READINESS GATES\napi-596f494cd9-2fvrp   1/1     Running   0          3m25s   10.244.2.10   cloudlab-worker    <none>           <none>\napi-596f494cd9-2pk2l   1/1     Running   0          62s     10.244.2.13   cloudlab-worker    <none>           <none>\napi-596f494cd9-ffms4   1/1     Running   0          5m51s   10.244.1.5    cloudlab-worker2   <none>           <none>\nWorker container is stopped; this is an API worker fault, not host or Redis failover.\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:25:10.208777+00:00"
+}

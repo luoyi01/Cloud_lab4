@@ -1,0 +1,8 @@
+{
+  "stage": "11-scale-three",
+  "title": "V08 扩缩容 两条路径扩至 3 副本",
+  "output": "$ docker compose --env-file .env -f docker/compose.yaml --progress quiet up -d --no-build --scale api=3 --wait --wait-timeout 120\n\n$ kubectl -n cloudlab scale deployment/api --replicas=3\ndeployment.apps/api scaled\n$ python3 scripts/wait_api.py --replicas 3\nAPI stable: 3 ready Pods, matching Service endpoints.\n$ wait until kubectl top reports all 3 current Ready API Pods\n$ set -e -o pipefail; docker ps --filter label=com.docker.compose.service=api --filter label=com.docker.compose.project=cloudlab --format '{{.Names}}' | xargs docker stats --no-stream --format 'table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}'\nNAME             CPU %     MEM USAGE / LIMIT\ncloudlab-api-7   0.18%     38.82MiB / 256MiB\ncloudlab-api-6   0.22%     38.82MiB / 256MiB\ncloudlab-api-5   7.86%     39.04MiB / 256MiB\n$ kubectl -n cloudlab get pods -l app=api\nNAME                   READY   STATUS    RESTARTS   AGE\napi-596f494cd9-6jgww   1/1     Running   0          29s\napi-596f494cd9-c9tbw   1/1     Running   0          23m\napi-596f494cd9-g5jbn   1/1     Running   0          29s\n$ kubectl -n cloudlab top pods -l app=api\nNAME                   CPU(cores)   MEMORY(bytes)   \napi-596f494cd9-6jgww   5m           38Mi            \napi-596f494cd9-c9tbw   5m           38Mi            \napi-596f494cd9-g5jbn   68m          38Mi\nSupplemental instantaneous metrics; not the original five-observation medians.\n",
+  "running": false,
+  "status": "执行完成；输出来自本轮真实命令。",
+  "utc": "2026-10-12T15:51:37.404437+00:00"
+}

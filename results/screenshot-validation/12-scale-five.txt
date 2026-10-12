@@ -1,0 +1,33 @@
+UTC 2026-10-12T15:52:15.798801+00:00
+V08 扩缩容 两条路径扩至 5 副本
+$ docker compose --env-file .env -f docker/compose.yaml --progress quiet up -d --no-build --scale api=5 --wait --wait-timeout 120
+
+$ kubectl -n cloudlab scale deployment/api --replicas=5
+deployment.apps/api scaled
+$ python3 scripts/wait_api.py --replicas 5
+API stable: 5 ready Pods, matching Service endpoints.
+$ wait until kubectl top reports all 5 current Ready API Pods
+$ set -e -o pipefail; docker ps --filter label=com.docker.compose.service=api --filter label=com.docker.compose.project=cloudlab --format '{{.Names}}' | xargs docker stats --no-stream --format 'table {{.Name}}	{{.CPUPerc}}	{{.MemUsage}}'
+NAME             CPU %     MEM USAGE / LIMIT
+cloudlab-api-9   0.22%     38.82MiB / 256MiB
+cloudlab-api-8   22.43%    38.98MiB / 256MiB
+cloudlab-api-7   22.15%    38.82MiB / 256MiB
+cloudlab-api-6   22.36%    38.9MiB / 256MiB
+cloudlab-api-5   0.25%     38.86MiB / 256MiB
+$ kubectl -n cloudlab get pods -l app=api
+NAME                   READY   STATUS    RESTARTS   AGE
+api-596f494cd9-52dwm   1/1     Running   0          23s
+api-596f494cd9-6jgww   1/1     Running   0          60s
+api-596f494cd9-7fvmp   1/1     Running   0          23s
+api-596f494cd9-c9tbw   1/1     Running   0          23m
+api-596f494cd9-g5jbn   1/1     Running   0          60s
+$ kubectl -n cloudlab top pods -l app=api
+NAME                   CPU(cores)   MEMORY(bytes)   
+api-596f494cd9-52dwm   5m           38Mi            
+api-596f494cd9-6jgww   5m           39Mi            
+api-596f494cd9-7fvmp   6m           38Mi            
+api-596f494cd9-c9tbw   5m           38Mi            
+api-596f494cd9-g5jbn   4m           39Mi
+Supplemental instantaneous metrics; not the original five-observation medians.
+
+执行完成；输出来自本轮真实命令。
