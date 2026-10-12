@@ -1,0 +1,18 @@
+{
+  "format": "docx",
+  "editable_font": "宋体",
+  "font_properties_checked": 601,
+  "editable_tables": 9,
+  "figures": 6,
+  "source_content_and_code_blocks": "preserved",
+  "identity": "blank",
+  "author": "",
+  "native_word_pages": 15,
+  "render_engine": "Native Word PDF export and canonical render_docx.py PNG rasterizer",
+  "rendered_visual_review": "all 15 page PNGs inspected",
+  "native_pdf_fonts": [
+    "/BCDEEE+SimSun",
+    "/BCDFEE+SimSun"
+  ],
+  "docx_sha256": "ec96c09b8e481609a6753e63d0e38d08f04d194c3de06d3cbc085e959c1a3849"
+}

@@ -2,7 +2,7 @@
 
 同一套 **Nginx + FastAPI + Redis** 应用，在现有 Windows / Docker Desktop / WSL2 Ubuntu 24.04 上分别运行 Docker Compose 与三节点 Kind。支持发布留言、游标分页、访问计数、输入校验和实例身份展示。留言及计数由 Redis 共享，API 可以独立扩缩容。
 
-实测数据由脚本生成，见 [结果摘要](results/summary.md)、[提交与评分清单](docs/submission-checklist.md)。课程报告为根目录 `report.pdf`，可编辑正文在 `docs/report.md`。姓名、学号按要求留空。
+实测数据由脚本生成，见 [结果摘要](results/summary.md)、[提交与评分清单](docs/submission-checklist.md)。课程报告为根目录 [Word 版](report.docx)和 [PDF 版](report.pdf)，可编辑正文在 `docs/report.md`。Word 的可编辑文字统一宋体，表格保持可编辑；姓名、学号按要求留空。
 
 ## 环境与实验范围
 
@@ -172,9 +172,10 @@ kubectl --kubeconfig .local/kubeconfig -n cloudlab scale deployment/api deployme
 python3 -m venv .local/report-venv
 .local/report-venv/bin/pip install -r docs/requirements.txt
 .local/report-venv/bin/python scripts/build_report.py --font /mnt/c/Windows/Fonts/msyh.ttc
+.local/report-venv/bin/python scripts/build_word_report.py --font /mnt/c/Windows/Fonts/simsun.ttc
 ```
 
-Ubuntu 若没有 `venv` 模块，先通过系统包安装 `python3-venv`；其他 Linux 主机使用本机合法安装、支持中文的 TTF/TTC 字体路径。生成器核验完整伸缩、持久化、PDB 和测试证据，从本轮 JSON 更新表格及结论。`docs/report.md` 可单独编辑，重新运行生成器会覆盖它。提交前检查 PDF，提交修改后再运行打包脚本，使 ZIP 记录的提交与内容一致。
+Ubuntu 若没有 `venv` 模块，先通过系统包安装 `python3-venv`；其他 Linux 主机使用本机支持中文的 TTF/TTC 字体路径，Word 图表需提供宋体字体文件。PDF 生成器核验完整伸缩、持久化、PDB 和测试证据，从本轮 JSON 更新表格及结论。`docs/report.md` 可单独编辑，重新运行 PDF 生成器会覆盖它；Word 生成器读取该正文并生成统一宋体的 DOCX，另生成宋体架构图和资源图。提交前检查报告，提交修改后再运行打包脚本，使 ZIP 记录的提交与内容一致。Word 版已经通过本机 Word 排版和全部 15 页预览检查，记录在 `results/word-report-verification.json`。
 
 ## 参考资料
 

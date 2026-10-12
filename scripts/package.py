@@ -6,7 +6,7 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 DIRECTORIES = {"src", "docker", "k8s", "scripts", "tests", "docs", "results", "screenshots"}
-FILES = {"README.md", "report.pdf", "pytest.ini", ".gitignore", ".gitattributes", ".dockerignore", ".env.example"}
+FILES = {"README.md", "report.pdf", "report.docx", "pytest.ini", ".gitignore", ".gitattributes", ".dockerignore", ".env.example"}
 
 
 def main():
